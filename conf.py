@@ -19,9 +19,9 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'Readthedocs'
-copyright = '2018, Matthew Welch'
-author = 'Matthew Welch'
+project = 'sdcMicro GUI manual'
+copyright = '2018, Thijs Benschop'
+author = 'Thijs Benschop'
 
 # The short X.Y version
 version = ''
@@ -39,15 +39,6 @@ release = ''
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    'sphinx.ext.autodoc',
-    'sphinx.ext.doctest',
-    'sphinx.ext.intersphinx',
-    'sphinx.ext.todo',
-    'sphinx.ext.coverage',
-    'sphinx.ext.mathjax',
-    'sphinx.ext.ifconfig',
-    'sphinx.ext.viewcode',
-    'sphinx.ext.githubpages',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -110,7 +101,7 @@ html_static_path = ['_static']
 # -- Options for HTMLHelp output ---------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'Readthedocsdoc'
+htmlhelp_basename = 'sdcMicroGUImanualdoc'
 
 
 # -- Options for LaTeX output ------------------------------------------------
@@ -137,8 +128,8 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'Readthedocs.tex', 'Readthedocs Documentation',
-     'Matthew Welch', 'manual'),
+    (master_doc, 'sdcMicroGUImanual.tex', 'sdcMicro GUI manual Documentation',
+     'Thijs Benschop', 'manual'),
 ]
 
 
@@ -147,7 +138,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'readthedocs', 'Readthedocs Documentation',
+    (master_doc, 'sdcmicroguimanual', 'sdcMicro GUI manual Documentation',
      [author], 1)
 ]
 
@@ -158,20 +149,7 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'Readthedocs', 'Readthedocs Documentation',
-     author, 'Readthedocs', 'One line description of project.',
+    (master_doc, 'sdcMicroGUImanual', 'sdcMicro GUI manual Documentation',
+     author, 'sdcMicroGUImanual', 'One line description of project.',
      'Miscellaneous'),
 ]
-
-
-# -- Extension configuration -------------------------------------------------
-
-# -- Options for intersphinx extension ---------------------------------------
-
-# Example configuration for intersphinx: refer to the Python standard library.
-intersphinx_mapping = {'https://docs.python.org/': None}
-
-# -- Options for todo extension ----------------------------------------------
-
-# If true, `todo` and `todoList` produce output, else they produce nothing.
-todo_include_todos = True

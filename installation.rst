@@ -25,18 +25,17 @@ The sdcMicro Package
 ------------------------------------------------------------------------------------
 .. code-block:: R
 
-		install.packages()
-		second
+		install.packages("sdcMicro")
+		
  
 Install the latest version of the sdcMicro add-on package (internet connection is required). 
 
-To do so open the application R and type the commands install.packages(“sdcMicro”). 
+To do so launch R and type the command install.packages(“sdcMicro”). 
 A prompt will ask you to select a CRAN mirror (server) to install the package from. 
-Note: also dependencies will be installed and the installation may take some time. 
-Dependencies are other add-on packages, of which the functionality is required to run the sdcMicro package.
+Note: R will automatically install any necessary and missing dependencie. This may take some time. 
+Dependencies are other add-on packages, which provide aditional functionality required to run the sdcMicro package.
 
-
-You can now load the sdcMicro package by typing library(sdcMicro) 
+Once teh sdcMicro package is installed you can now load it by typing at the R command prompt: library(sdcMicro) 
 and launch the application by typing sdcApp(). 
 
 The application opens in your default web browser through the local host IP 127.0.0.1:
@@ -45,6 +44,23 @@ The application opens in your default web browser through the local host IP 127.
 stored locally on your computer or server. The web browser uses a local host IP, 
 which is not connected to the internet and the browser is only used to communicate with 
 the running R session.
+
+Additional launch options:
+.. code-block:: R
+
+		sdcApp(maxRequestSize = 50, debug = FALSE, theme = "IHSN", ..., shiny.server = FALSE)
+
+*Arguments*
+- maxRequestSize (numeric) number defining the maximum allowed filesize (in megabytes) for uploaded files, defaults to 50MB
+- debug logical if TRUE, set shiny-debugging options
+- theme select stylesheet for the interface. Supported choices are
+• ’yeti’
+• ’flatly’
+• ’journal’
+• ’IHSN’
+- ... arguments (e.g host) that are passed through runApp when starting the shiny application
+- shiny.server Setting this parameter to TRUE will return the app in the form of an object rather
+than invoking it. This is useful for deploying sdcApp via shiny-server.
     
 Launching sdcApp
 ------------------------------------------------------------------------------------

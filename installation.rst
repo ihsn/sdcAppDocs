@@ -23,20 +23,25 @@ Scroll down and select the file corresponding to your OS:
 
 The sdcMicro Package
 ------------------------------------------------------------------------------------
+ 
+Install the latest version of the sdcMicro add-on package (internet connection is required). 
+
+To do so launch R and type the command:
+
 .. code-block:: R
 
 		install.packages("sdcMicro")
 		
- 
-Install the latest version of the sdcMicro add-on package (internet connection is required). 
-
-To do so launch R and type the command install.packages(“sdcMicro”). 
 A prompt will ask you to select a CRAN mirror (server) to install the package from. 
 Note: R will automatically install any necessary and missing dependencie. This may take some time. 
 Dependencies are other add-on packages, which provide aditional functionality required to run the sdcMicro package.
 
-Once teh sdcMicro package is installed you can now load it by typing at the R command prompt: library(sdcMicro) 
-and launch the application by typing sdcApp(). 
+Once the sdcMicro package is installed you can load it by typing at the R command prompt: library(sdcMicro) 
+and launch the application by typing: sdcApp()
+
+.. code-block:: R
+		library("sdcMicro")
+		sdcApp() 
 
 The application opens in your default web browser through the local host IP 127.0.0.1:
 

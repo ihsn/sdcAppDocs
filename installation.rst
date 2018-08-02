@@ -50,24 +50,22 @@ stored locally on your computer or server. The web browser uses a local host IP,
 which is not connected to the internet and the browser is only used to communicate with 
 the running R session.
 
-Additional launch options:
+Additional launch options
 
 .. code-block:: R
 		sdcApp(maxRequestSize = 50, debug = FALSE, theme = "IHSN", ..., shiny.server = FALSE)
-
+		
 *Arguments*
+
 + maxRequestSize (numeric) number defining the maximum allowed filesize (in megabytes) for uploaded files, defaults to 50MB
 + debug logical if TRUE, set shiny-debugging options
-+ theme select stylesheet for the interface. Supported choices are
-|’yeti’
-|’flatly’
-|’journal’
-|’IHSN’
-+ ... arguments (e.g host) that are passed through runApp when starting the shiny application
-+ shiny.server Setting this parameter to TRUE will return the app in the form of an object rather
-than invoking it. This is useful for deploying sdcApp via shiny-server.
-    
-Launching sdcApp
-------------------------------------------------------------------------------------
-test
++ theme select stylesheet for the interface. Supported choices are::
 
+	yeti
+	flatly
+	journal
+	IHSN
+
++ ... arguments (e.g host) that are passed through runApp when starting the shiny application
++ shiny.server Setting this parameter to TRUE will return the app in the form of an object rather than invoking it. This is useful for deploying sdcApp via shiny-server.
+  

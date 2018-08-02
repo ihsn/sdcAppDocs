@@ -1,2 +1,2 @@
-# sdcAppDocs
-Practical Guidance for using the sdcMicro, sdcApp()
+# sdcMicro-GUI-manual
+Manual for the GUI of the R package sdcMicro

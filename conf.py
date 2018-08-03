@@ -80,7 +80,9 @@ html_theme = 'agogo'
 # further.  For a list of options available for each theme, see the
 # documentation.
 #
-# html_theme_options = {}
+# html_theme_options = {
+textalign = justify
+documentwidth = 50em}
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -95,9 +97,7 @@ html_static_path = ['_static']
 # default: ``['localtoc.html', 'relations.html', 'sourcelink.html',
 # 'searchbox.html']``.
 #
-# html_sidebars = {
-textalign = justify
-documentwidth = 50em}
+# html_sidebars = {}
 
 
 # -- Options for HTMLHelp output ---------------------------------------------

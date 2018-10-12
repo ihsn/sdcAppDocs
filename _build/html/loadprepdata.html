@@ -83,17 +83,28 @@
               <p class="caption"><span class="caption-text">Table of contents</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation and updating</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introsdcApp.html">Introduction to sdcApp</a></li>
 <li class="toctree-l1"><a class="reference internal" href="about.html">Help and settings</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Loading and Preparing Data</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#loading-data">Loading data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#testdata">Testdata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#other-datasets">Other datasets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#inspect-and-explore-data">Inspect and explore data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#preparing-data">Preparing data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#convert-variable-type">Convert variable type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#set-missing-values-to-na">Set missing values to NA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#create-stratification-variable">Create stratification variable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hierarchical-data">Hierarchical data</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="setup.html">Setup anonymization problem</a></li>
 <li class="toctree-l1"><a class="reference internal" href="risk.html">Risk measurement</a></li>
 <li class="toctree-l1"><a class="reference internal" href="anon.html">Anonymization methods</a></li>
-<li class="toctree-l1"><a class="reference internal" href="utility.html">Utility</a></li>
-<li class="toctree-l1"><a class="reference internal" href="export.html">Export data, reports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="utility.html">Utility measurement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="export.html">Export data and reports</a></li>
 <li class="toctree-l1"><a class="reference internal" href="reproducibility.html">Reproducibility</a></li>
 </ul>
 
@@ -161,9 +172,85 @@
             
   <div class="section" id="loading-and-preparing-data">
 <h1>Loading and Preparing Data<a class="headerlink" href="#loading-and-preparing-data" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="loading-data">
+<h2>Loading data<a class="headerlink" href="#loading-data" title="Permalink to this headline">¶</a></h2>
+</div>
 <div class="section" id="testdata">
 <h2>Testdata<a class="headerlink" href="#testdata" title="Permalink to this headline">¶</a></h2>
-<p>test</p>
+<p>sdcApp comes with two testdata datasets: testdata and testdata2. The testdata dataset is
+used for</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">All examples in the testdata</p>
+</div>
+</div>
+<div class="section" id="other-datasets">
+<h2>Other datasets<a class="headerlink" href="#other-datasets" title="Permalink to this headline">¶</a></h2>
+<p>sdcApp supports datasets in several foreign data formats (cf. <code class="xref std std-numref docutils literal notranslate"><span class="pre">tabloadprep71</span></code>).
+If the microdata is not in one of these dataformats,another software can be used to convert the
+data, such as StatTransfer. In order to load a dataset, select in the left sidebar of the
+Microdata tabtabloadprep</p>
+<span id="tabloadprep1"></span><table border="1" class="colwidths-auto docutils align-center" id="id1">
+<caption><span class="caption-text">Data formats compatible with sdcApp</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Software</th>
+<th class="head">File extension</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>R/RStudio</td>
+<td>.rdata</td>
+</tr>
+<tr class="row-odd"><td>SPSS</td>
+<td>.sav</td>
+</tr>
+<tr class="row-even"><td>SAS</td>
+<td>.sas7bdat</td>
+</tr>
+<tr class="row-odd"><td>CSV</td>
+<td>.csv, .txt</td>
+</tr>
+<tr class="row-even"><td>STATA</td>
+<td>.dta</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="inspect-and-explore-data">
+<h2>Inspect and explore data<a class="headerlink" href="#inspect-and-explore-data" title="Permalink to this headline">¶</a></h2>
+<p>After loading the dataset into sdcApp, the data is shown. A this moment, the user should</p>
+</div>
+<div class="section" id="preparing-data">
+<h2>Preparing data<a class="headerlink" href="#preparing-data" title="Permalink to this headline">¶</a></h2>
+<p>Most datasets need to be prepared before the start of the anonymization process. Examples
+of data preparation are removing variables that are not suitable for release, etc. It is
+recommended to carry out the data preparation in a statistical software of choice, before
+loading the data in sdcApp. Data preparation includes</p>
+<p>After loading the data in sdcApp, still some steps may need to be carried, which are
+specific to the needs of the sdcApp. These steps are discussed in the following subsections.</p>
+<div class="section" id="convert-variable-type">
+<h3>Convert variable type<a class="headerlink" href="#convert-variable-type" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="set-missing-values-to-na">
+<h3>Set missing values to NA<a class="headerlink" href="#set-missing-values-to-na" title="Permalink to this headline">¶</a></h3>
+<p>Missing values play an important role in anonymization of microdata. In particular when
+measuring disclosure risk of categorical key variables (see <a href="#id3"><span class="problematic" id="id4">`Risk`__</span></a>). sdcApp only considers
+the R missing value <code class="code docutils literal notranslate"><span class="pre">NA</span></code> as missing. Therefore, it is important to recode other missing values,
+such as 9, 99, 998 or 999, “Missing”, “Not applicable” after loading the
+data to the R missing value <code class="code docutils literal notranslate"><span class="pre">NA</span></code>, if appropriate. Many standard missing value codes
+in the data, such as <code class="code docutils literal notranslate"><span class="pre">.</span></code> in STATA are automatically converted to NA upon loading
+the data into <em>sdcApp</em>.</p>
+<div class="figure align-center" id="id2">
+<span id="fig57"></span><img alt="_images/prepareMissingToNA.png" src="_images/prepareMissingToNA.png" />
+<p class="caption"><span class="caption-text">Screen to set specific value in a variable to NA</span></p>
+</div>
+</div>
+<div class="section" id="create-stratification-variable">
+<h3>Create stratification variable<a class="headerlink" href="#create-stratification-variable" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="hierarchical-data">
+<h3>Hierarchical data<a class="headerlink" href="#hierarchical-data" title="Permalink to this headline">¶</a></h3>
+</div>
 </div>
 </div>
 

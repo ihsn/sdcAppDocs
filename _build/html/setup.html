@@ -31,7 +31,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Risk measurement" href="risk.html" />
-    <link rel="prev" title="Loading and Preparing Data" href="loadprepdata.html" /> 
+    <link rel="prev" title="Loading and preparing Data" href="loadprepdata.html" /> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -83,14 +83,24 @@
               <p class="caption"><span class="caption-text">Table of contents</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation and updating</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introsdcApp.html">Introduction to sdcApp</a></li>
 <li class="toctree-l1"><a class="reference internal" href="about.html">Help and settings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="loadprepdata.html">Loading and Preparing Data</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Setup anonymization problem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="loadprepdata.html">Loading and preparing Data</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Setup anonymization problem</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#variable-selection">Variable selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#settings">Settings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#alpha">Alpha</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#seed">Seed</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#summary-view">Summary view</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="risk.html">Risk measurement</a></li>
 <li class="toctree-l1"><a class="reference internal" href="anon.html">Anonymization methods</a></li>
-<li class="toctree-l1"><a class="reference internal" href="utility.html">Utility</a></li>
-<li class="toctree-l1"><a class="reference internal" href="export.html">Export data, reports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="utility.html">Utility measurement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="export.html">Export data and reports</a></li>
 <li class="toctree-l1"><a class="reference internal" href="reproducibility.html">Reproducibility</a></li>
 </ul>
 
@@ -158,7 +168,89 @@
             
   <div class="section" id="setup-anonymization-problem">
 <h1>Setup anonymization problem<a class="headerlink" href="#setup-anonymization-problem" title="Permalink to this headline">¶</a></h1>
-<p>test</p>
+<div class="section" id="variable-selection">
+<h2>Variable selection<a class="headerlink" href="#variable-selection" title="Permalink to this headline">¶</a></h2>
+<p>In order to set up an SDC problem the user needs to select</p>
+<div class="figure align-center" id="id1">
+<span id="fig11"></span><img alt="_images/setupTable.png" src="_images/setupTable.png" />
+<p class="caption"><span class="caption-text">Table on Anonymize tab for variable selection</span></p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">All variables need to be of the appropriate variable type. If the variable type of a
+variable is not suitable for the intended</p>
+</div>
+<span id="tabsetup1"></span><table border="1" class="colwidths-auto docutils align-center" id="id2">
+<caption><span class="caption-text">Columns in setup table</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Column header</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Variable name</td>
+<td>Name of variable in original dataset</td>
+</tr>
+<tr class="row-odd"><td>Type</td>
+<td>Variable type in R (factor, integer, numeric, character)</td>
+</tr>
+<tr class="row-even"><td>Key variables</td>
+<td>Radio buttons to select variable as cat. or cont. key variable</td>
+</tr>
+<tr class="row-odd"><td>Weight</td>
+<td>Column to select variable as weight variable</td>
+</tr>
+<tr class="row-even"><td>Hierarchical identifier</td>
+<td>Column to select variable as hierarchical identifier</td>
+</tr>
+<tr class="row-odd"><td>PRAM</td>
+<td>Column to select variable for PRAM method</td>
+</tr>
+<tr class="row-even"><td>Delete</td>
+<td>Column to select variable to be deleted from released dataset</td>
+</tr>
+<tr class="row-odd"><td>Number of levels</td>
+<td>Number of different values (including NA/missing) in a categorical (type factor) variable</td>
+</tr>
+<tr class="row-even"><td>Number of missing</td>
+<td>Number of records with missing value for this particular variable</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If an invalid variable choice is made, such as an invalid variable type
+or a variable is selected for more than one choice, a pop-up window with an informative
+error message is shown. It is important to undo the invalid selection after clicking away
+the error message, as this doesn’t happen automatically. Not correcting the selection will
+make it later difficult to trace back the invalid selections. The blue setup button disappears and reappears once the problem is fixed.</p>
+</div>
+</div>
+<div class="section" id="settings">
+<h2>Settings<a class="headerlink" href="#settings" title="Permalink to this headline">¶</a></h2>
+<p>Besides the variable selection, there are two more parameters to be set: alpha and seed.</p>
+<div class="section" id="alpha">
+<h3>Alpha<a class="headerlink" href="#alpha" title="Permalink to this headline">¶</a></h3>
+<p>The parameter alpha is used to compute the frequencies of . See for more information.</p>
+</div>
+<div class="section" id="seed">
+<h3>Seed<a class="headerlink" href="#seed" title="Permalink to this headline">¶</a></h3>
+<p>Every time a probabilistic method is used, a different outcome is generated. For these
+methods it is often recommended that a seed be set for the random number generator
+if you want to produce replicable results.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Order of operations and use of undo matters for seed.</p>
+</div>
+</div>
+</div>
+<div class="section" id="summary-view">
+<h2>Summary view<a class="headerlink" href="#summary-view" title="Permalink to this headline">¶</a></h2>
+<p>After setting up the SDC problem, the application jumps automativcally to the Anonymize tab.
+This tab first shows a Summary overview of the problem. The content of the summary page varies with
+the SDC problem. For example, if no numerical key variables were selected, the information on
+numeric key variables is omitted. Fig shows the summary page.</p>
+</div>
 </div>
 
 
@@ -172,7 +264,7 @@
         <a href="risk.html" class="btn btn-neutral float-right" title="Risk measurement" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="loadprepdata.html" class="btn btn-neutral" title="Loading and Preparing Data" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="loadprepdata.html" class="btn btn-neutral" title="Loading and preparing Data" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

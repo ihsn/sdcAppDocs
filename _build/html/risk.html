@@ -83,14 +83,31 @@
               <p class="caption"><span class="caption-text">Table of contents</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation and updating</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introsdcApp.html">Introduction to sdcApp</a></li>
 <li class="toctree-l1"><a class="reference internal" href="about.html">Help and settings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="loadprepdata.html">Loading and Preparing Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="loadprepdata.html">Loading and preparing Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="setup.html">Setup anonymization problem</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Risk measurement</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Risk measurement</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#summary-view">Summary view</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#global-risk-measure">Global risk measure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#k-anonymity">-anonymity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#risk-measures-for-numerical-key-variables">Risk measures for numerical key variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#household-risk">Household risk</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#detailed-view">Detailed view</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#risky-observations">Risky observations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#suda">SUDA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#l-diversity">l-diversity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">k-anonymity</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="anon.html">Anonymization methods</a></li>
-<li class="toctree-l1"><a class="reference internal" href="utility.html">Utility</a></li>
-<li class="toctree-l1"><a class="reference internal" href="export.html">Export data, reports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="utility.html">Utility measurement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="export.html">Export data and reports</a></li>
 <li class="toctree-l1"><a class="reference internal" href="reproducibility.html">Reproducibility</a></li>
 </ul>
 
@@ -158,7 +175,108 @@
             
   <div class="section" id="risk-measurement">
 <h1>Risk measurement<a class="headerlink" href="#risk-measurement" title="Permalink to this headline">¶</a></h1>
-<p>test</p>
+<div class="section" id="summary-view">
+<h2>Summary view<a class="headerlink" href="#summary-view" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="global-risk-measure">
+<h3>Global risk measure<a class="headerlink" href="#global-risk-measure" title="Permalink to this headline">¶</a></h3>
+<p>For categorical variables</p>
+</div>
+<div class="section" id="k-anonymity">
+<h3>-anonymity<a class="headerlink" href="#k-anonymity" title="Permalink to this headline">¶</a></h3>
+<p>The risk measure -anonymity is based on the principle that, in a safe
+dataset, the number of individuals sharing the same combination of
+values (keys) of categorical quasi-identifiers should be higher than a
+specified threshold . -anonymity is a risk
+measure based on the microdata to be released, since it only takes the
+sample into account. An individual violates -anonymity if the
+sample frequency count  for the key  is smaller
+than the specified threshold . For example, if an
+individual has the same combination of quasi-identifiers as two other
+individuals in the sample, these individuals satisfy 3-anonymity but
+violate 4-anonymity. In the dataset in <code class="xref std std-numref docutils literal notranslate"><span class="pre">tab41</span></code>, six individuals
+satisfy 2-anonymity and four violate 2-anonymity. The individuals that
+violate 2-anonymity are sample uniques. The risk measure is the number
+of observations that violates k-anonymity for a certain value of <em>k</em>,
+which is</p>
+<p>where  is the indicator function and  refers to the
+<sup>th</sup> record. This is simply a count of the number of
+individuals with a sample frequency of their key lower than .
+The count is higher for larger , since if a record satisfies
+-anonimity, it also satisfies -anonimity. The
+risk measure -anonymity does not consider the sample weights,
+but it is important to consider the sample weights when determining the
+required level of -anonymity. If the sample weights are large,
+one individual in the dataset represents more individuals in the target
+population, the probability of a correct match is smaller, and hence the
+required threshold can be lower. Large sample weights go together with
+smaller datasets. In a smaller dataset, the probability to find another
+record with the same key is smaller than in a larger dataset. This
+probability is related to the number of records in the population with a
+particular key through the sample weights.</p>
+<p>In the summary view</p>
+<div class="figure align-center" id="id5">
+<span id="fig24"></span><img alt="_images/summary_k_anon.png" src="_images/summary_k_anon.png" />
+<p class="caption"><span class="caption-text">Information on -anonymity violators in summary view</span></p>
+</div>
+</div>
+<div class="section" id="risk-measures-for-numerical-key-variables">
+<h3>Risk measures for numerical key variables<a class="headerlink" href="#risk-measures-for-numerical-key-variables" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="household-risk">
+<h3>Household risk<a class="headerlink" href="#household-risk" title="Permalink to this headline">¶</a></h3>
+<p>If household identifier is selected, household risk will automatically be displayed.</p>
+</div>
+</div>
+<div class="section" id="detailed-view">
+<h2>Detailed view<a class="headerlink" href="#detailed-view" title="Permalink to this headline">¶</a></h2>
+<p>The Risk/Utility tab provides more detailed information on risk measures and records at
+(high) risk.</p>
+<div class="section" id="risky-observations">
+<h3>Risky observations<a class="headerlink" href="#risky-observations" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="suda">
+<h3>SUDA<a class="headerlink" href="#suda" title="Permalink to this headline">¶</a></h3>
+<p>The SUDA algorithm identifies all the MSUs in the sample, which in turn
+are used to assign a SUDA score to each record. This score indicates how
+“risky” a record is. The potential risk of the records is determined
+based on two observations:</p>
+<ul class="simple">
+<li>The smaller the size of the MSU within a record (i.e., the fewer
+variables are needed to reach uniqueness), the greater the risk of
+the record</li>
+<li>The larger the number of MSUs possessed by a record, the greater the
+risk of the record</li>
+</ul>
+<div class="figure align-center" id="id6">
+<span id="id1"></span><img alt="_images/risk_suda_setup.png" src="_images/risk_suda_setup.png" />
+<p class="caption"><span class="caption-text">Compute SUDA scores</span></p>
+</div>
+<div class="figure align-center" id="id7">
+<span id="id2"></span><img alt="_images/risk_suda_result.png" src="_images/risk_suda_result.png" />
+<p class="caption"><span class="caption-text">Result of SUDA calculation</span></p>
+</div>
+</div>
+<div class="section" id="l-diversity">
+<h3>l-diversity<a class="headerlink" href="#l-diversity" title="Permalink to this headline">¶</a></h3>
+<p>A dataset
+satisfies -diversity if for every key  there are at least
+ different values for each of the sensitive variables. In the
+example, the first two individuals satisfy only 1-diversity, individuals
+4 and 6 satisfy 2-diversity. The required level of -diversity
+depends on the number of possible values the sensitive variable can
+take. If the sensitive variable is a binary variable, the highest level
+if -diversity that can be achieved is 2. A sample unique will
+always only satisfy 1-diversity.</p>
+<p>To compute -diversity for sensitive variables in sdcApp</p>
+</div>
+<div class="section" id="id3">
+<h3>k-anonymity<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<div class="figure align-center" id="id8">
+<span id="id4"></span><img alt="_images/summary_k_anon.png" src="_images/summary_k_anon.png" />
+<p class="caption"><span class="caption-text">Information on -anonymity violators for any level of </span></p>
+</div>
+</div>
+</div>
 </div>
 
 

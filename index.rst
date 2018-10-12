@@ -11,6 +11,7 @@ also known as microdata anonymization.
 
    introduction
    installation
+   introsdcApp
    about
    loadprepdata
    setup

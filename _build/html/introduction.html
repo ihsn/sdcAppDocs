@@ -30,7 +30,7 @@
     <link rel="author" title="About these documents" href="about.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Installation" href="installation.html" />
+    <link rel="next" title="Installation and updating" href="installation.html" />
     <link rel="prev" title="sdcMicro GUI manual" href="index.html" /> 
 
   
@@ -82,15 +82,22 @@
             
               <p class="caption"><span class="caption-text">Table of contents</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#what-is-sdcapp">What is sdcApp?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#statistical-disclosure-control">Statistical Disclosure Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-is-the-purpose-of-the-manual">What is the purpose of the manual?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#outline-of-this-guide">Outline of this guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation and updating</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introsdcApp.html">Introduction to sdcApp</a></li>
 <li class="toctree-l1"><a class="reference internal" href="about.html">Help and settings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="loadprepdata.html">Loading and Preparing Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="setup.html">Setup anonymization problem</a></li>
 <li class="toctree-l1"><a class="reference internal" href="risk.html">Risk measurement</a></li>
 <li class="toctree-l1"><a class="reference internal" href="anon.html">Anonymization methods</a></li>
-<li class="toctree-l1"><a class="reference internal" href="utility.html">Utility</a></li>
-<li class="toctree-l1"><a class="reference internal" href="export.html">Export data, reports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="utility.html">Utility measurement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="export.html">Export data and reports</a></li>
 <li class="toctree-l1"><a class="reference internal" href="reproducibility.html">Reproducibility</a></li>
 </ul>
 
@@ -158,7 +165,47 @@
             
   <div class="section" id="introduction">
 <h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
-<p>test</p>
+<div class="section" id="what-is-sdcapp">
+<h2>What is sdcApp?<a class="headerlink" href="#what-is-sdcapp" title="Permalink to this headline">¶</a></h2>
+<p>sdcApp is the Graphical User Interface (GUI) for the R package sdcMicro (see
+<cite>here &lt;https://cran.r-project.org/web/packages/sdcMicro/index.html&gt;</cite> ). The sdcApp
+opens the functionality of sdcMicro to users not familiar with the statistical
+programming language R. sdcMicro</p>
+<p>All functionality available in the sdcMicro package is also available in the sdcApp.
+The sdcApp allows to anonymize microdata with sdcMicro without any knowledge of R.</p>
+</div>
+<div class="section" id="statistical-disclosure-control">
+<h2>Statistical Disclosure Control<a class="headerlink" href="#statistical-disclosure-control" title="Permalink to this headline">¶</a></h2>
+<p>add brief intro to SDC</p>
+</div>
+<div class="section" id="what-is-the-purpose-of-the-manual">
+<h2>What is the purpose of the manual?<a class="headerlink" href="#what-is-the-purpose-of-the-manual" title="Permalink to this headline">¶</a></h2>
+<p>This manual is designed to provide step-by-step guidance in the process of anonymizing a
+dataset with microdata. Both the background information on methods and measures is
+provided as well as instructions on how to complete these steps in sdcApp. As sdcApp is a
+GUI for the sdcMicro package, R users can also carry out the anonymization process from
+command-line in R. More information and guidance on using sdcMicro from command-line
+is available in the SDC Practice Guide available <cite>here &lt;https://sdcpractice.readthedocs.io/en/latest/&gt;</cite>.
+This guide also provides more detailed background information on SDC.</p>
+<p>Use test dataset</p>
+</div>
+<div class="section" id="outline-of-this-guide">
+<h2>Outline of this guide<a class="headerlink" href="#outline-of-this-guide" title="Permalink to this headline">¶</a></h2>
+<p>This guide is divided into the following main sections:</p>
+<ol class="arabic simple">
+<li>the Section <a class="reference external" href="installation.html">Installation and updating</a> guides the user through the installation process of sdcApp, which includes the installation of R, RStudio as well as the required packages. It also discusses the need and process of regular updates of all software components.</li>
+<li>the Section <a class="reference external" href="introsdcApp.html">Introduction to sdcApp</a> covers how to launch and close the application and provides a brief overview of structure of the application.  of the structure of the application</li>
+<li>the Section <a class="reference external" href="about.html">Help and settings</a></li>
+<li>the Section <a class="reference external" href="loadprepdata.html">Loading and preparing data</a> describes how to load microdata into the application. It also discusses the requirements to the</li>
+<li>the Section <a class="reference external" href="setup.html">Setup anonymization problem</a>  covers the variable selection and setup of an SDC problem.</li>
+<li>the Section <a class="reference external" href="risk.html">Risk measurement</a> covers methods to measure the disclosure risk in the microdata.</li>
+<li>the Section <a class="reference external" href="anon.html">Anonymization methods</a> covers anonymization methods for quantitative and qualitative variables.</li>
+<li>the Section <a class="reference external" href="utility.html">Utility measurement</a> covers the measurement of information loss resulting from anonymization of the data</li>
+<li>the Section <a class="reference external" href="export.html">Export data and reports</a> describes how to export the anonymized dataset and generate reports.</li>
+<li>the Section <a class="reference external" href="reproducibility.html">Reproducibility</a> covers functionality that render the anonymization process reproducable.</li>
+</ol>
+<p>? case study ?</p>
+</div>
 </div>
 
 
@@ -169,7 +216,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="installation.html" class="btn btn-neutral float-right" title="Installation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="installation.html" class="btn btn-neutral float-right" title="Installation and updating" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="index.html" class="btn btn-neutral" title="sdcMicro GUI manual" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

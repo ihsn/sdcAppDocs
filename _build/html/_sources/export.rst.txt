@@ -1,5 +1,12 @@
-Export data, reports
-=====================
+Export data and reports
+=======================
 
-test
+Export anonymized dataset
+-------------------------
+
+Also for intermediate export 
+
+Anonymization reports
+---------------------
+
 

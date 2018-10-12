@@ -1,5 +1,51 @@
 Introduction
 ====================================================================================
 
-test
+What is sdcApp?
+---------------
 
+sdcApp is the Graphical User Interface (GUI) for the R package *sdcMicro* (see
+`here <https://cran.r-project.org/web/packages/sdcMicro/index.html>` ). The sdcApp 
+opens the functionality of sdcMicro to users not familiar with the statistical
+programming language R. sdcMicro
+
+All functionality available in the sdcMicro package is also available in the sdcApp.
+The sdcApp allows to anonymize microdata with sdcMicro without any knowledge of R.
+
+
+Statistical Disclosure Control
+------------------------------
+add brief intro to SDC
+
+
+What is the purpose of the manual?
+----------------------------------
+
+This manual is designed to provide step-by-step guidance in the process of anonymizing a
+dataset with microdata. Both the background information on methods and measures is 
+provided as well as instructions on how to complete these steps in sdcApp. As sdcApp is a 
+GUI for the sdcMicro package, R users can also carry out the anonymization process from
+command-line in R. More information and guidance on using sdcMicro from command-line 
+is available in the SDC Practice Guide available `here <https://sdcpractice.readthedocs.io/en/latest/>`.
+This guide also provides more detailed background information on SDC.
+
+Use test dataset
+
+
+Outline of this guide
+---------------------
+
+This guide is divided into the following main sections:
+
+(1)   	the Section `Installation and updating <installation.html>`__ guides the user through the installation process of sdcApp, which includes the installation of R, RStudio as well as the required packages. It also discusses the need and process of regular updates of all software components.
+(2)  	the Section `Introduction to sdcApp <introsdcApp.html>`__ covers how to launch and close the application and provides a brief overview of structure of the application.  of the structure of the application
+(3) 	the Section `Help and settings <about.html>`__ 
+(4)  	the Section `Loading and preparing data <loadprepdata.html>`__ describes how to load microdata into the application. It also discusses the requirements to the 
+(5)   	the Section `Setup anonymization problem <setup.html>`__  covers the variable selection and setup of an SDC problem.
+(6)  	the Section `Risk measurement <risk.html>`__ covers methods to measure the disclosure risk in the microdata.
+(7) 	the Section `Anonymization methods <anon.html>`__ covers anonymization methods for quantitative and qualitative variables.
+(8) 	the Section `Utility measurement <utility.html>`__ covers the measurement of information loss resulting from anonymization of the data
+(9)  	the Section `Export data and reports <export.html>`__ describes how to export the anonymized dataset and generate reports.
+(10)   	the Section `Reproducibility <reproducibility.html>`__ covers functionality that render the anonymization process reproducable.
+
+? case study ?

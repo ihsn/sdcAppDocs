@@ -27,6 +27,7 @@
   
     <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
     <link rel="author" title="About these documents" href="about.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -85,18 +86,22 @@
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation and updating</a></li>
 <li class="toctree-l1"><a class="reference internal" href="introsdcApp.html">Introduction to sdcApp</a></li>
-<li class="toctree-l1"><a class="reference internal" href="about.html">Help and settings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="loadprepdata.html">Loading and preparing Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="loadprepdata.html">Loading and Preparing Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="setup.html">Setup anonymization problem</a></li>
 <li class="toctree-l1"><a class="reference internal" href="risk.html">Risk measurement</a></li>
 <li class="toctree-l1"><a class="reference internal" href="anon.html">Anonymization methods</a></li>
 <li class="toctree-l1"><a class="reference internal" href="utility.html">Utility measurement</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Export data and reports</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#export-anonymized-dataset">Export anonymized dataset</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#anonymization-reports">Anonymization reports</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#exporting-reports">Exporting reports</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#internal-report">Internal report</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#external-report">External report</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="reproducibility.html">Reproducibility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="undo.html">Undo</a></li>
 </ul>
 
             
@@ -165,10 +170,88 @@
 <h1>Export data and reports<a class="headerlink" href="#export-data-and-reports" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="export-anonymized-dataset">
 <h2>Export anonymized dataset<a class="headerlink" href="#export-anonymized-dataset" title="Permalink to this headline">¶</a></h2>
+<p><em>sdcApp</em> supports datasets in several foreign data formats. The file formats that are
+supported for loading microdata are also supported for export (cf. <a class="reference internal" href="#tab101"><span class="std std-numref">Table 3</span></a>).</p>
+<p>In order to export the file, click on  <strong>Anonymized Data</strong> in the left sidebar on the
+<strong>Export Data</strong> tab. The dataset shown is the file as it will be exported. Select the
+appropriate file format with the radiobuttons underneath the data.</p>
+<p>In case the microdata is exported as csv or STATA file, additional options need to
+be specified. For a csv file, whether first row should include column names,
+the field separator as well as the decimal separator. For STATA files, the version of STATA
+needs to be specified. STATA cannot STATA files saved for a higher version.</p>
+<p>Option to randomize the order of the records. Order may reveal values, e.g.
+ordered by region with suppressed region value Need to replace existing ID</p>
+<p>In order to export the dataset, click on blue button <strong>Save dataset</strong>. The dataset is saved
+to the
+, exported two with file name… Exported to
+the microdata, select</p>
+<span id="tab101"></span><table border="1" class="colwidths-auto docutils align-center" id="id1">
+<caption><span class="caption-number">Table 3 </span><span class="caption-text">Data formats compatible with sdcApp</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Software</th>
+<th class="head">File extension</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>R/RStudio</td>
+<td>.rdata</td>
+</tr>
+<tr class="row-odd"><td>SPSS</td>
+<td>.sav</td>
+</tr>
+<tr class="row-even"><td>SAS</td>
+<td>.sas7bdat</td>
+</tr>
+<tr class="row-odd"><td>CSV</td>
+<td>.csv, .txt</td>
+</tr>
+<tr class="row-even"><td>STATA</td>
+<td>.dta</td>
+</tr>
+</tbody>
+</table>
 <p>Also for intermediate export</p>
+<dl class="docutils">
+<dt>..NOTE::</dt>
+<dd><p class="first">Categorical variables (type factor in <em>sdcApp</em>) that were had a value and a
+label in the input dataset are</p>
+<p class="last">labels (variable, value), coding 0,1 to 1,2 etc.</p>
+</dd>
+</dl>
+<p>Extra for STATA input files: change variable labels for STATA files</p>
 </div>
-<div class="section" id="anonymization-reports">
-<h2>Anonymization reports<a class="headerlink" href="#anonymization-reports" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="exporting-reports">
+<h2>Exporting reports<a class="headerlink" href="#exporting-reports" title="Permalink to this headline">¶</a></h2>
+<p>It is extremely important to document the SDC process of microdata both for internal
+use as well as for external use. The internal report should contain detailed descriptions
+of all steps carried out as well as reasoning for</p>
+<div class="section" id="internal-report">
+<h3>Internal report<a class="headerlink" href="#internal-report" title="Permalink to this headline">¶</a></h3>
+<p>An important step in the SDC process is reporting, both internal and external.
+Internal reporting contains the exact description of anonymization methods used,
+parameters but also the risk measures before and after anonymization. This allows
+replication of the anonymized dataset and is important for supervisory authorities/bodies
+to ensure the anonymization process is sufficient to guarantee anonymity according
+to the applicable legislation.</p>
+<p>Report is just technical overview, not complete</p>
+<p>file path, name of file</p>
+<div class="figure align-center" id="id2">
+<span id="fig102"></span><img alt="_images/reproScript.png" src="_images/reproScript.png" />
+<p class="caption"><span class="caption-number">Fig. 41 </span><span class="caption-text">Exporting an internal report</span></p>
+</div>
+</div>
+<div class="section" id="external-report">
+<h3>External report<a class="headerlink" href="#external-report" title="Permalink to this headline">¶</a></h3>
+<p>The external report</p>
+<p>External reporting informs the user that the data has been anonymized,
+provides information for valid analysis on the data and explains the limitations to
+the data as a result of the anonymization. A brief description of the methods used
+can be included. The release of anonymized microdata should be accompanied by the
+usual metadata of the survey (survey weight, strata, survey methodology) as well as
+information on the anonymization methods that allow researchers to do valid analysis
+(e.g., amount of noise added, transition matrix for PRAM).</p>
+<p>file path, name of file</p>
+</div>
 </div>
 </div>
 
@@ -192,7 +275,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2018, Thijs Benschop.
+        &copy; Copyright 2018, Thijs Benschop, Matthew Welch.
 
     </p>
   </div>
@@ -225,6 +308,7 @@
       <script type="text/javascript" src="_static/jquery.js"></script>
       <script type="text/javascript" src="_static/underscore.js"></script>
       <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

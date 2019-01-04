@@ -103,7 +103,7 @@ By specifying the dependencies argument to TRUE, these dependencies will automat
 	the running R session.
     
 Launching *sdcApp*
------------------
+-------------------
 
 Once the sdcMicro package is successfully installed, the sdcMicro package needs to be loaded. 
 Installing the package is only required once (except for updating), whereas loading the
@@ -125,14 +125,14 @@ Furthermore, it's important that your R session is allowed to use the installed 
 .. figure:: media/RconsoleIP.png
    :align: center
    
-	R console with local IP after launching *sdcApp*
+   R console with local IP after launching *sdcApp*
 	
 .. _fig26:
 
 .. figure:: media/sdcAppStartIP.png
    :align: center
    
-	Start screen sdcApp in browser with local IP
+   Start screen sdcApp in browser with local IP
 	
 .. code-block:: R
    :linenos:
@@ -143,7 +143,7 @@ Furthermore, it's important that your R session is allowed to use the installed 
    library(sdcMicro)
    
    # Launch sdcApp (opens in browser window)
-   *sdcApp*()
+   sdcApp()
 
 In rare cases, not all dependencies are correctly installed and the following error 
 message appears in the R console upon loading the sdcMicro package. 

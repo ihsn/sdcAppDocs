@@ -1,7 +1,7 @@
-sdcMicro GUI manual
-===================
+sdcApp manual
+=============
 
-This is documentation and guidance for the sdcGUI, a user interface for the sdcMicro R 
+This is documentation and guidance for *sdcApp*, a user interface for the *sdcMicro* *R* 
 package, which provides tools for Statistical Disclosure Control (SDC) for microdata, 
 also known as microdata anonymization.
 
@@ -12,7 +12,6 @@ also known as microdata anonymization.
    introduction
    installation
    introsdcApp
-   about
    loadprepdata
    setup
    risk
@@ -20,3 +19,4 @@ also known as microdata anonymization.
    utility
    export
    reproducibility
+   undo

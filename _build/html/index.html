@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>sdcMicro GUI manual &mdash; sdcMicro GUI manual  documentation</title>
+  <title>sdcApp manual &mdash; sdcMicro GUI manual  documentation</title>
   
 
   
@@ -27,6 +27,7 @@
   
     <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
     <link rel="author" title="About these documents" href="about.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -84,7 +85,6 @@
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation and updating</a></li>
 <li class="toctree-l1"><a class="reference internal" href="introsdcApp.html">Introduction to sdcApp</a></li>
-<li class="toctree-l1"><a class="reference internal" href="about.html">Help and settings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="loadprepdata.html">Loading and Preparing Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="setup.html">Setup anonymization problem</a></li>
 <li class="toctree-l1"><a class="reference internal" href="risk.html">Risk measurement</a></li>
@@ -92,6 +92,7 @@
 <li class="toctree-l1"><a class="reference internal" href="utility.html">Utility measurement</a></li>
 <li class="toctree-l1"><a class="reference internal" href="export.html">Export data and reports</a></li>
 <li class="toctree-l1"><a class="reference internal" href="reproducibility.html">Reproducibility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="undo.html">Undo</a></li>
 </ul>
 
             
@@ -137,7 +138,7 @@
     
       <li><a href="#">Docs</a> &raquo;</li>
         
-      <li>sdcMicro GUI manual</li>
+      <li>sdcApp manual</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -156,9 +157,9 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="sdcmicro-gui-manual">
-<h1>sdcMicro GUI manual<a class="headerlink" href="#sdcmicro-gui-manual" title="Permalink to this headline">¶</a></h1>
-<p>This is documentation and guidance for the sdcGUI, a user interface for the sdcMicro R
+  <div class="section" id="sdcapp-manual">
+<h1>sdcApp manual<a class="headerlink" href="#sdcapp-manual" title="Permalink to this headline">¶</a></h1>
+<p>This is documentation and guidance for <em>sdcApp</em>, a user interface for the <em>sdcMicro</em> <em>R</em>
 package, which provides tools for Statistical Disclosure Control (SDC) for microdata,
 also known as microdata anonymization.</p>
 <div class="toctree-wrapper compound">
@@ -166,8 +167,9 @@ also known as microdata anonymization.</p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="introduction.html#what-is-sdcapp">What is sdcApp?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="introduction.html#statistical-disclosure-control">Statistical Disclosure Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#statistical-disclosure-control-sdc">Statistical Disclosure Control (SDC)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="introduction.html#what-is-the-purpose-of-the-manual">What is the purpose of the manual?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#background-literature-on-sdc-for-microdata">Background literature on SDC for microdata</a></li>
 <li class="toctree-l2"><a class="reference internal" href="introduction.html#outline-of-this-guide">Outline of this guide</a></li>
 </ul>
 </li>
@@ -181,18 +183,15 @@ also known as microdata anonymization.</p>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="introsdcApp.html">Introduction to sdcApp</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="introsdcApp.html#starting-sdcapp">Starting sdcApp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introsdcApp.html#tab-and-panel-structure">Tab and panel structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introsdcApp.html#in-app-help">In-app help</a></li>
 <li class="toctree-l2"><a class="reference internal" href="introsdcApp.html#getting-started">Getting started</a></li>
 <li class="toctree-l2"><a class="reference internal" href="introsdcApp.html#set-storage-path">Set storage path</a></li>
-<li class="toctree-l2"><a class="reference internal" href="introsdcApp.html#tab-structure">Tab structure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="introsdcApp.html#panel-structure">Panel structure</a></li>
 <li class="toctree-l2"><a class="reference internal" href="introsdcApp.html#quiting-sdcapp">Quiting sdcApp</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="about.html">Help and settings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="loadprepdata.html">Loading and Preparing Data</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="loadprepdata.html#loading-data">Loading data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="loadprepdata.html#testdata">Testdata</a></li>
-<li class="toctree-l2"><a class="reference internal" href="loadprepdata.html#other-datasets">Other datasets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="loadprepdata.html#inspect-and-explore-data">Inspect and explore data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="loadprepdata.html#preparing-data">Preparing data</a></li>
 </ul>
@@ -210,25 +209,34 @@ also known as microdata anonymization.</p>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="anon.html">Anonymization methods</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="anon.html#recoding">Recoding</a></li>
-<li class="toctree-l2"><a class="reference internal" href="anon.html#k-anonimity">k-Anonimity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anon.html#k-anonimity-local-suppression">k-Anonimity / local suppression</a></li>
 <li class="toctree-l2"><a class="reference internal" href="anon.html#pram">PRAM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="anon.html#suppress-values-with-high-risk">Suppress values with high risk</a></li>
 <li class="toctree-l2"><a class="reference internal" href="anon.html#top-bottom-coding">Top/Bottom coding</a></li>
-<li class="toctree-l2"><a class="reference internal" href="anon.html#undo-several-steps">Undo several steps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anon.html#microaggregation">Microaggregation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anon.html#adding-noise">Adding noise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anon.html#rank-swapping">Rank swapping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anon.html#undo">Undo</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="utility.html">Utility measurement</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="utility.html#export-of-dataset">Export of dataset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utility.html#general-utility-measures-in-sdcapp">General utility measures in <em>sdcApp</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="utility.html#customized-utility-measures">Customized utility measures</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="export.html">Export data and reports</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="export.html#export-anonymized-dataset">Export anonymized dataset</a></li>
-<li class="toctree-l2"><a class="reference internal" href="export.html#anonymization-reports">Anonymization reports</a></li>
+<li class="toctree-l2"><a class="reference internal" href="export.html#exporting-reports">Exporting reports</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="reproducibility.html">Reproducibility</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="reproducibility.html#exporting-script">Exporting script</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reproducibility.html#exporting-r-script">Exporting <em>R</em> script</a></li>
 <li class="toctree-l2"><a class="reference internal" href="reproducibility.html#exporting-reports">Exporting reports</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="undo.html">Undo</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="undo.html#undo-one-step">Undo one step</a></li>
+<li class="toctree-l2"><a class="reference internal" href="undo.html#undo-several-steps">Undo several steps</a></li>
 </ul>
 </li>
 </ul>
@@ -253,7 +261,7 @@ also known as microdata anonymization.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2018, Thijs Benschop.
+        &copy; Copyright 2018, Thijs Benschop, Matthew Welch.
 
     </p>
   </div>
@@ -286,6 +294,7 @@ also known as microdata anonymization.</p>
       <script type="text/javascript" src="_static/jquery.js"></script>
       <script type="text/javascript" src="_static/underscore.js"></script>
       <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

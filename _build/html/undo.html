@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Risk measurement &mdash; sdcMicro GUI manual  documentation</title>
+  <title>Undo &mdash; sdcMicro GUI manual  documentation</title>
   
 
   
@@ -27,9 +27,11 @@
   
     <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
     <link rel="author" title="About these documents" href="about.html" />
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" /> 
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Reproducibility" href="reproducibility.html" /> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -79,18 +81,26 @@
             
             
               <p class="caption"><span class="caption-text">Table of contents</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation and updating</a></li>
 <li class="toctree-l1"><a class="reference internal" href="introsdcApp.html">Introduction to sdcApp</a></li>
-<li class="toctree-l1"><a class="reference internal" href="about.html">Help and settings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="loadprepdata.html">Loading and preparing Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="loadprepdata.html">Loading and Preparing Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="setup.html">Setup anonymization problem</a></li>
-<li class="toctree-l1"><a class="reference internal" href="risk.html">Undo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="risk.html">Risk measurement</a></li>
 <li class="toctree-l1"><a class="reference internal" href="anon.html">Anonymization methods</a></li>
-<li class="toctree-l1"><a class="reference internal" href="utility.html">Utility</a></li>
-<li class="toctree-l1"><a class="reference internal" href="export.html">Export data, reports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="utility.html">Utility measurement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="export.html">Export data and reports</a></li>
 <li class="toctree-l1"><a class="reference internal" href="reproducibility.html">Reproducibility</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Undo</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#undo-one-step">Undo one step</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#undo-several-steps">Undo several steps</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#save-a-previously-saved-problem">Save a previously saved problem</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#load-a-previously-saved-problem">Load a previously saved problem</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
             
@@ -136,7 +146,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Risk measurement</li>
+      <li>Undo</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -155,10 +165,41 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="risk-measurement">
-<h1>Risk measurement<a class="headerlink" href="#risk-measurement" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="summary-view">
-<h2>Summary View<a class="headerlink" href="#summary-view" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="undo">
+<h1>Undo<a class="headerlink" href="#undo" title="Permalink to this headline">¶</a></h1>
+<p>Microdata anonymization is a trial-and-error process. It is necessary to several
+methods, each with different parameter settings, to find optimal set of
+anonymization measures that minimize the information loss, while reducing the risk of
+disclosure to an acceptable level. Before applying an alternative method to the same
+variable or set of variables, it is important to undo the previously applied methods.
+Only in this way, it is possible to compare the effect on risk and information
+loss of a particular method or parameter setting. For instance to compare the
+effect of recoding the age variable in 5 or 10 year intervals, it is necessary to first
+undo the recoding in 5-year intervals before recoding in 10 year intervals.</p>
+<p>In <em>sdcApp</em> it is possible to undo the last anonymization step. In order to undo several
+steps, it is required to save and reload the SDC problem. Both ways are explained below.</p>
+<div class="section" id="undo-one-step">
+<h2>Undo one step<a class="headerlink" href="#undo-one-step" title="Permalink to this headline">¶</a></h2>
+<p>In order to undo one step, go to the <strong>Undo</strong> tab.
+The screen shows</p>
+<p>risk measures etc are also reset, script not (completely), random seed not</p>
+</div>
+<div class="section" id="undo-several-steps">
+<h2>Undo several steps<a class="headerlink" href="#undo-several-steps" title="Permalink to this headline">¶</a></h2>
+<p>Save and reload</p>
+<p>Recommended to save the SDC problem after each method to be able to reload. This is also
+practical if <em>sdcApp</em> or <em>R</em> crash. Also useful to continue working at a later point of
+transfer a problem to a different computer</p>
+<div class="section" id="save-a-previously-saved-problem">
+<h3>Save a previously saved problem<a class="headerlink" href="#save-a-previously-saved-problem" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="load-a-previously-saved-problem">
+<h3>Load a previously saved problem<a class="headerlink" href="#load-a-previously-saved-problem" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>..NOTE::</dt>
+<dd>Different file names for different files (data, sdcProblem)</dd>
+</dl>
+</div>
 </div>
 </div>
 
@@ -168,12 +209,19 @@
           </div>
           <footer>
   
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="reproducibility.html" class="btn btn-neutral" title="Reproducibility" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2018, Thijs Benschop.
+        &copy; Copyright 2018, Thijs Benschop, Matthew Welch.
 
     </p>
   </div>
@@ -206,6 +254,7 @@
       <script type="text/javascript" src="_static/jquery.js"></script>
       <script type="text/javascript" src="_static/underscore.js"></script>
       <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

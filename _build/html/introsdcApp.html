@@ -27,10 +27,11 @@
   
     <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
     <link rel="author" title="About these documents" href="about.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Help and settings" href="about.html" />
+    <link rel="next" title="Loading and Preparing Data" href="loadprepdata.html" />
     <link rel="prev" title="Installation and updating" href="installation.html" /> 
 
   
@@ -86,21 +87,21 @@
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation and updating</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction to sdcApp</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#starting-sdcapp">Starting sdcApp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tab-and-panel-structure">Tab and panel structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#in-app-help">In-app help</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#getting-started">Getting started</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#set-storage-path">Set storage path</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#tab-structure">Tab structure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#panel-structure">Panel structure</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#quiting-sdcapp">Quiting sdcApp</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="about.html">Help and settings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="loadprepdata.html">Loading and preparing Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="loadprepdata.html">Loading and Preparing Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="setup.html">Setup anonymization problem</a></li>
 <li class="toctree-l1"><a class="reference internal" href="risk.html">Risk measurement</a></li>
 <li class="toctree-l1"><a class="reference internal" href="anon.html">Anonymization methods</a></li>
 <li class="toctree-l1"><a class="reference internal" href="utility.html">Utility measurement</a></li>
 <li class="toctree-l1"><a class="reference internal" href="export.html">Export data and reports</a></li>
 <li class="toctree-l1"><a class="reference internal" href="reproducibility.html">Reproducibility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="undo.html">Undo</a></li>
 </ul>
 
             
@@ -167,25 +168,28 @@
             
   <div class="section" id="introduction-to-sdcapp">
 <h1>Introduction to sdcApp<a class="headerlink" href="#introduction-to-sdcapp" title="Permalink to this headline">¶</a></h1>
-<p>sdcApp is a user-friendly application for microdata anonymization
-and is built on the Shiny technology
-(see <cite>here &lt;https://www.shiny.org&gt;</cite>). Shiny allows users to
-communicate through a GUI that runs in a webbrowser with a local R session. The local
-R session performs the necessary calculations. In the case of sdcApp, most functionality
-used in R is included in the sdcMicro package (see <cite>here &lt;https://www.sdcMicro.org&gt;</cite>).</p>
-<p>sdcApp has tab structure         and consists of seven tabs, which in turn consist of
+<p><em>sdcApp</em> is a user-friendly application for microdata anonymization
+and is built on the <a class="reference external" href="https://shiny.rstudio.com">Shiny</a>
+technology. Shiny allows users to
+communicate through a GUI that runs in a webbrowser with a local <em>R</em> session. The local
+<em>R</em> session performs the necessary calculations. In the case of <em>sdcApp</em>, most functionality
+used in <em>R</em> is included in the <a class="reference external" href="https://CRAN.R-project.org/package=sdcMicro">sdcMicro</a>
+package.</p>
+<p><em>sdcApp</em> has a tab structure and consists of seven tabs, which in turn consist of
 up to three panels. This structured is further explored below.
 The tabs and panels are used to navigate through the app.</p>
 <div class="section" id="starting-sdcapp">
 <h2>Starting sdcApp<a class="headerlink" href="#starting-sdcapp" title="Permalink to this headline">¶</a></h2>
-<p>After succcesful installation (cf. ), sdcApp is ready for use. Every single time sdcApp is
-used, first the applications R or RStudio need to be opened. See the Section
-<a href="#id2"><span class="problematic" id="id3">`Installation and updating`_</span></a>
-on how to install R and RStudio. After launching R or RStudio,
-the sdcMicro package needs to be loaded and sdcApp needs to be launched. This is done by
-entering the code as shown in code02 in the R console.</p>
-<div class="literal-block-wrapper docutils container" id="code02">
-<div class="code-block-caption"><span class="caption-text">Loading sdcMicro package and launching sdcApp</span><a class="headerlink" href="#code02" title="Permalink to this code">¶</a></div>
+<p>After succcesful installation (see the Section <a class="reference external" href="installation.html">Installation and updating</a>),
+<em>sdcApp</em> is ready for use. Every single time <em>sdcApp</em> is used,
+first the applications <em>R</em> or <em>RStudio</em> need to be opened. We recommend to use <em>RStudio</em>
+for ease of use. After launching <em>R</em> or <em>RStudio</em>,
+the <em>sdcMicro</em> package needs to be loaded and <em>sdcApp</em> needs to be launched.
+To load <em>sdcMicro</em> and launch <em>sdcApp</em>, enter the code as shown in <a class="reference internal" href="#code1"><span class="std std-numref">Listing 4</span></a> in the <em>R</em> console.
+Press enter after each line to execute the line of code. <a class="reference internal" href="#fig31"><span class="std std-numref">Fig. 8</span></a> shows the
+output in the <em>R</em> console after successfully launching <em>sdcApp</em>.</p>
+<div class="literal-block-wrapper docutils container" id="code1">
+<div class="code-block-caption"><span class="caption-number">Listing 4 </span><span class="caption-text">Loading sdcMicro package and launching sdcApp</span><a class="headerlink" href="#code1" title="Permalink to this code">¶</a></div>
 <div class="highlight-R notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -198,9 +202,103 @@ sdcApp<span class="p">()</span>
 </pre></div>
 </td></tr></table></div>
 </div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You can omit the lines starting with a hash tag (<code class="code docutils literal notranslate"><span class="pre">#</span></code>) as these are comment lines
+and ignored by the <em>R</em> interpreter.</p>
+</div>
 <p>The application opens in a new tab in your default web browser. In case you prefer to use
-an alternative web browser, you can simply copy the internal path and paste it into
-a different browser on the same machine. The application opens on the <strong>About/Help</strong> tab (see).</p>
+an alternative web browser, you can simply copy the address of the localhost and paste it into
+a different browser on the same machine. The localhost address can be
+found in the output in the <em>R</em> console. The address starts with <code class="code docutils literal notranslate"><span class="pre">http://127.0.0.1:</span></code> followed
+by a four digit number. In the example in <a class="reference internal" href="#fig31"><span class="std std-numref">Fig. 8</span></a>, the full localhost address is
+<code class="code docutils literal notranslate"><span class="pre">http://127.0.0.1:3256</span></code>. The application opens on the <strong>About/Help</strong> tab (see <a class="reference internal" href="#fig32"><span class="std std-numref">Fig. 9</span></a>).</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Firewalls and other settings on your computer and browser may prevent <em>sdcApp</em> from opening
+in your webbrowser. As a first thing you could try to copy paste the localhost address
+into your webbrowser. If that is not successful, try changing the settings of your
+browser and firewall.</p>
+</div>
+<div class="figure align-center" id="id1">
+<span id="fig31"></span><img alt="_images/introRConsoleLaunch.png" src="_images/introRConsoleLaunch.png" />
+<p class="caption"><span class="caption-number">Fig. 8 </span><span class="caption-text">R console after loading the <em>sdcMicro</em> package and launching <em>sdcApp</em></span></p>
+</div>
+<div class="figure align-center" id="id2">
+<span id="fig32"></span><img alt="_images/introLandingPage.png" src="_images/introLandingPage.png" />
+<p class="caption"><span class="caption-number">Fig. 9 </span><span class="caption-text"><strong>About/Help</strong> tab in web browser after launching <em>sdcApp</em> with localhost address</span></p>
+</div>
+</div>
+<div class="section" id="tab-and-panel-structure">
+<h2>Tab and panel structure<a class="headerlink" href="#tab-and-panel-structure" title="Permalink to this headline">¶</a></h2>
+<p>The sdcApp consists of seven different tabs that serve different parts of the
+SDC process. The tabs can be selected in the navigation
+bar at the top of the page (cf. the area indicated with 1 in <a class="reference internal" href="#fig33"><span class="std std-numref">Fig. 10</span></a>).
+The navigation bar is visible at all times. The content of each tab may change as
+function the specified SDC problem and the current state of the SDC process. For example,
+anonymization methods for continuous key variables are not shown on the <strong>Anonymize</strong> tab,
+if no continuous key variables are selected.</p>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>About/Help</dt>
+<dd>Landing page to set storage path, quit and restart <em>sdcApp</em> as well as provide feedback to the developers</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Microdata</dt>
+<dd>Page to load, view, explore and prepare the microdata to be anonymized</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Anonymize</dt>
+<dd>Page to setup the anonymization problem (select variables, set parameters). Once the
+problem is defined, this page shows a summary of the anonymization problem and allows
+to apply anonymization methods</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Risk/Utility</dt>
+<dd>Page to evaluate disclosure risk and information loss (data utility)</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Export Data</dt>
+<dd>Page to export the anonymized data and reports on the anonymization process</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Reproducibility</dt>
+<dd>Page with functionality to guarantee the reproducibility of the process by exporting the
+<em>R</em> script or problem instance</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Undo</dt>
+<dd>Page to revert one or several steps in the anonymization process</dd>
+</dl>
+</li>
+</ul>
+<p>Each tab consists of two panels: the left sidebar (cf. the area indicated with 2 in <a class="reference internal" href="#fig33"><span class="std std-numref">Fig. 10</span></a>)
+and the main panel (cf. the area indicated with 3 in <a class="reference internal" href="#fig33"><span class="std std-numref">Fig. 10</span></a>). The left panel
+allows the user to navigate between different function on the same tab, e.g., different
+risk measures. Some tabs have an additional right sidebar (cf. the area indicated with 4 in <a class="reference internal" href="#fig33"><span class="std std-numref">Fig. 10</span></a>),
+which provide summary information on the current SDC problem.</p>
+<div class="figure align-center" id="id3">
+<span id="fig33"></span><img alt="_images/appStructure.png" src="_images/appStructure.png" />
+<p class="caption"><span class="caption-number">Fig. 10 </span><span class="caption-text">Risk/Utility tab with navigation bar and panel structure</span></p>
+</div>
+</div>
+<div class="section" id="in-app-help">
+<h2>In-app help<a class="headerlink" href="#in-app-help" title="Permalink to this headline">¶</a></h2>
+<p>By hovering over the <em>i</em> icon in <em>sdcApp</em>, additional information on e.g.,
+specific parameters and the interpretation of results is provided. The help information
+is mainly intended to provide a brief reminder and is not meant to replace a thorough
+study of the SDC literature on risk and utility measurement and anonymization methods.
+<a class="reference internal" href="#fig36"><span class="std std-numref">Fig. 11</span></a> shows the help pop-up for the variable selection table.</p>
+<div class="figure align-center" id="id4">
+<span id="fig36"></span><img alt="_images/introHelp.png" src="_images/introHelp.png" />
+<p class="caption"><span class="caption-number">Fig. 11 </span><span class="caption-text">Help pop-up when moving with mouse cursor over <em>i</em> icon</span></p>
+</div>
 </div>
 <div class="section" id="getting-started">
 <h2>Getting started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
@@ -208,28 +306,47 @@ a different browser on the same machine. The application opens on the <strong>Ab
 </div>
 <div class="section" id="set-storage-path">
 <h2>Set storage path<a class="headerlink" href="#set-storage-path" title="Permalink to this headline">¶</a></h2>
+<p>All output exported from <em>sdcApp</em>, such as the anonymized dataset, reports and scripts will be
+saved in the directory shown under the header <strong>Set storage path</strong> on the <strong>About/Help</strong>
+tab (cf. <a class="reference internal" href="#fig34"><span class="std std-numref">Fig. 12</span></a>). Upon launching <em>sdcApp</em>, this directory is set to the <em>R</em> working
+directory. Change the working directory to a the folder in the project directory with the
+dataset to be anonymized by typing the path to this folder in the input box (cf. <a class="reference internal" href="#fig34"><span class="std std-numref">Fig. 12</span></a>).
+Once a valid path on your computer is entered, click the blue button <strong>Update the current output
+path</strong> to change the path. If the entered path is not a valid path on your system, a red button appears
+with the text <strong>The specified directory does not exist, thus the path can’t be updated</strong>.
+It is recommended to create a new folder in the project directory for the <em>sdcApp</em> output.
+The file names of the output files contain a date and time stamp as well as a brief description,
+e.g., exportedData_sdcMicro_20181010_1211.dta for the anonymized microdata in STATA format
+on October 10, 2018 at 12:11 and exportedProblem_sdcMicro_20180304_1633.rdata for the
+saved problem instance as <em>R</em> datafile on March 4, 2018 ar 16:33.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The storage path to the output folder needs to be specified every time <em>sdcApp</em> is
+launched.</p>
 </div>
-<div class="section" id="tab-structure">
-<h2>Tab structure<a class="headerlink" href="#tab-structure" title="Permalink to this headline">¶</a></h2>
-<p>The sdcApp consists of eight different tabs. The tabs can be selected in the navigation
-bar at the top of the page. The navigation bar is visible at all times. The content
-of each tab may change as function of the current state of the SDC process. For example,</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If an sdcProblem is saved and reloaded, the storage path is set to the path saved
+in the sdcProblem. If the problem is loaded on a different computer than it was saved at,
+the storage path may be invalid and needs to be updated in the same way as described above.</p>
 </div>
-<div class="section" id="panel-structure">
-<h2>Panel structure<a class="headerlink" href="#panel-structure" title="Permalink to this headline">¶</a></h2>
-<p>Each tab can consists of two panels: the left sidebar and the main panel.
-. The left panel allows the user to navigate between different function on the
-tab. Some tabs have an additional right sidebar, which provide summary information
-on the current</p>
-<div class="figure align-center" id="id1">
-<img alt="_images/appStructure.png" src="_images/appStructure.png" />
-<p class="caption"><span class="caption-text">Risk/Utility tab with navigation bar and panel structure</span></p>
+<div class="figure align-center" id="id5">
+<span id="fig34"></span><img alt="_images/introSetStoragePath.png" src="_images/introSetStoragePath.png" />
+<p class="caption"><span class="caption-number">Fig. 12 </span><span class="caption-text">View and set storage path for file export</span></p>
 </div>
 </div>
 <div class="section" id="quiting-sdcapp">
 <h2>Quiting sdcApp<a class="headerlink" href="#quiting-sdcapp" title="Permalink to this headline">¶</a></h2>
-<p>It is recommended to quit R or RStudio after quitting sdcApp to ensure that nothing is
-left in the memory. This also applies to a restart due to sdcApp not responding.</p>
+<p>To quit <em>sdcApp</em>, click on <strong>Stop the GUI</strong> under the header <strong>Stop the interface</strong> on the
+<strong>About/Help</strong> tab. It is recommended to quit <em>R</em> or <em>RStudio</em> after quitting <em>sdcApp</em>
+to ensure that nothing is left in the memory. This especially applies to a restart due
+to <em>sdcApp</em> not responding.</p>
+<div class="figure align-center" id="id6">
+<span id="fig35"></span><img alt="_images/introStopGUI.png" src="_images/introStopGUI.png" />
+<p class="caption"><span class="caption-number">Fig. 13 </span><span class="caption-text">Button to quit <em>sdcApp</em> on the <strong>About/Help</strong> tab</span></p>
+</div>
+<p>Save SDC problem to continue working later. Possible once the SDC problem is defined.
+See undo section</p>
 </div>
 </div>
 
@@ -241,7 +358,7 @@ left in the memory. This also applies to a restart due to sdcApp not responding.
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="about.html" class="btn btn-neutral float-right" title="Help and settings" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="loadprepdata.html" class="btn btn-neutral float-right" title="Loading and Preparing Data" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="installation.html" class="btn btn-neutral" title="Installation and updating" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -253,7 +370,7 @@ left in the memory. This also applies to a restart due to sdcApp not responding.
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2018, Thijs Benschop.
+        &copy; Copyright 2018, Thijs Benschop, Matthew Welch.
 
     </p>
   </div>
@@ -286,6 +403,7 @@ left in the memory. This also applies to a restart due to sdcApp not responding.
       <script type="text/javascript" src="_static/jquery.js"></script>
       <script type="text/javascript" src="_static/underscore.js"></script>
       <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

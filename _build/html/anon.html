@@ -27,6 +27,7 @@
   
     <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
     <link rel="author" title="About these documents" href="about.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -85,22 +86,37 @@
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation and updating</a></li>
 <li class="toctree-l1"><a class="reference internal" href="introsdcApp.html">Introduction to sdcApp</a></li>
-<li class="toctree-l1"><a class="reference internal" href="about.html">Help and settings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="loadprepdata.html">Loading and preparing Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="loadprepdata.html">Loading and Preparing Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="setup.html">Setup anonymization problem</a></li>
 <li class="toctree-l1"><a class="reference internal" href="risk.html">Risk measurement</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Anonymization methods</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#recoding">Recoding</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#k-anonimity">k-Anonimity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#recoding">Recoding</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#global-recoding">Global recoding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#top-and-bottom-coding">Top and bottom coding</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#k-anonimity-local-suppression">k-Anonimity / local suppression</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#importance">Importance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#subsets">Subsets</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#pram">PRAM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#suppress-values-with-high-risk">Suppress values with high risk</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#top-bottom-coding">Top/Bottom coding</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#undo-several-steps">Undo several steps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#microaggregation">Microaggregation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#adding-noise">Adding noise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#rank-swapping">Rank swapping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#undo">Undo</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#undo-one-step">Undo one step</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#undo-several-steps">Undo several steps</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="utility.html">Utility measurement</a></li>
 <li class="toctree-l1"><a class="reference internal" href="export.html">Export data and reports</a></li>
 <li class="toctree-l1"><a class="reference internal" href="reproducibility.html">Reproducibility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="undo.html">Undo</a></li>
 </ul>
 
             
@@ -167,25 +183,158 @@
             
   <div class="section" id="anonymization-methods">
 <h1>Anonymization methods<a class="headerlink" href="#anonymization-methods" title="Permalink to this headline">¶</a></h1>
+<p>Once the disclosure risk is evaluated and is too high for release, SDC methods need
+to be applied to the variables to reduce the risk. This process is a iterative, i.e.,
+after applying a certain method with a set of parameters, the disclosure risk
+needs to be reassessed and the information loss needs to be evaluated. If the result is not
+satisfactory, other methods can be applied to other variables. It is also possible to
+undo the method and reapply the same method with a different  set of parameters.</p>
+<p>In this section, we provide a brief description of common SDC methods for microdata and
+show how to use these in <em>sdcApp</em>. For more information on the choice of the
+appropriate method and more detailed information on the methods themselves, we refer to …</p>
 <div class="section" id="recoding">
 <h2>Recoding<a class="headerlink" href="#recoding" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="global-recoding">
+<h3>Global recoding<a class="headerlink" href="#global-recoding" title="Permalink to this headline">¶</a></h3>
+<p>Global recoding combines several categories of a categorical variable or constructs
+intervals for continuous variables. This reduces the number of categories available
+in the data and potentially the disclosure risk, especially for categories with few
+observations, but also, importantly, it reduces the level of detail of information
+available to the analyst.</p>
+<p>Variable needs to be of type factor and key variable</p>
+<p>Variables can already be recoded before on data tab</p>
+<div class="figure align-center" id="id1">
+<span id="fig81"></span><img alt="_images/anonGlobalRecodeSettings.png" src="_images/anonGlobalRecodeSettings.png" />
+<p class="caption"><span class="caption-number">Fig. 30 </span><span class="caption-text">Settings for global recoding to recode the variable age</span></p>
 </div>
-<div class="section" id="k-anonimity">
-<h2>k-Anonimity<a class="headerlink" href="#k-anonimity" title="Permalink to this headline">¶</a></h2>
 </div>
+<div class="section" id="top-and-bottom-coding">
+<h3>Top and bottom coding<a class="headerlink" href="#top-and-bottom-coding" title="Permalink to this headline">¶</a></h3>
+<p>Top and bottom coding are similar to global recoding, but instead of recoding all values,
+only the top and/or bottom values of the distribution or categories are recoded. This can
+be applied only to ordinal categorical variables and (semi-)continuous variables, since
+the values have to be at least ordered. Top and bottom coding is especially useful if
+the bulk of the values lies in the center of the distribution with the peripheral
+categories having only few observations (outliers). Examples are age and income; for
+these variables, there will often be only a few observations above certain thresholds,
+typically at the tails of the distribution. The fewer the observations within a category,
+the higher the identification risk. One solution could be grouping the values at the tails
+of the distribution into one category. This reduces the risk for those observations, and,
+importantly, does so without reducing the data utility for the other observations in the
+distribution.</p>
+<div class="figure align-center" id="id2">
+<span id="fig82"></span><img alt="_images/anonTopcodingSettings.png" src="_images/anonTopcodingSettings.png" />
+<p class="caption"><span class="caption-number">Fig. 31 </span><span class="caption-text">Settings for topcoding the variable income at 8 million</span></p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Top and bottom coding ca only be applied to numeric variables. If age, as in our example,
+is converted to factor, the global recoding method needs to be used, in order to
+topcode age by grouping all values above the threshold.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">IT is advised to use a replacement value different than the threshold value,
+such as the weighted mean or median to reduce information loss. The replacement
+value needs to be computed in a different software and manually inserted in <em>sdcApp</em>.</p>
+</div>
+</div>
+</div>
+<div class="section" id="k-anonimity-local-suppression">
+<h2>k-Anonimity / local suppression<a class="headerlink" href="#k-anonimity-local-suppression" title="Permalink to this headline">¶</a></h2>
+<p>It is common in surveys to encounter values for certain variables or combinations
+of quasi-identifiers (keys) that are shared by very few individuals. When this occurs,
+the risk of re-identification for those respondents is higher than the rest of the
+respondents (see the Section k-anonymity). Often local suppression is used after
+reducing the number of keys in the data by recoding the appropriate variables.
+Recoding reduces the number of necessary suppressions as well as the computation
+time needed for suppression. Suppression of values means that values of a variable
+are replaced by a missing value (NA in R). The the Section k-anonymity discusses how
+missing values influence frequency counts and k-anonymity.</p>
+<div class="figure align-center" id="id3">
+<span id="fig83"></span><img alt="_images/anonLocSupSettings.png" src="_images/anonLocSupSettings.png" />
+<p class="caption"><span class="caption-number">Fig. 32 </span><span class="caption-text">Settings for local suppression to achieve 3-anonimity</span></p>
+</div>
+<div class="section" id="importance">
+<h3>Importance<a class="headerlink" href="#importance" title="Permalink to this headline">¶</a></h3>
+<div class="figure align-center" id="id4">
+<span id="fig84"></span><img alt="_images/anonLocSupSettingsImportance.png" src="_images/anonLocSupSettingsImportance.png" />
+<p class="caption"><span class="caption-number">Fig. 33 </span><span class="caption-text">Importance settings for local suppression</span></p>
+</div>
+</div>
+<div class="section" id="subsets">
+<h3>Subsets<a class="headerlink" href="#subsets" title="Permalink to this headline">¶</a></h3>
+<div class="figure align-center" id="id5">
+<span id="fig85"></span><img alt="_images/anonLocSupSettingsSubset.png" src="_images/anonLocSupSettingsSubset.png" />
+<p class="caption"><span class="caption-number">Fig. 34 </span><span class="caption-text">Subset settings for local suppression</span></p>
+</div>
+</div>
+</div>
+<hr class="docutils" />
 <div class="section" id="pram">
 <h2>PRAM<a class="headerlink" href="#pram" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-center" id="id6">
+<span id="fig86"></span><img alt="_images/anonPRAMsettings.png" src="_images/anonPRAMsettings.png" />
+<p class="caption"><span class="caption-number">Fig. 35 </span><span class="caption-text">Settings for PRAM</span></p>
+</div>
+<div class="figure align-center" id="id7">
+<span id="fig87"></span><img alt="_images/anonPRAMsettingsMatrix.png" src="_images/anonPRAMsettingsMatrix.png" />
+<p class="caption"><span class="caption-number">Fig. 36 </span><span class="caption-text">Settings for PRAM with customized transition matrix</span></p>
+</div>
 </div>
 <div class="section" id="suppress-values-with-high-risk">
 <h2>Suppress values with high risk<a class="headerlink" href="#suppress-values-with-high-risk" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-center" id="id8">
+<span id="fig88"></span><img alt="_images/anonSuppressSettings.png" src="_images/anonSuppressSettings.png" />
+<p class="caption"><span class="caption-number">Fig. 37 </span><span class="caption-text">Settings for suppressing values in records with high risk</span></p>
+</div>
 </div>
 <div class="section" id="top-bottom-coding">
 <h2>Top/Bottom coding<a class="headerlink" href="#top-bottom-coding" title="Permalink to this headline">¶</a></h2>
 </div>
+<div class="section" id="microaggregation">
+<h2>Microaggregation<a class="headerlink" href="#microaggregation" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-center" id="id9">
+<span id="fig89"></span><img alt="_images/anonMicroaggregationSettingsCluster.png" src="_images/anonMicroaggregationSettingsCluster.png" />
+<p class="caption"><span class="caption-number">Fig. 38 </span><span class="caption-text">Settings for microaggregation</span></p>
+</div>
+<div class="figure align-center" id="id10">
+<span id="fig810"></span><img alt="_images/anonMicroaggregationSettingsAdditional.png" src="_images/anonMicroaggregationSettingsAdditional.png" />
+<p class="caption"><span class="caption-number">Fig. 39 </span><span class="caption-text">Additional settings for microaggregation</span></p>
+</div>
+<div class="figure align-center" id="id11">
+<span id="fig811"></span><img alt="_images/anonMicroaggregationSettingsCluster.png" src="_images/anonMicroaggregationSettingsCluster.png" />
+<p class="caption"><span class="caption-number">Fig. 40 </span><span class="caption-text">Cluster settings for microaggregation</span></p>
+</div>
+</div>
+<div class="section" id="adding-noise">
+<h2>Adding noise<a class="headerlink" href="#adding-noise" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="rank-swapping">
+<h2>Rank swapping<a class="headerlink" href="#rank-swapping" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="undo">
+<h2>Undo<a class="headerlink" href="#undo" title="Permalink to this headline">¶</a></h2>
+<p>Finding an anonymization strategy for a microdata dataset is a trial-and-error process.
+The effect on risk and utility of different methods with different parameter settings can
+only be assessed by executing the methods on the actual dataset. Therefore, it is unlikely
+to find a satisfactory anonymization strategy at the first attempt. Before another method
+is applied, the previous method needs to be canceled. In <em>sdcApp</em> it is possible
+to undo the last method applied with one click. To test the effect of a combination
+of several methods, which is recommended, it is necessary to cancel several steps.
+To do so, the state of the SDC problem before applying the methods is saved to disk and can
+be reloaded afterwards. This is the same as canceling several steps. Both methods are
+described below.</p>
+<div class="section" id="undo-one-step">
+<h3>Undo one step<a class="headerlink" href="#undo-one-step" title="Permalink to this headline">¶</a></h3>
+<p>In order to undo one step,</p>
+<p>risk measures etc are also reset, script not, random seed not</p>
+</div>
 <div class="section" id="undo-several-steps">
-<h2>Undo several steps<a class="headerlink" href="#undo-several-steps" title="Permalink to this headline">¶</a></h2>
+<h3>Undo several steps<a class="headerlink" href="#undo-several-steps" title="Permalink to this headline">¶</a></h3>
 <p>Recommended to</p>
 <p>Save and reload</p>
+</div>
 </div>
 </div>
 
@@ -209,7 +358,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2018, Thijs Benschop.
+        &copy; Copyright 2018, Thijs Benschop, Matthew Welch.
 
     </p>
   </div>
@@ -242,6 +391,7 @@
       <script type="text/javascript" src="_static/jquery.js"></script>
       <script type="text/javascript" src="_static/underscore.js"></script>
       <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

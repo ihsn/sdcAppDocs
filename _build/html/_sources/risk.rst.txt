@@ -20,7 +20,7 @@ sample frequency count :math:`f_{k}` for the key :math:`k` is smaller
 than the specified threshold :math:`k`. For example, if an
 individual has the same combination of quasi-identifiers as two other
 individuals in the sample, these individuals satisfy 3-anonymity but
-violate 4-anonymity. In the dataset in :numref:`tab41`, six individuals
+violate 4-anonymity. In the dataset, six individuals
 satisfy 2-anonymity and four violate 2-anonymity. The individuals that
 violate 2-anonymity are sample uniques. The risk measure is the number
 of observations that violates k-anonymity for a certain value of *k*,
@@ -46,7 +46,7 @@ particular key through the sample weights.
 
 In the summary view
 
-.. _fig24:
+.. _fig71:
 
 .. figure:: media/summary_k_anon.png
    :align: center
@@ -54,7 +54,7 @@ In the summary view
    Information on :math:`k`-anonymity violators in summary view
    
 Risk measures for numerical key variables
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 Household risk
@@ -83,14 +83,14 @@ based on two observations:
 -  The larger the number of MSUs possessed by a record, the greater the
    risk of the record
 
-.. _fig24:
+.. _fig71:
 
 .. figure:: media/risk_suda_setup.png
    :align: center
    
    Compute SUDA scores
    
-.. _fig24:
+.. _fig72:
 
 .. figure:: media/risk_suda_result.png
    :align: center
@@ -115,7 +115,7 @@ To compute :math:`l`-diversity for sensitive variables in sdcApp
 k-anonymity
 ~~~~~~~~~~~~~~~~~~~
 
-.. _fig24:
+.. _fig73:
 
 .. figure:: media/summary_k_anon.png
    :align: center

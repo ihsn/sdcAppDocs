@@ -27,10 +27,12 @@
   
     <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
     <link rel="author" title="About these documents" href="about.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Export data, reports" href="export.html" /> 
+    <link rel="next" title="Undo" href="undo.html" />
+    <link rel="prev" title="Export data and reports" href="export.html" /> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -84,18 +86,22 @@
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation and updating</a></li>
 <li class="toctree-l1"><a class="reference internal" href="introsdcApp.html">Introduction to sdcApp</a></li>
-<li class="toctree-l1"><a class="reference internal" href="about.html">Help and settings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="loadprepdata.html">Loading and preparing Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="loadprepdata.html">Loading and Preparing Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="setup.html">Setup anonymization problem</a></li>
 <li class="toctree-l1"><a class="reference internal" href="risk.html">Risk measurement</a></li>
 <li class="toctree-l1"><a class="reference internal" href="anon.html">Anonymization methods</a></li>
-<li class="toctree-l1"><a class="reference internal" href="utility.html">Utility</a></li>
-<li class="toctree-l1"><a class="reference internal" href="export.html">Export data, reports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="utility.html">Utility measurement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="export.html">Export data and reports</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Reproducibility</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#exporting-script">Exporting script</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#exporting-reports">Exporting reports</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#exporting-r-script">Exporting <em>R</em> script</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#exporting-reports">Exporting reports</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#internal-report">Internal report</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#external-report">External report</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="undo.html">Undo</a></li>
 </ul>
 
             
@@ -162,11 +168,85 @@
             
   <div class="section" id="reproducibility">
 <h1>Reproducibility<a class="headerlink" href="#reproducibility" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="exporting-script">
-<h2>Exporting script<a class="headerlink" href="#exporting-script" title="Permalink to this headline">¶</a></h2>
+<p>Reproducibility is key to the SDC process, as …</p>
+<div class="section" id="exporting-r-script">
+<h2>Exporting <em>R</em> script<a class="headerlink" href="#exporting-r-script" title="Permalink to this headline">¶</a></h2>
+<p><em>sdcApp</em> is a GUI for the <em>R</em> package <em>sdcMicro</em>. All steps executed in <em>sdcApp</em> are translated
+into <em>R</em> commands. Therefore, the full anonymization can also be performed from command-line
+in <em>R</em>. While carrying out the anonymization process, the code to perform the same action
+from command-line is generated. The code can be viewed and exported on the <strong>Reproducibility</strong>
+tab by selecting <strong>View the current script</strong> from the left sidebar (cf. <a class="reference internal" href="#fig111"><span class="std std-numref">Fig. 42</span></a>).
+The script also contains comments, which are the lines starting with the hash tag (<code class="code docutils literal notranslate"><span class="pre">#</span></code>).
+These comments are meant to help with the interpretation of the code blocks.</p>
+<div class="figure align-center" id="id5">
+<span id="fig111"></span><img alt="_images/reproScript.png" src="_images/reproScript.png" />
+<p class="caption"><span class="caption-number">Fig. 42 </span><span class="caption-text"><em>R</em> script to reproduce anonymization process after setting up SDC problem</span></p>
+</div>
+<p>The goal of the <em>R</em> script is threefold:
+1) To reproduce the steps taken in the anonymization process. This guarantees
+the reproducibility, since the all variabele selections and parameters are contained in the
+code and the order of the application of different methods is preserved in the code.
+2) As a starting point to learn <em>R</em> and use <em>sdcMicro</em> from <em>R</em> command-line. Especially for
+users with some degree of familiarity with <em>R</em>, the script
+3) To rerun the same methods with different parameter settings without the need to make
+all selections by mouseclick in the GUI. It’s relatively easy to change the parameter settings
+in the <em>R</em> code and rerun the code. However, the code does not include commands to shw
+the results.</p>
+<p>By clicking on the blue button <strong>Save script to file</strong> at the top of the page, the script
+is saved as <em>R</em> script (extension .R) on disk to the selected storage path on the
+<strong>About/Help</strong> tab (see <a class="reference external" href="introsdcApp.html">Introduction to sdcApp</a>).
+The filename of the exported script starts with ‘exportedScript_sdcMicro’ followed
+by a date and time stamp, e.g., ‘exportedScript_sdcMicro_20181010_1212.R’.</p>
+<p>In order to run the script in <em>R</em>, open the saved script in <em>RStudio</em>. The only
+thing to do is to change the path of the input file to the actual file path on your computer.
+In the second line of the <em>R</em> script,</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>In case a method was applied in <em>sdcApp</em> and subsequently reverted by using the <strong>Undo</strong>
+button, the method is not erased from the script, but rather the undo command is added.
+For example, if local suppression was applied and reverted, this appears as follows in
+the script:</p>
+<div class="highlight-R notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">## Local suppression to obtain k-anonymity</span>
+sdcObj <span class="o">&lt;-</span> kAnon<span class="p">(</span>sdcObj<span class="p">,</span> importance<span class="o">=</span><span class="kt">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">),</span> combs<span class="o">=</span><span class="kc">NULL</span><span class="p">,</span> k<span class="o">=</span><span class="kt">c</span><span class="p">(</span><span class="m">3</span><span class="p">))</span>
+sdcObj <span class="o">&lt;-</span> undolast<span class="p">(</span>sdcObj<span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<p class="last">This code preceding the :code:<a href="#id1"><span class="problematic" id="id2">`</span></a>undoLast`command and the :code:<a href="#id3"><span class="problematic" id="id4">`</span></a>undoLast`command
+can be deleted without changing the results.</p>
+</div>
 </div>
 <div class="section" id="exporting-reports">
 <h2>Exporting reports<a class="headerlink" href="#exporting-reports" title="Permalink to this headline">¶</a></h2>
+<p>It is extremely important to document the SDC process of microdata both for internal
+use as well as for external use. The internal report should contain detailed descriptions
+of all steps carried out as well as reasoning for</p>
+<div class="section" id="internal-report">
+<h3>Internal report<a class="headerlink" href="#internal-report" title="Permalink to this headline">¶</a></h3>
+<p>An important step in the SDC process is reporting, both internal and external.
+Internal reporting contains the exact description of anonymization methods used,
+parameters but also the risk measures before and after anonymization. This allows
+replication of the anonymized dataset and is important for supervisory authorities/bodies
+to ensure the anonymization process is sufficient to guarantee anonymity according
+to the applicable legislation.</p>
+<p>Report is just technical overview, not complete</p>
+<div class="figure align-center" id="id6">
+<span id="fig112"></span><img alt="_images/reproScript.png" src="_images/reproScript.png" />
+<p class="caption"><span class="caption-number">Fig. 43 </span><span class="caption-text">Exporting an internal report</span></p>
+</div>
+</div>
+<div class="section" id="external-report">
+<h3>External report<a class="headerlink" href="#external-report" title="Permalink to this headline">¶</a></h3>
+<p>The external report</p>
+<p>External reporting informs the user that the data has been anonymized,
+provides information for valid analysis on the data and explains the limitations to
+the data as a result of the anonymization. A brief description of the methods used
+can be included. The release of anonymized microdata should be accompanied by the
+usual metadata of the survey (survey weight, strata, survey methodology) as well as
+information on the anonymization methods that allow researchers to do valid analysis
+(e.g., amount of noise added, transition matrix for PRAM).</p>
+</div>
 </div>
 </div>
 
@@ -178,8 +258,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
+        <a href="undo.html" class="btn btn-neutral float-right" title="Undo" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
-        <a href="export.html" class="btn btn-neutral" title="Export data, reports" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+        <a href="export.html" class="btn btn-neutral" title="Export data and reports" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -188,7 +270,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2018, Thijs Benschop.
+        &copy; Copyright 2018, Thijs Benschop, Matthew Welch.
 
     </p>
   </div>
@@ -221,6 +303,7 @@
       <script type="text/javascript" src="_static/jquery.js"></script>
       <script type="text/javascript" src="_static/underscore.js"></script>
       <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

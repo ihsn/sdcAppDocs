@@ -20,8 +20,8 @@
 # -- Project information -----------------------------------------------------
 
 project = 'sdcMicro GUI manual'
-copyright = '2018, Thijs Benschop'
-author = 'Thijs Benschop'
+copyright = '2018, Thijs Benschop, Matthew Welch'
+author = 'Thijs Benschop, Matthew Welch'
 
 # The short X.Y version
 version = ''
@@ -39,7 +39,15 @@ release = ''
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-]
+    'sphinx.ext.autodoc',
+    'sphinx.ext.doctest',
+    'sphinx.ext.intersphinx',
+    'sphinx.ext.todo',
+    'sphinx.ext.coverage',
+    'sphinx.ext.mathjax',
+    'sphinx.ext.ifconfig',
+    'sphinx.ext.viewcode',
+    'sphinx.ext.githubpages',]
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -102,6 +110,8 @@ html_static_path = ['_static']
 
 # Output file base name for HTML help builder.
 htmlhelp_basename = 'sdcMicroGUImanualdoc'
+def setup(app):
+    app.add_stylesheet('theme_overrides.css')
 
 
 # -- Options for LaTeX output ------------------------------------------------
@@ -153,3 +163,13 @@ texinfo_documents = [
      author, 'sdcMicroGUImanual', 'One line description of project.',
      'Miscellaneous'),
 ]
+
+# -- Extension configuration -------------------------------------------------
+
+# -- Options for intersphinx extension ---------------------------------------
+
+# Example configuration for intersphinx: refer to the Python standard library.
+intersphinx_mapping = {'https://docs.python.org/': None}
+
+# Option for references to tables and figures
+numfig = True

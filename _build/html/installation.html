@@ -27,6 +27,7 @@
   
     <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
     <link rel="author" title="About these documents" href="about.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -97,14 +98,14 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="introsdcApp.html">Introduction to sdcApp</a></li>
-<li class="toctree-l1"><a class="reference internal" href="about.html">Help and settings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="loadprepdata.html">Loading and preparing Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="loadprepdata.html">Loading and Preparing Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="setup.html">Setup anonymization problem</a></li>
 <li class="toctree-l1"><a class="reference internal" href="risk.html">Risk measurement</a></li>
 <li class="toctree-l1"><a class="reference internal" href="anon.html">Anonymization methods</a></li>
 <li class="toctree-l1"><a class="reference internal" href="utility.html">Utility measurement</a></li>
 <li class="toctree-l1"><a class="reference internal" href="export.html">Export data and reports</a></li>
 <li class="toctree-l1"><a class="reference internal" href="reproducibility.html">Reproducibility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="undo.html">Undo</a></li>
 </ul>
 
             
@@ -189,7 +190,7 @@ By selecting your OS, the installer will be dowloaded to your computer. In order
 R, open the installer and follow the installation steps</p>
 <div class="figure align-center" id="id7">
 <span id="fig21"></span><img alt="_images/downloadR.png" src="_images/downloadR.png" />
-<p class="caption"><span class="caption-text">Select OS to start downloading R</span></p>
+<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Select OS to start downloading R</span></p>
 </div>
 <p>Once R is successfully installed, we can install RStudio. RStudio is an IDE (integrated development environment) for R.
 RStudio is makes working with R much easier. RStudio Desktop and RStudio Server can be downloaded
@@ -199,7 +200,7 @@ select the version corresponding to your OS to start downloading.
 In order to install RStudio, open the installer and follow the installation steps.</p>
 <div class="figure align-center" id="id8">
 <span id="fig22"></span><img alt="_images/RStudioVersion.png" src="_images/RStudioVersion.png" />
-<p class="caption"><span class="caption-text">Select version to start downloading RStudio</span></p>
+<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Select version to start downloading RStudio</span></p>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -217,7 +218,7 @@ of four different panes as shown in Figure.</p>
 </ol>
 <div class="figure align-center" id="id9">
 <span id="fig23"></span><img alt="_images/RStudio.png" src="_images/RStudio.png" />
-<p class="caption"><span class="caption-text">Screenshot RStudio</span></p>
+<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Screenshot RStudio</span></p>
 </div>
 </div>
 <div class="section" id="sdcmicro-package">
@@ -228,7 +229,7 @@ that are required by the <em>sdcMicro</em> package are downloaded from the CRAN 
 it is necessary to be connected to the internet during the installation process. <a class="footnote-reference" href="#id6" id="id2">[2]</a></p>
 <div class="figure align-center" id="id10">
 <span id="fig24"></span><img alt="_images/downloadR.png" src="_images/downloadR.png" />
-<p class="caption"><span class="caption-text">Screenshot RStudio</span></p>
+<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">Screenshot RStudio</span></p>
 </div>
 <p>In order to install the latest version of the <em>sdcMicro</em> package, type the command
 <code class="code docutils literal notranslate"><span class="pre">install.packages(&quot;sdcMicro&quot;,</span> <span class="pre">dependencies</span> <span class="pre">=</span> <span class="pre">TRUE)</span></code> in the console and press enter to execute.
@@ -238,7 +239,7 @@ The sdcMicro package itself uses functionality
 from a set of other R packages (e.g., <em>haven</em> for reading files in different formats).
 By specifying the dependencies argument to TRUE, these dependencies will automatically be installed too.</p>
 <div class="literal-block-wrapper docutils container" id="code01">
-<div class="code-block-caption"><span class="caption-text">Installing sdcMicro package</span><a class="headerlink" href="#code01" title="Permalink to this code">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">Listing 1 </span><span class="caption-text">Installing sdcMicro package</span><a class="headerlink" href="#code01" title="Permalink to this code">¶</a></div>
 <div class="highlight-R notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># install sdcMicro package</span>
 install.packages<span class="p">(</span><span class="s">&quot;sdcMicro&quot;</span><span class="p">,</span> dependencies <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
@@ -271,14 +272,16 @@ In case your default web browser is not one of the aforementioned browsers, you 
 alternative browser and copy paste the internal IP address to the new browser. <em>sdcApp</em> will open
 in the new browser.</p>
 <p>Furthermore, it’s important that your R session is allowed to use the installed webbrowser.</p>
-<div class="figure align-center" id="fig25">
-<img alt="_images/RconsoleIP.png" src="_images/RconsoleIP.png" />
+<div class="figure align-center" id="id11">
+<span id="fig25"></span><img alt="_images/RconsoleIP.png" src="_images/RconsoleIP.png" />
+<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">R console with local IP after launching <em>sdcApp</em></span></p>
 </div>
-<div class="figure align-center" id="fig26">
-<img alt="_images/sdcAppStartIP.png" src="_images/sdcAppStartIP.png" />
+<div class="figure align-center" id="id12">
+<span id="fig26"></span><img alt="_images/sdcAppStartIP.png" src="_images/sdcAppStartIP.png" />
+<p class="caption"><span class="caption-number">Fig. 6 </span><span class="caption-text">Start screen sdcApp in browser with local IP</span></p>
 </div>
 <div class="literal-block-wrapper docutils container" id="code02">
-<div class="code-block-caption"><span class="caption-text">Loading sdcMicro package and launching <em>sdcApp</em></span><a class="headerlink" href="#code02" title="Permalink to this code">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">Listing 2 </span><span class="caption-text">Loading sdcMicro package and launching <em>sdcApp</em></span><a class="headerlink" href="#code02" title="Permalink to this code">¶</a></div>
 <div class="highlight-R notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -287,7 +290,7 @@ in the new browser.</p>
 <span class="kn">library</span><span class="p">(</span>sdcMicro<span class="p">)</span>
 
 <span class="c1"># Launch sdcApp (opens in browser window)</span>
-<span class="o">*</span>sdcApp<span class="o">*</span><span class="p">()</span>
+sdcApp<span class="p">()</span>
 </pre></div>
 </td></tr></table></div>
 </div>
@@ -312,9 +315,9 @@ If a new version of R is available, the same steps as as for the installation of
 as described in the Section <a class="reference internal" href="#installing-r-and-rstudio">Installing R and RStudio</a>. The version number of the
 R version installed on your computer appears in the R console upon launching R or RStudio
 (cf. Figure ).</p>
-<div class="figure align-center" id="id11">
+<div class="figure align-center" id="id13">
 <span id="fig27"></span><img alt="_images/Rversion.png" src="_images/Rversion.png" />
-<p class="caption"><span class="caption-text">R console with version number</span></p>
+<p class="caption"><span class="caption-number">Fig. 7 </span><span class="caption-text">R console with version number</span></p>
 </div>
 </div>
 <div class="section" id="updating-rstudio">
@@ -331,7 +334,7 @@ for newer versions, click on the Update button to get an overview of all package
 newer versions available. By clicking Select all, these packages are all automatically updated.</p>
 <p>Report a bug</p>
 <div class="literal-block-wrapper docutils container" id="code03">
-<div class="code-block-caption"><span class="caption-text">Updating packages</span><a class="headerlink" href="#code03" title="Permalink to this code">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">Listing 3 </span><span class="caption-text">Updating packages</span><a class="headerlink" href="#code03" title="Permalink to this code">¶</a></div>
 <div class="highlight-R notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># Update</span>
 install.packages<span class="p">()</span>
@@ -381,7 +384,7 @@ sdcMicro should be installed on cannot be connected to the internet for technica
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2018, Thijs Benschop.
+        &copy; Copyright 2018, Thijs Benschop, Matthew Welch.
 
     </p>
   </div>
@@ -414,6 +417,7 @@ sdcMicro should be installed on cannot be connected to the internet for technica
       <script type="text/javascript" src="_static/jquery.js"></script>
       <script type="text/javascript" src="_static/underscore.js"></script>
       <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
   
 

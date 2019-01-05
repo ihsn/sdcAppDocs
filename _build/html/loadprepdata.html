@@ -181,10 +181,10 @@
 <p>This section discusses how to load microdata into <em>sdcApp</em> and prepare the data
 for the SDC process.</p>
 <p>The first step in the SDC process is loading the dataset into <em>sdcApp</em>. <em>sdcApp</em> supports
-most common data formats, such as <em>R</em>, <em>STATA</em>, <em>SPSS</em> and <em>SAS</em> files. First time users
-may also load one of the two practice datasets, which are included in <em>sdcApp</em>,
+most common statistical data formats, such as <em>R</em>, <em>STATA</em>, <em>SPSS</em> and <em>SAS</em> files. First time
+users may also load one of the two practice datasets, which are included in <em>sdcApp</em>,
 to explore <em>sdcApp</em> and methods. Most examples in this guide are illustrated by
-using the practice dataset <em>testdata</em> and can be reproduced.</p>
+using the practice dataset <em>testdata</em> and can be reproduced by using this dataset.</p>
 <p>After loading the data, the user needs to prepare the data for the SDC process.
 Most preparation steps can be carried out in <em>sdcApp</em>, although users may find it
 more convenient to perform some of these actions in another statistical software
@@ -198,10 +198,29 @@ before loading the data in <em>sdcApp</em>.</p>
 replicate these examples, the user needs to load this dataset. In order to load the testdata
 dataset, navigate to the <strong>Microdata tab</strong> and select <strong>Testdata/Internal data</strong> in the left sidebar.
 Select the dataset from the dropdown menu and click the button <strong>Load data</strong>.
-This is illustrated in <a class="reference internal" href="#fig51"><span class="std std-numref">Fig. 14</span></a>. After loading the testdata dataset, the loaded
-dataset is displayed (cf. <a class="reference internal" href="#fig52"><span class="std std-numref">Fig. 15</span></a>).</p>
-<p>Any other datasets loaded in the current <em>R</em> session are also shown in the list with
-available datasets and can be loaded.</p>
+This is illustrated in <a class="reference internal" href="#fig51"><span class="std std-numref">Fig. 14</span></a>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Any other datasets loaded in the current <em>R</em> session are also shown in the dropdown list
+with available datasets and can be loaded.
+<strong>Add screenshot of dropdown menu with mymicrodata</strong></p>
+</div>
+<p>After loading the dataset, the data is displayed in the <strong>Microdata</strong> tab. The <strong>Microdata</strong>
+tab changes and the functionality for loading microdata is replaced with
+functionality to explore and prepare the dataset (cf. <a class="reference internal" href="#fig52"><span class="std std-numref">Fig. 15</span></a>). The
+left sidebar shows different options to explore and prepare the data for the anonymization process,
+as discussed in the next sections.</p>
+<p>After loading the testdata dataset, the loaded
+dataset is displayed (cf. <a class="reference internal" href="#fig52"><span class="std std-numref">Fig. 15</span></a>). By default the first 20 records are displayed.
+With the dropdown menu in the topleft corner it is possible to display 20, 50, 100 or all
+records per page. It is not recommended to select <em>all</em> in case of larger datasets
+<em>sdcApp</em> will run very slow. In the right bottom it is possible to navigate to different pages,
+either by clicking <em>Next</em> or by clicking on a page number. The table
+with the data is both horizontally and vertically scrollable with the scrollbars on the
+right side and bottom of the table. To sort the data by a variable, click on the symbol
+with two arrows (<img alt="sort" src="_images/prepLoadSort.png" /> or <img alt="sort2" src="_images/prepLoadSort2.png" />) next to the variable name in the header of the table.
+The data is searchable by using the search bar on the right top of the table. Only records
+with matches are displayed. The search is performed simultaneously on all variables.</p>
 <div class="figure align-center" id="id1">
 <span id="fig51"></span><img alt="_images/prepLoadTestdata.png" src="_images/prepLoadTestdata.png" />
 <p class="caption"><span class="caption-number">Fig. 14 </span><span class="caption-text">Load testdata on <strong>Microdata</strong> tab</span></p>
@@ -308,6 +327,15 @@ sdcApp<span class="p">(</span>maxRequestSize <span class="o">=</span> <span clas
 <span id="fig53"></span><img alt="_images/prepLoadData.png" src="_images/prepLoadData.png" />
 <p class="caption"><span class="caption-number">Fig. 16 </span><span class="caption-text">Load data on Microdata tab - example STATA dataset</span></p>
 </div>
+<p>After loading the testdata dataset, the loaded
+dataset is displayed (cf. <a class="reference internal" href="#fig52"><span class="std std-numref">Fig. 15</span></a>). By default the first 20 records are displayed.
+With the dropdown menu in the topleft corner it is possible to display 20, 50, 100 or all
+records per page. It is not recommended to select <em>all</em> in case of larger datasets
+<em>sdcApp</em> will run very slow. In the right bottom it is possible to navigate to different pages,
+either by clicking <em>Next</em> or by clicking on a page number. The table
+with the data is both horizontally and vertically scrollable with the scrollbars on the
+right side and bottom of the table. To sort the data by a variable, click on the symbol
+with two arrows next to the variable name in the header of the table.</p>
 <p>After loading the dataset, the data is shown in the <strong>Microdata</strong> tab. The <strong>Microdata</strong>
 tab changes and the functionality for loading microdata is replaced with
 functionality to explore and prepare the dataset (cf. <a class="reference internal" href="#fig511"><span class="std std-numref">Fig. 17</span></a>). The

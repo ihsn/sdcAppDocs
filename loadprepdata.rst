@@ -5,10 +5,10 @@ This section discusses how to load microdata into *sdcApp* and prepare the data
 for the SDC process.
 
 The first step in the SDC process is loading the dataset into *sdcApp*. *sdcApp* supports
-most common data formats, such as *R*, *STATA*, *SPSS* and *SAS* files. First time users
-may also load one of the two practice datasets, which are included in *sdcApp*, 
+most common statistical data formats, such as *R*, *STATA*, *SPSS* and *SAS* files. First time 
+users may also load one of the two practice datasets, which are included in *sdcApp*, 
 to explore *sdcApp* and methods. Most examples in this guide are illustrated by 
-using the practice dataset *testdata* and can be reproduced.
+using the practice dataset *testdata* and can be reproduced by using this dataset.
 
 After loading the data, the user needs to prepare the data for the SDC process.
 Most preparation steps can be carried out in *sdcApp*, although users may find it 
@@ -25,12 +25,34 @@ Testdata
 replicate these examples, the user needs to load this dataset. In order to load the testdata
 dataset, navigate to the **Microdata tab** and select **Testdata/Internal data** in the left sidebar.
 Select the dataset from the dropdown menu and click the button **Load data**. 
-This is illustrated in :numref:`fig51`. After loading the testdata dataset, the loaded 
-dataset is displayed (cf. :numref:`fig52`).
+This is illustrated in :numref:`fig51`. 
 
-Any other datasets loaded in the current *R* session are also shown in the list with 
-available datasets and can be loaded.
+.. NOTE::
+	Any other datasets loaded in the current *R* session are also shown in the dropdown list 
+	with available datasets and can be loaded.
+	**Add screenshot of dropdown menu with mymicrodata**
 
+After loading the dataset, the data is displayed in the **Microdata** tab. The **Microdata**
+tab changes and the functionality for loading microdata is replaced with 
+functionality to explore and prepare the dataset (cf. :numref:`fig52`). The 
+left sidebar shows different options to explore and prepare the data for the anonymization process,
+as discussed in the next sections.
+
+After loading the testdata dataset, the loaded 
+dataset is displayed (cf. :numref:`fig52`). By default the first 20 records are displayed. 
+With the dropdown menu in the topleft corner it is possible to display 20, 50, 100 or all
+records per page. It is not recommended to select *all* in case of larger datasets
+*sdcApp* will run very slow. In the right bottom it is possible to navigate to different pages,
+either by clicking *Next* or by clicking on a page number. The table
+with the data is both horizontally and vertically scrollable with the scrollbars on the 
+right side and bottom of the table. To sort the data by a variable, click on the symbol 
+with two arrows (|sort| or |sort2|) next to the variable name in the header of the table.
+The data is searchable by using the search bar on the right top of the table. Only records 
+with matches are displayed. The search is performed simultaneously on all variables.
+
+.. |sort| image:: media/prepLoadSort.png	
+.. |sort2| image:: media/prepLoadSort2.png
+	
 .. _fig51:
 
 .. figure:: media/prepLoadTestdata.png
@@ -69,14 +91,14 @@ the data in another data format.
    ==========  ================
    
 In order to load a dataset, select the corresponding data format
-from the left sidebar of the Microdata tab. For all formats the user can set two options:
+from the left sidebar of the **Microdata** tab. For all formats the user can set two options:
 	
 (1)	Convert string variables (character vectors) to factor variables?
 		If :code:`TRUE` (default), variables of type string are automatically converted to categorical variables 
 		(type factor in *R*). Categorical variables need to be of type factor in *sdcApp*.
 		Remove any textual variables, such as 'Specify other:' variables before loading the
 		data. These variables are oftentimes not suitable for release and require long
-		computation times to be transformed to factor. IF :code:`FALSE`
+		computation times to be transformed to factor. If :code:`FALSE`,
 (2)	Drop variables with only missing values (NA)?
 		If :code:`TRUE` (default), variables that contain only missing values (:code:`NA` in *R*) 
 		are removed upon loading the data. This does not cause any loss of information,
@@ -122,7 +144,17 @@ immediately after selection. After loading the file, which may
    :align: center
    
    Load data on Microdata tab - example STATA dataset 
-   
+
+After loading the testdata dataset, the loaded 
+dataset is displayed (cf. :numref:`fig52`). By default the first 20 records are displayed. 
+With the dropdown menu in the topleft corner it is possible to display 20, 50, 100 or all
+records per page. It is not recommended to select *all* in case of larger datasets
+*sdcApp* will run very slow. In the right bottom it is possible to navigate to different pages,
+either by clicking *Next* or by clicking on a page number. The table
+with the data is both horizontally and vertically scrollable with the scrollbars on the 
+right side and bottom of the table. To sort the data by a variable, click on the symbol 
+with two arrows next to the variable name in the header of the table.
+
 After loading the dataset, the data is shown in the **Microdata** tab. The **Microdata**
 tab changes and the functionality for loading microdata is replaced with 
 functionality to explore and prepare the dataset (cf. :numref:`fig511`). The 

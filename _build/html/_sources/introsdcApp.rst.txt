@@ -110,11 +110,13 @@ which provide summary information on the current SDC problem.
    
 In-app help
 -----------------
-By hovering over the *i* icon in *sdcApp*, additional information on e.g.,
-specific parameters and the interpretation of results is provided. The help information
+By hovering with the mouse pointer over the |icon| icon in *sdcApp*, additional information on
+e.g., specific parameters and the interpretation of results is provided. The help information
 is mainly intended to provide a brief reminder and is not meant to replace a thorough 
 study of the SDC literature on risk and utility measurement and anonymization methods. 
 :numref:`fig36` shows the help pop-up for the variable selection table.
+
+.. |icon| image:: media/introIicon.png	
 
 .. _fig36:
 

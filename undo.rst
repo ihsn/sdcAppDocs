@@ -28,7 +28,7 @@ Save and reload
 
 Recommended to save the SDC problem after each method to be able to reload. This is also 
 practical if *sdcApp* or *R* crash. Also useful to continue working at a later point of 
-transfer a problem to a different computer
+transfer a problem to a different computer	
 
 
 Save a previously saved problem
@@ -37,7 +37,8 @@ Save a previously saved problem
 Load a previously saved problem
 +++++++++++++++++++++++++++++++
 
-..NOTE::
+.. NOTE::
+	sdcApp exports four different file types
 	Different file names for different files (data, sdcProblem)
 
 

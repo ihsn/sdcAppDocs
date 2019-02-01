@@ -20,7 +20,10 @@ ordered by region with suppressed region value Need to replace existing ID
 
 In order to export the dataset, click on blue button **Save dataset**. The dataset is saved
 to the 
+
+By clicking on the blue button Save script to file at the top of the page, the script is saved as R script (extension .R) on disk to the selected storage path on the About/Help tab (see Introduction to sdcApp). The filename of the exported script starts with ‘exportedScript_sdcMicro’ followed by a date and time stamp, e.g., ‘exportedScript_sdcMicro_20181010_1212.R’.
 , exported two with file name... Exported to 
+
 the microdata, select
 
 .. _tab101:

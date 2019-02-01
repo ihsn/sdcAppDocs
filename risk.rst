@@ -61,6 +61,7 @@ Household risk
 ~~~~~~~~~~~~~~~~~~~
 If household identifier is selected, household risk will automatically be displayed.
 
+
 Detailed view
 -------------
 The Risk/Utility tab provides more detailed information on risk measures and records at 

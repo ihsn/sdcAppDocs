@@ -91,14 +91,14 @@ the data in another data format.
    ==========  ================
    
 In order to load a dataset, select the corresponding data format
-from the left sidebar of the Microdata tab. For all formats the user can set two options:
+from the left sidebar of the **Microdata** tab. For all formats the user can set two options:
 	
 (1)	Convert string variables (character vectors) to factor variables?
 		If :code:`TRUE` (default), variables of type string are automatically converted to categorical variables 
 		(type factor in *R*). Categorical variables need to be of type factor in *sdcApp*.
 		Remove any textual variables, such as 'Specify other:' variables before loading the
 		data. These variables are oftentimes not suitable for release and require long
-		computation times to be transformed to factor. IF :code:`FALSE`
+		computation times to be transformed to factor. If :code:`FALSE`,
 (2)	Drop variables with only missing values (NA)?
 		If :code:`TRUE` (default), variables that contain only missing values (:code:`NA` in *R*) 
 		are removed upon loading the data. This does not cause any loss of information,

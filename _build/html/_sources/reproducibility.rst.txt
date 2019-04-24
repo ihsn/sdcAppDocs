@@ -57,40 +57,4 @@ In the second line of the *R* script,
 	This code preceding the :code:`undoLast`command and the :code:`undoLast`command
 	can be deleted without changing the results.
 
-   		
-Exporting reports
------------------
-It is extremely important to document the SDC process of microdata both for internal 
-use as well as for external use. The internal report should contain detailed descriptions
-of all steps carried out as well as reasoning for 
-
-
-Internal report
-~~~~~~~~~~~~~~~
-An important step in the SDC process is reporting, both internal and external. 
-Internal reporting contains the exact description of anonymization methods used, 
-parameters but also the risk measures before and after anonymization. This allows 
-replication of the anonymized dataset and is important for supervisory authorities/bodies
-to ensure the anonymization process is sufficient to guarantee anonymity according 
-to the applicable legislation.
-
-Report is just technical overview, not complete
-
-.. _fig112:
-
-.. figure:: media/reproScript.png
-   :align: center
-   
-   Exporting an internal report
-
-External report
-~~~~~~~~~~~~~~~
-The external report
-
-External reporting informs the user that the data has been anonymized, 
-provides information for valid analysis on the data and explains the limitations to 
-the data as a result of the anonymization. A brief description of the methods used 
-can be included. The release of anonymized microdata should be accompanied by the 
-usual metadata of the survey (survey weight, strata, survey methodology) as well as 
-information on the anonymization methods that allow researchers to do valid analysis 
-(e.g., amount of noise added, transition matrix for PRAM).
+   	

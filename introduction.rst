@@ -52,5 +52,4 @@ This guide is divided into the following main sections:
 (7) 	the Section `Utility measurement <utility.html>`__ covers the measurement of information loss resulting from anonymization of the data
 (8)  	the Section `Export data and reports <export.html>`__ describes how to export the anonymized dataset and generate reports.
 (9)   	the Section `Reproducibility <reproducibility.html>`__ covers functionality that render the anonymization process reproducable.
-
-? Add case study ?
+(10)	the Section `Case Studies <casestudies.html>`__ presents two case studies illustrating the full SDC process in sdcApp.

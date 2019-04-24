@@ -189,3 +189,13 @@ This tab first shows a Summary overview of the problem. The content of the summa
 the SDC problem. For example, if no numerical key variables were selected, the information on
 numeric key variables is omitted. Fig shows the summary page.
 
+.. NOTE:: 
+	Once the SDC problem is set up, it is possible and highly recommended to save 
+	the SDC problem. By saving the SDC problem, you can reload the problem including 
+	the preparation steps and variable selection in case of issues with sdcApp or
+	to revert to this 'clean' state without any methods applied in order to compare several
+	methods.
+	
+.. NOTE:: 
+	If you would like to change the variable selection after setting up the SDC problem,
+	click the red button [add png]. By doing so, you need to respecify the full variable selection.

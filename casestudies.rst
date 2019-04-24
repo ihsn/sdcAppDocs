@@ -8,7 +8,8 @@ regions: Latin America and the Caribbean (LAC), Sub-Saharan Africa
 (AFR), South Asia (SA), Europe and Central Asia (ECA), Middle East and
 North Africa (MENA) as well as East Asia and the Pacific (EAP). The
 datasets chosen were from a mix of datasets that are already publically
-available, as well as data made available to the World Bank. The surveys used included, amongst others, household,
+available, as well as data made available to the World Bank. 
+The surveys used included, amongst others, household,
 demographic, and health surveys. The variables from these surveys used
 for the experiments were selected based on their relevance for users
 (e.g., for indicators, MDGs), their sensitivity, and their classification
@@ -28,12 +29,8 @@ Case study 1- SUF
 
 This case study shows an example of how the anonymization process might
 be approached, particularly for a dataset with many continuous
-variables. We also show how this can be achieved using the open source
-and free *sdcMicro* package and *R*. A ready-to-run *R* script for this
-case study and the dataset are also available to reproduce the results
-and allow the user to adapt the code
-(see http://ihsn.org/home/projects/sdc-practice). Extracts of this code
-are presented in this section to illustrate several steps of the anonymization process.
+variables. We also show how this can be achieved using *sdcApp*, the GUI for 
+the open source and free *sdcMicro* *R* package. 
 
 .. NOTE:: 
 	The choices of methods and parameters in 
@@ -81,78 +78,29 @@ as this is a hypothetical dataset.
 Step 2: Data preparation and exploring data characteristics
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The first step is to explore the data. To analyze the data in *R* we
-first have to read the data into *R*. In our case, the data is saved in
-a *STATA* file (.dta file). To read *STATA* files, we need to load the *R*
-package *foreign* (see the Section 
-`Read functions in R <sdcMicro.html#Read functions in R>`__ 
-on importing other data formats in
-*R*). We also load the *sdcMicro* package and several other packages
-used later for the computation of the utility measures. If these
-packages are not yet installed, you should do so before trying to load
-them. The *R* code for this case study demonstrates how to do this.
+The first step is to explore the data. First launch *sdcApp* and specify the
+output directory (see the Section 
+`Starting sdcApp <introsdcApp.html#Starting sdcApp`__). To analyze the data in *sdcApp* we
+first have to load the dataset. 
+In our case, the data is saved as a *STATA* file (.dta file). (see the Section 
+`Loading data <loadprepdata.html#Loading data>`__ 
+on importing data in *sdcApp*). Load the dataset case_1_data.dta with the default
+options for string conversion and dropping variables with only missing values.
+After loading the dataset, the dataset is shown in the Microdata tab. 
 
-.. code-block:: R
-   :linenos:
-   :caption: Loading required packages
-   :name: code91
+On top of the table we can check the name of the loaded dataset, 
+the number of variables and the number of 
+observation, as shown in :numref:`fig131`. Note that the variables ETHNICITY and 
+LANGUAGE were dropped due to all missing values in these variables. The loaded 
+dataset contains 10,574 observations and 66 variables.
+
+.. _fig131:
+
+.. figure:: media/case1LoadedData.png
+   :align: center
    
-   # Load required packages   
-   library(foreign)   # for read/write function for STATA files
-   library(sdcMicro)  # sdcMicro package with functions for the SDC process
-   library(laeken)    # for GINI
-   library(reldist)   # for GINI
-   library(bootstrap) # for bootstrapping
-   library(ineq)      # for Lorenz curves
-
-After setting the working directory to the directory where the *STATA*
-file is stored, we load the data into the object called *file*. All
-output, unless otherwise specified, is saved in the working directory.
-
-.. code-block:: R
-   :linenos:
-   :caption: Loading the data
-   :name: code92
-
-   #  Set working directory
-   setwd("C:/WorldBank/CaseStudy/")
-
-   # Specify file name
-   fname <- " case_1_data.dta"
-   
-   # Read-in file
-   file <- read.dta(fname, convert.factors = F) # factors as numeric code
-
-We check the number of variables, number of observations and variable
-names, as shown in :numref:`code93`.
-
-.. code-block:: R
-   :linenos:
-   :caption: Number of individuals and variables and variable names
-   :name: code93
-
-   dim(file) # Dimensions of file (observations, variables)
-   ## [1] 10574 68
-
-   colnames(file) # Variable names
-   ##  [1] "REGION"        "DIST"          "URBRUR"        "WGTHH"
-   ##  [5] "WGTPOP"        "IDH"           "IDP"           "HHSIZE"
-   ##  [9] "GENDER"        "REL"           "MARITAL"       "AGEYRS"
-   ## [13] "AGEMTH"        "RELIG"         "ETHNICITY"     "LANGUAGE"
-   ## [17] "MORBID"        "MEASLES"       "MEDATT"        "CHWEIGHTKG"
-   ## [21] "CHHEIGHTCM"    "ATSCHOOL"      "EDUCY"         "EDYRS"
-   ## [25] "EDYRSCURRAT"   "SCHTYP"        "LITERACY"      "EMPTYP1"
-   ## [29] "UNEMP1"        "INDUSTRY1"     "EMPCAT1"       "WHOURSWEEK1"
-   ## [33] "OWNHOUSE"      "ROOF"          "TOILET"        "ELECTCON"
-   ## [37] "FUELCOOK"      "WATER"         "OWNAGLAND"     "LANDSIZEHA"
-   ## [41] "OWNMOTORCYCLE" "CAR"           "TV"            "LIVESTOCK"
-   ## [45] "INCRMT"        "INCWAGE"       "INCBONSOCALL"  "INCFARMBSN"
-   ## [49] "INCNFARMBSN"   "INCRENT"       "INCFIN"        "INCPENSN"
-   ## [53] "INCOTHER"      "INCTOTGROSSHH" "FARMEMP"       "THOUSEXP"
-   ## [57] "TFOODEXP"      "TALCHEXP"      "TCLTHEXP"      "TFURNEXP"
-   ## [61] "THLTHEXP"      "TTRANSEXP"     "TCOMMEXP"      "TRECEXP"
-   ## [65] "TEDUEXP"       "TRESTHOTEXP"   "TMISCEXP"      "TANHHEXP"
-
+   Microdata tab after loading case study dataset
+	
 The dataset has 10,574 individuals in 2,000 households and contains 68
 variables. The survey corresponds to a population of about 4.3 million
 individuals, which means that the sample is relatively small and the
@@ -189,21 +137,30 @@ they were present, would need to be removed at this stage. Examples of
 direct identifiers would be names, telephone numbers, geographical
 location coordinates, etc.
 
-.. code-block:: R
-   :linenos:
-   :caption: Tabulation of the variable ‘gender’ and summary statistics for the variable ‘total annual expenditures’ in *R*
-   :name: code94
-   
-   # tabulation of variable GENDER (sex, categorical)
-   table(file$GENDER, useNA = "ifany") 
-   ##    0    1
-   ## 5448 5126
+Before exploring the data, the variable type of all variables needs to be checked and,
+if necessary, be adapted. Categorical key variables need to be of type *factor* and 
+continuous key variables need to be of type *numeric*. 
 
-   # summary statistics for variable TANHHEXP (total annual household expenditures, 
-   # continuous)
-   summary(file$TANHHEXP) 
-   ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.
-   ##     498   15550   17290   28560   29720  353200
+.. _fig132:
+
+.. figure:: media/case1ExploreVarType.png
+   :align: center
+   
+   Check variable type
+
+.. _fig132:
+
+.. figure:: media/case1ExploreCat.png
+   :align: center
+   
+   Summary statistics for categorical variable, example  variable ‘gender’ 
+   
+.. _fig132:
+
+.. figure:: media/case1ExploreCont.png
+   :align: center
+   
+   Summary statistics for continuous variable, example variable ‘total annual expenditures’
 
 .. _tab91:
 
@@ -217,7 +174,7 @@ location coordinates, etc.
     1      IDH                Household ID                           HH        .                  1-2,000   
     2      IDP                Individual ID                          IND       .                  1-33                                                                        
     3      REGION             Region                                 HH        categorical        1-6       
-    4      DISTRICT           District                               HH        categorical        101-1105  
+    4      DIST               District                               HH        categorical        101-1105  
     5      URBRUR             Area of residence                      HH        categorical        1, 2      
     6      WGTHH              Individual weighting coefficient       HH        weight             31.2-8495       
     7      WGTPOP             Population weighting coefficient       IND       weight             45.8-93452.2    
@@ -238,7 +195,7 @@ location coordinates, etc.
     22     ATSCHOOL           Currently enrolled in school           IND       categorical        0, 1                             
     23     EDUCY              Highest                                IND       categorical        1-6       
                               level of education attended                                                                      
-    24     EDYEARS            Years of education                     IND       semi-continuous    0-18      
+    24     EDYRS              Years of education                     IND       semi-continuous    0-18      
     25     EDYRSCURRAT        Years of education                     IND       semi-continuous    1-18      
                               for currently enrolled                                                                      
     26     SCHTYP             Type of                                IND       categorical        1-3, 9    
@@ -249,7 +206,7 @@ location coordinates, etc.
     30     INDUSTRY1          Industry                               IND       categorical        1-10      
                               classification (1-digit)                                                                     
     31     EMPCAT1            Employment categories                  IND       categorical        11, 12, 13, 14, 21, 22         
-    32     WHOURSLASTWEEK1    Hours worked last week                 IND       continuous         0-154                                                                   
+    32     WHOURSWEEK1        Hours worked last week                 IND       continuous         0-154                                                                   
     33     OWNHOUSE           Ownership of dwelling                  HH        categorical        0, 1                                                                    
     34     ROOF               Main material used for roof            IND       categorical        1-5, 9    
     35     TOILET             Main toilet facility                   HH        categorical        1-4, 9                                                                  
@@ -262,7 +219,7 @@ location coordinates, etc.
     41     OWNMOTORCYCLE      Ownership of motorcycle                HH        categorical        0, 1                                                                           
     42     CAR                Ownership of car                       HH        categorical        0, 1      
     43     TV                 Ownership of television                HH        categorical        0, 1      
-    44     LIFESTOCK          Number of                              HH        semi-continuous    0-25      
+    44     LIVESTOCK          Number of                              HH        semi-continuous    0-25      
                               large-sized livestock owned                                                                         
     45     INCRMT             Income – Remittances                   HH        continuous                
     46     INCWAGE            Income - Wages and salaries            HH        continuous                
@@ -276,7 +233,7 @@ location coordinates, etc.
     51     INCFIN             Income - Financial                     HH        continuous                
     52     INCPENSN           Income - Pensions/social assistance    HH        continuous                
     53     INCOTHER           Income - Other                         HH        continuous                
-    54     INCTOTGROSHH       Income - Total                         HH        continuous                
+    54     INCTOTGROSSHH      Income - Total                         HH        continuous                
     55     FARMEMP                                                                                       
     56     TFOODEXP           Total expenditure on food              HH        continuous                
     57     TALCHEXP           Total expenditure on alcoholic         HH        continuous                                                                             

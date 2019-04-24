@@ -20,3 +20,4 @@ also known as microdata anonymization.
    export
    reproducibility
    undo
+   casestudies

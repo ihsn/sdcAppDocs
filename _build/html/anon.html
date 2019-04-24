@@ -117,6 +117,7 @@
 <li class="toctree-l1"><a class="reference internal" href="export.html">Export data and reports</a></li>
 <li class="toctree-l1"><a class="reference internal" href="reproducibility.html">Reproducibility</a></li>
 <li class="toctree-l1"><a class="reference internal" href="undo.html">Undo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="casestudies.html">Case Studies (Illustrating the SDC Process)</a></li>
 </ul>
 
             
@@ -184,29 +185,61 @@
   <div class="section" id="anonymization-methods">
 <h1>Anonymization methods<a class="headerlink" href="#anonymization-methods" title="Permalink to this headline">¶</a></h1>
 <p>Once the disclosure risk is evaluated and is too high for release, SDC methods need
-to be applied to the variables to reduce the risk. This process is a iterative, i.e.,
+to be applied to the variables to reduce the risk. This process is iterative, i.e.,
 after applying a certain method with a set of parameters, the disclosure risk
 needs to be reassessed and the information loss needs to be evaluated. If the result is not
 satisfactory, other methods can be applied to other variables. It is also possible to
-undo the method and reapply the same method with a different  set of parameters.</p>
+undo the method (see <a class="reference external" href="undo.html">Undo</a>) and reapply the same method with a different set of parameters.</p>
 <p>In this section, we provide a brief description of common SDC methods for microdata and
 show how to use these in <em>sdcApp</em>. For more information on the choice of the
-appropriate method and more detailed information on the methods themselves, we refer to …</p>
+appropriate method and more detailed information on the methods themselves, we refer to
+the respective section in the SDC theory guide (link).</p>
 <div class="section" id="recoding">
 <h2>Recoding<a class="headerlink" href="#recoding" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="global-recoding">
 <h3>Global recoding<a class="headerlink" href="#global-recoding" title="Permalink to this headline">¶</a></h3>
-<p>Global recoding combines several categories of a categorical variable or constructs
+<p>Global recoding combines several categories (levels) of a categorical variable or constructs
 intervals for continuous variables. This reduces the number of categories available
 in the data and potentially the disclosure risk, especially for categories with few
 observations, but also, importantly, it reduces the level of detail of information
 available to the analyst.</p>
-<p>Variable needs to be of type factor and key variable</p>
-<p>Variables can already be recoded before on data tab</p>
+<p>In order to perform global recoding in <em>sdcApp</em>, navigate to on the <strong>Anonymize</strong> tab and
+select <strong>Recoding</strong> from the left sidebar. First select the variable to be recoded. In the
+example in <a class="reference internal" href="#fig81"><span class="std std-numref">Fig. 30</span></a> the semi-continuous variable age is selected. Only
+variables selected as categorical key variables in the problem setup can be recoded here.</p>
+<p>add: distribution is shown to determine breaks: refer to theory guide, also add in screenshot</p>
+<p>Next select all the existing levels in the variable to be combined. In the example, we
+select all values of age equal or larger to 85. Behind each value the number of observations
+in the dataset with this value is displayed. The label of the variable to be created
+is by default the concatenation of the labels of all combined values (85_88_90_95), but can
+be changed to any string. In the example the new label is 85+.</p>
+<p>In case the system missing value (:code:NA) should be included in the newly created level,
+set the option Add missing values to new factor level? to Yes. This could be for example
+useful if a new group is created combining other and not applicable.
+The default of this option is No.</p>
 <div class="figure align-center" id="id1">
 <span id="fig81"></span><img alt="_images/anonGlobalRecodeSettings.png" src="_images/anonGlobalRecodeSettings.png" />
 <p class="caption"><span class="caption-number">Fig. 30 </span><span class="caption-text">Settings for global recoding to recode the variable age</span></p>
 </div>
+<p>After selecting the variable, levels and specifying a new label the variable is recoded
+by clicking Recode key variable. The risk measures are immediately updated once the method
+is applied.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">When exploring the recoded variable, the old levels still appear in the
+frequency table. They stay in the variable with 0 observations.</p>
+</div>
+<p>For each group (new level), this process needs to be repeated. If, for example, age should
+be recoded in 5-year age bands, these steps need to be carried out for each 5-year
+age group separately.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Global recoding for a variable with many different levels, such as age, can be a
+daunting task in <em>sdcApp</em>, as it involves many clicks and is prone to making mistakes.
+As an alternative, one could perform the recoding in another statistical software
+before loading the data in <em>sdcApp</em>. This would influence the initial risk levels.</p>
+</div>
+<p>add: Variables can already be recoded before on data tab</p>
 </div>
 <div class="section" id="top-and-bottom-coding">
 <h3>Top and bottom coding<a class="headerlink" href="#top-and-bottom-coding" title="Permalink to this headline">¶</a></h3>
@@ -222,21 +255,34 @@ the higher the identification risk. One solution could be grouping the values at
 of the distribution into one category. This reduces the risk for those observations, and,
 importantly, does so without reducing the data utility for the other observations in the
 distribution.</p>
-<div class="figure align-center" id="id2">
-<span id="fig82"></span><img alt="_images/anonTopcodingSettings.png" src="_images/anonTopcodingSettings.png" />
-<p class="caption"><span class="caption-number">Fig. 31 </span><span class="caption-text">Settings for topcoding the variable income at 8 million</span></p>
-</div>
+<p>In order to perform top or bottom coding in <em>sdcApp</em>, navigate to on the <strong>Anonymize</strong>
+tab and select <strong>Top/bottom coding</strong> from the left sidebar. First select the variable
+to be recoded. In the example in <a class="reference internal" href="#fig82"><span class="std std-numref">Fig. 31</span></a> the continuous variable income
+is selected. Only variables of type numeric can be top or bottom coded.</p>
+<p>add: boxplot to check distribution</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">Top and bottom coding ca only be applied to numeric variables. If age, as in our example,
 is converted to factor, the global recoding method needs to be used, in order to
 topcode age by grouping all values above the threshold.</p>
 </div>
+<p>Next select top or bottom coding. In case of top coding all values above the set threshold
+are replaced, in case of bottom coding all values below the set threshold are replaced.
+Set the threshold value and replacement value by entering these in the numeric fields.
+After entering the threshold and replacement values, the number of records with values
+below/above the threshold that are replaced is shown.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">IT is advised to use a replacement value different than the threshold value,
+<p class="last">It is advised to use a replacement value different than the threshold value,
 such as the weighted mean or median to reduce information loss. The replacement
 value needs to be computed in a different software and manually inserted in <em>sdcApp</em>.</p>
+</div>
+<p>After selecting the variable, type and specifying the threshold and replacement values,
+the variable is topcoded by clicking Apply Top/Bottom-Coding. The risk measures are
+automatically updated after the method is applied.</p>
+<div class="figure align-center" id="id2">
+<span id="fig82"></span><img alt="_images/anonTopcodingSettings.png" src="_images/anonTopcodingSettings.png" />
+<p class="caption"><span class="caption-number">Fig. 31 </span><span class="caption-text">Settings for topcoding the variable income at 8 million</span></p>
 </div>
 </div>
 </div>

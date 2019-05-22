@@ -118,18 +118,26 @@ automatically updated after the method is applied.
    :align: center
    
    Settings for topcoding the variable income at 8 million
-
-k-Anonimity / local suppression
+	
+k-Anonymity / local suppression
 --------------------------------
 It is common in surveys to encounter values for certain variables or combinations
 of quasi-identifiers (keys) that are shared by very few individuals. When this occurs, 
 the risk of re-identification for those respondents is higher than the rest of the 
-respondents (see the Section k-anonymity). Often local suppression is used after 
+respondents. Often local suppression is used after 
 reducing the number of keys in the data by recoding the appropriate variables. 
 Recoding reduces the number of necessary suppressions as well as the computation 
-time needed for suppression. Suppression of values means that values of a variable 
+time needed for computing the suppression pattern. Suppression of values means that values of a variable 
 are replaced by a missing value (NA in R). The the Section k-anonymity discusses how 
 missing values influence frequency counts and k-anonymity. 
+
+In order to perform local suppression to achieve k-anonymity in *sdcApp*, 
+navigate to on the **Anonymize** tab and select **k-Anonimity** from the left sidebar. 
+Local suppression is always performed on the complete set off selected categorical
+key variables.
+
+In order to apply the default local suppression algorithm, the user only needs to set the 
+level of k to be achieved.
 
 .. _fig83:
 
@@ -138,8 +146,14 @@ missing values influence frequency counts and k-anonymity.
    
    Settings for local suppression to achieve 3-anonimity
    
+add: overview of suppressions /suppression patterns
+
 Importance
 ~~~~~~~~~~
+By default the algorithm considers variables with many different levels first. Therefore,
+it is more likely that these variables will contain suppressed values. Sometimes variables
+with many different levels are important for the 
+
 .. _fig84:
 
 .. figure:: media/anonLocSupSettingsImportance.png

@@ -167,6 +167,9 @@ as discussed in the next sections.
    :align: center
    
    Microdata tab after loading dataset 
+   
+   
+maxrequestsize option for loading larger files
 
 Inspect and explore data
 ------------------------
@@ -232,6 +235,12 @@ Modify factor variable
 ~~~~~~~~~~~~~~~~~~~~~~
 Recoding (see Recoding)
 
+.. NOTE::
+	(this note may come in other places as well) *sdcApp* is an aid for completing the
+	microdata anonymization process. However, sometimes it may be easier and quicker to 
+	use other statistical software packages for performing data preparation steps, such as 
+	recoding.
+	
 Create stratification variable
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

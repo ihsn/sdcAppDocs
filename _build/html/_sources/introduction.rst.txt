@@ -6,7 +6,7 @@ What is sdcApp?
 
 *sdcApp* is the Graphical User Interface (GUI) for the R package *sdcMicro* (see
 `here <https://cran.r-project.org/web/packages/sdcMicro/index.html>`_). The *sdcApp* 
-opens the functionality of sdcMicro to users not familiar with the statistical
+opens the functionality of *sdcMicro* to users not familiar with the statistical
 programming language *R*. *sdcMicro* is an add-on package for the statistical software *R* 
 for Statistical Disclosure Control (SDC) of microdata and includes functions for risk measurement, 
 anonymization and utility measurement for
@@ -26,17 +26,24 @@ and methodology for protecting microdata.
 What is the purpose of the manual?
 ----------------------------------
 This manual is designed to provide step-by-step guidance through the process of anonymizing a
-dataset with microdata. Both the background information on methods and measures is 
+dataset with microdata. Both limited background information on methods and measures is 
 provided as well as instructions on how to complete these steps in sdcApp. As *sdcApp* is a 
 GUI for the *sdcMicro* package, users familiar with using *R* for statistical analysis
 may prefer to carry out the anonymization process using *R* from command-line. 
 More information and guidance on using *sdcMicro* from command-line 
 is available in the SDC Practice Guide available `here <https://sdcpractice.readthedocs.io/en/latest/>`_.
-This guide also provides more detailed background information on SDC.
+A theory guide is available `here <https://statistical-disclosure-control-for-microdata-theory.readthedocs.io/en/latest/>`_
+and provides more detailed background information on the SDC process, methods and measures.
 
 Background literature on SDC for microdata
 ------------------------------------------
-Add here links to websites/books
+There is a broad scientific literature available on SDC for microdata. The theory guide 
+contains many references to the appropriate literature. Two books written by practitioners in
+NSOs, which give a complete overview are especially worth mentioning:
+
+Hundepool
+
+Templ
 
 Outline of this guide
 ---------------------

@@ -21,7 +21,11 @@ ordered by region with suppressed region value Need to replace existing ID
 In order to export the dataset, click on blue button **Save dataset**. The dataset is saved
 to the 
 
-By clicking on the blue button Save script to file at the top of the page, the script is saved as R script (extension .R) on disk to the selected storage path on the About/Help tab (see Introduction to sdcApp). The filename of the exported script starts with ‘exportedScript_sdcMicro’ followed by a date and time stamp, e.g., ‘exportedScript_sdcMicro_20181010_1212.R’.
+By clicking on the blue button Save script to file at the top of the page, the script is 
+saved as R script (extension .R) on disk to the selected storage path on the 
+About/Help tab (see Introduction to sdcApp). The filename of the exported script 
+starts with ‘exportedScript_sdcMicro’ followed by a date and time stamp, e.g., 
+‘exportedScript_sdcMicro_20181010_1212.R’.
 , exported two with file name... Exported to 
 
 the microdata, select
@@ -60,6 +64,7 @@ It is extremely important to document the SDC process of microdata both for inte
 use as well as for external use. The internal report should contain detailed descriptions
 of all steps carried out as well as reasoning for 
 
+Generic drafts of both an 
 
 Internal report
 ~~~~~~~~~~~~~~~
@@ -70,23 +75,23 @@ replication of the anonymized dataset and is important for supervisory authoriti
 to ensure the anonymization process is sufficient to guarantee anonymity according 
 to the applicable legislation.
 
+
+
 Report is just technical overview, not complete
 
 file path, name of file
 
 
-.. _fig102:
+.. _fig103:
 
-.. figure:: media/reproScript.png
+.. figure:: media/exportReportInternal.png
    :align: center
    
    Exporting an internal report
 
 External report
 ~~~~~~~~~~~~~~~
-The external report
-
-External reporting informs the user that the data has been anonymized, 
+The external report informs the user that the data has been anonymized, 
 provides information for valid analysis on the data and explains the limitations to 
 the data as a result of the anonymization. A brief description of the methods used 
 can be included. The release of anonymized microdata should be accompanied by the 
@@ -96,4 +101,10 @@ information on the anonymization methods that allow researchers to do valid anal
 
 file path, name of file
 
+.. _fig104:
+
+.. figure:: media/exportReportExternal.png
+   :align: center
+   
+   Exporting an external report
 

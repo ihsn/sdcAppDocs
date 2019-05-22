@@ -173,19 +173,61 @@
 <p>Based on the analysis of the disclosure scenarios (see ), the user needs can make the variable
 selection in <em>sdcApp</em> and set some other parameters in order to define the
 so-called SDC problem. Once the data is loaded and prepared,
-the tab <em>Microdata</em> shows a variable selection matrix in the main panel. The right sidebar
-shows several parameter settings and allows to have a quck summary view of each of the variables
+the tab <em>Anonymize</em> shows a variable selection matrix in the main panel. The right sidebar
+shows several parameter settings and allows to have a quick summary view of each of the variables
 in the loaded dataset.</p>
 <div class="section" id="variable-selection">
 <h2>Variable selection<a class="headerlink" href="#variable-selection" title="Permalink to this headline">¶</a></h2>
 <p>In order to setup an SDC problem the user needs to make a variable selection. The variable
 selection itself is the result of the analysis of diclosure scenarios and is beyond the scope
 of this manual. We refer to Chapter in for a thorough discussion of disclosure scenarios.</p>
-<p>The matrix shown in <a class="reference internal" href="#fig11"><span class="std std-numref">Fig. 22</span></a> contain one row for each variable in the loaded dataset
-and nine different columns as described in <a class="reference internal" href="#tabsetup1"><span class="std std-numref">Table 2</span></a>. The user can select for each
-variable the function it has in the sDC problem. No selection needs to
+<p>The matrix shown in <a class="reference internal" href="#fig11"><span class="std std-numref">Fig. 23</span></a> contain one row for each variable in the loaded dataset
+and nine different columns as described in <a class="reference internal" href="#tabsetup1"><span class="std std-numref">Table 2</span></a>.</p>
+<div class="figure align-center" id="id1">
+<span id="fig11"></span><img alt="_images/setupTable.png" src="_images/setupTable.png" />
+<p class="caption"><span class="caption-number">Fig. 23 </span><span class="caption-text">Table on Anonymize tab for variable selection</span></p>
+</div>
+<span id="tabsetup1"></span><table border="1" class="colwidths-auto docutils align-center" id="id2">
+<caption><span class="caption-number">Table 2 </span><span class="caption-text">Columns in setup table</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Column header</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Variable name</td>
+<td>Name of variable in original dataset</td>
+</tr>
+<tr class="row-odd"><td>Type</td>
+<td>Variable type in <em>R</em> (factor, integer, numeric, character)</td>
+</tr>
+<tr class="row-even"><td>Key variables</td>
+<td>Radio buttons to select variable as categorical or continuous key variable</td>
+</tr>
+<tr class="row-odd"><td>Weight</td>
+<td>Column to select variable as weight variable</td>
+</tr>
+<tr class="row-even"><td>Hierarchical identifier</td>
+<td>Column to select variable as hierarchical identifier</td>
+</tr>
+<tr class="row-odd"><td>PRAM</td>
+<td>Column to select variable for PRAM method</td>
+</tr>
+<tr class="row-even"><td>Delete</td>
+<td>Column to select variable to be deleted from released dataset</td>
+</tr>
+<tr class="row-odd"><td>Number of levels</td>
+<td>Number of different values (including NA/missing) in a categorical (type factor) variable</td>
+</tr>
+<tr class="row-even"><td>Number of missing</td>
+<td>Number of records with missing value for this particular variable</td>
+</tr>
+</tbody>
+</table>
+<p>The user can select for each
+variable the function it has in the SDC problem. No selection needs to
 be made for variables that are not relevant to the
-anonymization process and can be released without further treatment. Each of the different
+anonymization process and can be released without further treatment. Each of the
 columns is described in more detail:</p>
 <ol class="arabic simple">
 <li><dl class="first docutils">
@@ -198,7 +240,7 @@ must be renamed after exporting the dataset in a software of choice.</dd>
 </li>
 <li><dl class="first docutils">
 <dt><strong>Type</strong></dt>
-<dd>Each variable has a internal <em>R</em> type. The different types include
+<dd>Each variable has a internal variable type in <em>R</em>. The different types include
 numeric, integer, factor and string. Each of the different functions in the
 SDC process requires a specific variable type, e.g., the weight needs to be numeric.
 If a variable is not of the appropriate type, the type of the variable needs to be changed
@@ -208,11 +250,13 @@ before a selection is made (see the Section <a class="reference external" href="
 <li><dl class="first docutils">
 <dt><strong>Key variables</strong></dt>
 <dd>Variables that are determined as key variables in the disclosure
-scenario need to be selected here. By default the radiobutton is at <em>No</em>. A variable
-can either be a categorical key variable (<em>cat.</em>) or a numeric key variable (<em>cont.</em>).
+scenario need to be selected with the radiobutton.
+Key variables can be either categorical (select <em>cat.</em>) or numeric(select <em>cont.</em>).
 The sets of categorical key variables and numeric key variables are treated independently
 in <em>sdcApp</em>. Categorical key variables can be of type integer or factor. Numeric key variables
-can be of type integer or numeric. At least one variable needs to be selected as
+can be of type integer or numeric. If a variable is not a key variable, the default
+value <em>No</em> should be selected.
+At least one variable needs to be selected as
 categorcial key variable in order to create an SDC problem.</dd>
 </dl>
 </li>
@@ -227,19 +271,22 @@ variable needs to be of type numeric.</dd>
 <dd>If the data has a hierarchical structure, e.g., individuals
 in households, the variable that defines this hierarchy needs to be selected as
 hierarchical identifier (see also the Section <cite>Risk</cite>). This could be for instance a household ID. The hierarchical
-identifier needs to be a unique ID in the complete dataset and the same for each
-member of the hierarchical unit (household). If the unique hierachical indentifier is
+identifier needs to be unique for each hierarchical unit (e.g., household)
+in the complete dataset and the same for each
+member of the hierarchical unit (e.g., household member).
+The hierarchical identifier can be of any type, but it is recommended not to use a string
+variable. Only one variable can be selected as hierarchical identifier.
+If the unique hierachical indentifier is
 composed of several variabels, e.g., a geographical identifier, such as region, and
 a household ID which is unique within regions but not across, a unique hierarchical
 identifier needs to generated before importing the data into <em>sdcApp</em>. This can be done in
-a software of choice by concatenating the different components.
-The household identifier can be of type …</dd>
+a software of choice by concatenating the different components.</dd>
 </dl>
 </li>
 <li><dl class="first docutils">
 <dt><strong>PRAM</strong></dt>
 <dd>If some variables are considered for application of the PRAM method (see <a class="reference external" href="anon.html#PRAM">PRAM</a>),
-they need to be specified at this stage. PRAM variables can be of type.</dd>
+they need to be specified at this stage. PRAM variables must be of type factor.</dd>
 </dl>
 </li>
 <li><dl class="first docutils">
@@ -271,55 +318,14 @@ variable is not suitable for the selected variable function, a popup window with
 message will appear. If necessary, the variable type needs to be changed before setting up the SDC
 problem.</p>
 </div>
-<div class="figure align-center" id="id1">
-<span id="fig11"></span><img alt="_images/setupTable.png" src="_images/setupTable.png" />
-<p class="caption"><span class="caption-number">Fig. 22 </span><span class="caption-text">Table on Anonymize tab for variable selection</span></p>
-</div>
-<span id="tabsetup1"></span><table border="1" class="colwidths-auto docutils align-center" id="id2">
-<caption><span class="caption-number">Table 2 </span><span class="caption-text">Columns in setup table</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Column header</th>
-<th class="head">Description</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>Variable name</td>
-<td>Name of variable in original dataset</td>
-</tr>
-<tr class="row-odd"><td>Type</td>
-<td>Variable type in R (factor, integer, numeric, character)</td>
-</tr>
-<tr class="row-even"><td>Key variables</td>
-<td>Radio buttons to select variable as cat. or cont. key variable</td>
-</tr>
-<tr class="row-odd"><td>Weight</td>
-<td>Column to select variable as weight variable</td>
-</tr>
-<tr class="row-even"><td>Hierarchical identifier</td>
-<td>Column to select variable as hierarchical identifier</td>
-</tr>
-<tr class="row-odd"><td>PRAM</td>
-<td>Column to select variable for PRAM method</td>
-</tr>
-<tr class="row-even"><td>Delete</td>
-<td>Column to select variable to be deleted from released dataset</td>
-</tr>
-<tr class="row-odd"><td>Number of levels</td>
-<td>Number of different values (including NA/missing) in a categorical (type factor) variable</td>
-</tr>
-<tr class="row-even"><td>Number of missing</td>
-<td>Number of records with missing value for this particular variable</td>
-</tr>
-</tbody>
-</table>
 <p>Once a valid variable selection is made, a blue button will appear at the bottom of the
 setup table:</p>
 <div class="figure align-center" id="id3">
 <span id="fig12"></span><img alt="_images/setupButton.png" src="_images/setupButton.png" />
-<p class="caption"><span class="caption-number">Fig. 23 </span><span class="caption-text">Blue setup button appears below the setup table if the variable selection is valid</span></p>
+<p class="caption"><span class="caption-number">Fig. 24 </span><span class="caption-text">Blue setup button appears below the setup table if the variable selection is valid</span></p>
 </div>
 <p>If a variable selection is invalid, the setup button will disappear and only reappears once
-all invalid choices are corrected. Popup windows as shown in <a class="reference internal" href="#fig13"><span class="std std-numref">Fig. 24</span></a>,
+all invalid choices are corrected. Popup windows as shown in <a class="reference internal" href="#fig13"><span class="std std-numref">Fig. 25</span></a>,
 will guide the user through the variables
 that need to be fixed. The most common invalid choices are the selection of more
 than one function for a variable and the selection of a function that does not correspond
@@ -330,7 +336,7 @@ as outlined in the next section.</p>
 <p class="first admonition-title">Note</p>
 <p class="last">If an invalid variable choice is made, such as an invalid variable type
 or a variable is selected for more than one choice, a pop-up window with an informative
-error message is shown. An example is shown in <a class="reference internal" href="#fig13"><span class="std std-numref">Fig. 24</span></a>. The error
+error message is shown. An example is shown in <a class="reference internal" href="#fig13"><span class="std std-numref">Fig. 25</span></a>. The error
 message can be closed by clicking <em>Continue</em>.
 It is important to undo the invalid selection after clicking away
 the error message, as this doesn’t happen automatically.
@@ -338,19 +344,28 @@ Not correcting the selection will
 make it later difficult to trace back the invalid selections.
 The blue setup button disappears and reappears once the problem is fixed.</p>
 </div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The variable selection cannot be saved before setting up the SDC problem. If, for instance,
+a variable is not of the appropriate variable type for its use in the SDC problem,
+the variable type needs to be changed on the <em>Microdata</em> tab. By returning to the
+<em>Microdata</em> tab, all selections made on the <em>Anonymize</em> tab are lost and need to be reselected.
+Therefore, it is recommended to first check all variable types before starting the
+variable selection.</p>
+</div>
 <div class="figure align-center" id="id4">
 <span id="fig13"></span><img alt="_images/setupErrorMessage.png" src="_images/setupErrorMessage.png" />
-<p class="caption"><span class="caption-number">Fig. 24 </span><span class="caption-text">Example of a popup window with an error message after an invalid variable choice</span></p>
+<p class="caption"><span class="caption-number">Fig. 25 </span><span class="caption-text">Example of a popup window with an error message after an invalid variable choice</span></p>
 </div>
 </div>
 <div class="section" id="settings">
 <h2>Settings<a class="headerlink" href="#settings" title="Permalink to this headline">¶</a></h2>
 <p>Besides the variable selection, there are two more parameters to be set before creating
 the SDC problem: alpha and seed. Both parameters can be set with sliders
-in the right sidepanel (see <a class="reference internal" href="#fig14"><span class="std std-numref">Fig. 25</span></a>).</p>
+in the right sidepanel (see <a class="reference internal" href="#fig14"><span class="std std-numref">Fig. 26</span></a>).</p>
 <div class="figure align-center" id="id5">
 <span id="fig14"></span><img alt="_images/setupAdditionalParameters.png" src="_images/setupAdditionalParameters.png" />
-<p class="caption"><span class="caption-number">Fig. 25 </span><span class="caption-text">Sliders to set additional parameters for the SDC problem</span></p>
+<p class="caption"><span class="caption-number">Fig. 26 </span><span class="caption-text">Sliders to set additional parameters for the SDC problem</span></p>
 </div>
 <div class="section" id="alpha">
 <h3>Alpha<a class="headerlink" href="#alpha" title="Permalink to this headline">¶</a></h3>
@@ -368,7 +383,7 @@ if you want to produce replicable results. The seed is used to initialize the
 random number generator used for probabilistic methods. In <em>sdcApp</em>, the seed can
 be set to any integer value from 0 to 500. To select a value, you can click with
 the mouse pointer on the slider and use the arrow keys (left and right or up and down)
-to select an exact value. In <a class="reference internal" href="#fig14"><span class="std std-numref">Fig. 25</span></a> the seed is set at 388.</p>
+to select an exact value. In <a class="reference internal" href="#fig14"><span class="std std-numref">Fig. 26</span></a> the seed is set at 388.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">In order to replicate exact results when using probabilistic methods, the order in

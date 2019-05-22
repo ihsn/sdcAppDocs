@@ -4,8 +4,8 @@ Setup anonymization problem
 Based on the analysis of the disclosure scenarios (see ), the user needs can make the variable 
 selection in *sdcApp* and set some other parameters in order to define the 
 so-called SDC problem. Once the data is loaded and prepared,
-the tab *Microdata* shows a variable selection matrix in the main panel. The right sidebar
-shows several parameter settings and allows to have a quck summary view of each of the variables
+the tab *Anonymize* shows a variable selection matrix in the main panel. The right sidebar
+shows several parameter settings and allows to have a quick summary view of each of the variables
 in the loaded dataset.
 
 Variable selection
@@ -15,10 +15,40 @@ selection itself is the result of the analysis of diclosure scenarios and is bey
 of this manual. We refer to Chapter in for a thorough discussion of disclosure scenarios.
 
 The matrix shown in :numref:`fig11` contain one row for each variable in the loaded dataset
-and nine different columns as described in :numref:`tabsetup1`. The user can select for each
-variable the function it has in the sDC problem. No selection needs to 
+and nine different columns as described in :numref:`tabsetup1`. 
+
+.. _fig11:
+
+.. figure:: media/setupTable.png
+   :align: center
+   
+   Table on Anonymize tab for variable selection
+
+.. _tabsetup1:
+
+.. table:: Columns in setup table
+   :widths: auto
+   :align: center
+   
+   =========================  =======================================================================================================================
+	Column header              Description
+   =========================  =======================================================================================================================
+   Variable name			   Name of variable in original dataset
+   Type                        Variable type in *R* (factor, integer, numeric, character)
+   Key variables               Radio buttons to select variable as categorical or continuous key variable
+   Weight                      Column to select variable as weight variable
+   Hierarchical identifier     Column to select variable as hierarchical identifier
+   PRAM                        Column to select variable for PRAM method
+   Delete                      Column to select variable to be deleted from released dataset
+   Number of levels            Number of different values (including NA/missing) in a categorical (type factor) variable
+   Number of missing           Number of records with missing value for this particular variable
+   =========================  =======================================================================================================================
+
+
+The user can select for each
+variable the function it has in the SDC problem. No selection needs to 
 be made for variables that are not relevant to the 
-anonymization process and can be released without further treatment. Each of the different 
+anonymization process and can be released without further treatment. Each of the  
 columns is described in more detail:
 
 1.  **Variable name**
@@ -27,18 +57,20 @@ columns is described in more detail:
 	the anonymization process renders a variable name no longer appropriate, the variable 
 	must be renamed after exporting the dataset in a software of choice.
 2.  **Type**
-	Each variable has a internal *R* type. The different types include
+	Each variable has a internal variable type in *R*. The different types include
 	numeric, integer, factor and string. Each of the different functions in the 
 	SDC process requires a specific variable type, e.g., the weight needs to be numeric.
 	If a variable is not of the appropriate type, the type of the variable needs to be changed
 	before a selection is made (see the Section `Convert variable type <loadprepdata.html>`__).
 3.  **Key variables**
 	Variables that are determined as key variables in the disclosure
-	scenario need to be selected here. By default the radiobutton is at *No*. A variable
-	can either be a categorical key variable (*cat.*) or a numeric key variable (*cont.*). 
+	scenario need to be selected with the radiobutton.
+	Key variables can be either categorical (select *cat.*) or numeric(select *cont.*). 
 	The sets of categorical key variables and numeric key variables are treated independently
 	in *sdcApp*. Categorical key variables can be of type integer or factor. Numeric key variables
-	can be of type integer or numeric. At least one variable needs to be selected as 
+	can be of type integer or numeric. If a variable is not a key variable, the default 
+	value *No* should be selected. 
+	At least one variable needs to be selected as 
 	categorcial key variable in order to create an SDC problem.
 4.  **Weight**
 	The sampling weight is used to measure the disclosure risk. The weight
@@ -47,16 +79,19 @@ columns is described in more detail:
 	If the data has a hierarchical structure, e.g., individuals
 	in households, the variable that defines this hierarchy needs to be selected as 
 	hierarchical identifier (see also the Section `Risk`). This could be for instance a household ID. The hierarchical
-	identifier needs to be a unique ID in the complete dataset and the same for each 
-	member of the hierarchical unit (household). If the unique hierachical indentifier is 
+	identifier needs to be unique for each hierarchical unit (e.g., household) 
+	in the complete dataset and the same for each 
+	member of the hierarchical unit (e.g., household member). 
+	The hierarchical identifier can be of any type, but it is recommended not to use a string
+	variable. Only one variable can be selected as hierarchical identifier.
+	If the unique hierachical indentifier is 
 	composed of several variabels, e.g., a geographical identifier, such as region, and
 	a household ID which is unique within regions but not across, a unique hierarchical 
 	identifier needs to generated before importing the data into *sdcApp*. This can be done in
 	a software of choice by concatenating the different components. 
-	The household identifier can be of type ...
 6.  **PRAM**
 	If some variables are considered for application of the PRAM method (see `PRAM <anon.html#PRAM>`__), 
-	they need to be specified at this stage. PRAM variables can be of type.
+	they need to be specified at this stage. PRAM variables must be of type factor.
 7.  **Delete**
 	Variables that need to be deleted from the dataset for release, such as 
 	direct identifiers, need to be selected here. Variables to be deleted can be of any type.
@@ -76,33 +111,6 @@ columns is described in more detail:
 	message will appear. If necessary, the variable type needs to be changed before setting up the SDC
 	problem.
 	
-.. _fig11:
-
-.. figure:: media/setupTable.png
-   :align: center
-   
-   Table on Anonymize tab for variable selection
-
-.. _tabsetup1:
-
-.. table:: Columns in setup table
-   :widths: auto
-   :align: center
-   
-   =========================  =======================================================================================================================
-	Column header              Description
-   =========================  =======================================================================================================================
-   Variable name			   Name of variable in original dataset
-   Type                        Variable type in R (factor, integer, numeric, character)
-   Key variables               Radio buttons to select variable as cat. or cont. key variable
-   Weight                      Column to select variable as weight variable
-   Hierarchical identifier     Column to select variable as hierarchical identifier
-   PRAM                        Column to select variable for PRAM method
-   Delete                      Column to select variable to be deleted from released dataset
-   Number of levels            Number of different values (including NA/missing) in a categorical (type factor) variable
-   Number of missing           Number of records with missing value for this particular variable
-   =========================  =======================================================================================================================
-
 Once a valid variable selection is made, a blue button will appear at the bottom of the 
 setup table:
 
@@ -134,6 +142,14 @@ as outlined in the next section.
 	make it later difficult to trace back the invalid selections. 
 	The blue setup button disappears and reappears once the problem is fixed.
 
+.. NOTE::
+	The variable selection cannot be saved before setting up the SDC problem. If, for instance,
+	a variable is not of the appropriate variable type for its use in the SDC problem, 
+	the variable type needs to be changed on the *Microdata* tab. By returning to the 
+	*Microdata* tab, all selections made on the *Anonymize* tab are lost and need to be reselected.
+	Therefore, it is recommended to first check all variable types before starting the 
+	variable selection.
+	
 .. _fig13:
 
 .. figure:: media/setupErrorMessage.png

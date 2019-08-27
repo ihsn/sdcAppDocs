@@ -1,172 +1,47 @@
 
-
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>Setup anonymization problem &mdash; sdcMicro GUI manual  documentation</title>
-  
 
-  
-  
-  
-  
-
-  
-
-  
-  
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Setup anonymization problem &#8212; sdcMicro GUI manual  documentation</title>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/theme_overrides.css" />
     
-
-  
-
-  
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
     <link rel="author" title="About these documents" href="about.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Risk measurement" href="risk.html" />
     <link rel="prev" title="Loading and Preparing Data" href="loadprepdata.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="risk.html" title="Risk measurement"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="loadprepdata.html" title="Loading and Preparing Data"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">sdcMicro GUI manual  documentation</a> &#187;</li> 
+      </ul>
+    </div>  
 
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
-</head>
-
-<body class="wy-body-for-nav">
-
-   
-  <div class="wy-grid-for-nav">
-
-    
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
-          
-
-          
-            <a href="index.html" class="icon icon-home"> sdcMicro GUI manual
-          
-
-          
-          </a>
-
-          
-            
-            
-          
-
-          
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
-</div>
-
-          
-        </div>
-
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
-              <p class="caption"><span class="caption-text">Table of contents</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation and updating</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introsdcApp.html">Introduction to sdcApp</a></li>
-<li class="toctree-l1"><a class="reference internal" href="loadprepdata.html">Loading and Preparing Data</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Setup anonymization problem</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#variable-selection">Variable selection</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#settings">Settings</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#alpha">Alpha</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#seed">Seed</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#summary-view">Summary view</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="risk.html">Risk measurement</a></li>
-<li class="toctree-l1"><a class="reference internal" href="anon.html">Anonymization methods</a></li>
-<li class="toctree-l1"><a class="reference internal" href="utility.html">Utility measurement</a></li>
-<li class="toctree-l1"><a class="reference internal" href="export.html">Export data and reports</a></li>
-<li class="toctree-l1"><a class="reference internal" href="reproducibility.html">Reproducibility</a></li>
-<li class="toctree-l1"><a class="reference internal" href="undo.html">Undo</a></li>
-<li class="toctree-l1"><a class="reference internal" href="casestudies.html">Case Studies (Illustrating the SDC Process)</a></li>
-</ul>
-
-            
-          
-        </div>
-      </div>
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">sdcMicro GUI manual</a>
-        
-      </nav>
-
-
-      <div class="wy-nav-content">
-        
-        <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
-  <ul class="wy-breadcrumbs">
-    
-      <li><a href="index.html">Docs</a> &raquo;</li>
-        
-      <li>Setup anonymization problem</li>
-    
-    
-      <li class="wy-breadcrumbs-aside">
-        
-            
-            <a href="_sources/setup.rst.txt" rel="nofollow"> View page source</a>
-          
-        
-      </li>
-    
-  </ul>
-
-  
-  <hr/>
-</div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody">
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
             
   <div class="section" id="setup-anonymization-problem">
 <h1>Setup anonymization problem<a class="headerlink" href="#setup-anonymization-problem" title="Permalink to this headline">¶</a></h1>
@@ -185,42 +60,42 @@ of this manual. We refer to Chapter in for a thorough discussion of disclosure s
 and nine different columns as described in <a class="reference internal" href="#tabsetup1"><span class="std std-numref">Table 2</span></a>.</p>
 <div class="figure align-center" id="id1">
 <span id="fig11"></span><img alt="_images/setupTable.png" src="_images/setupTable.png" />
-<p class="caption"><span class="caption-number">Fig. 23 </span><span class="caption-text">Table on Anonymize tab for variable selection</span></p>
+<p class="caption"><span class="caption-number">Fig. 23 </span><span class="caption-text">Table on Anonymize tab for variable selection</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
-<span id="tabsetup1"></span><table border="1" class="colwidths-auto docutils align-center" id="id2">
+<span id="tabsetup1"></span><table class="colwidths-auto docutils align-center" id="id2">
 <caption><span class="caption-number">Table 2 </span><span class="caption-text">Columns in setup table</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Column header</th>
-<th class="head">Description</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>Column header</p></th>
+<th class="head"><p>Description</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>Variable name</td>
-<td>Name of variable in original dataset</td>
+<tbody>
+<tr class="row-even"><td><p>Variable name</p></td>
+<td><p>Name of variable in original dataset</p></td>
 </tr>
-<tr class="row-odd"><td>Type</td>
-<td>Variable type in <em>R</em> (factor, integer, numeric, character)</td>
+<tr class="row-odd"><td><p>Type</p></td>
+<td><p>Variable type in <em>R</em> (factor, integer, numeric, character)</p></td>
 </tr>
-<tr class="row-even"><td>Key variables</td>
-<td>Radio buttons to select variable as categorical or continuous key variable</td>
+<tr class="row-even"><td><p>Key variables</p></td>
+<td><p>Radio buttons to select variable as categorical or continuous key variable</p></td>
 </tr>
-<tr class="row-odd"><td>Weight</td>
-<td>Column to select variable as weight variable</td>
+<tr class="row-odd"><td><p>Weight</p></td>
+<td><p>Column to select variable as weight variable</p></td>
 </tr>
-<tr class="row-even"><td>Hierarchical identifier</td>
-<td>Column to select variable as hierarchical identifier</td>
+<tr class="row-even"><td><p>Hierarchical identifier</p></td>
+<td><p>Column to select variable as hierarchical identifier</p></td>
 </tr>
-<tr class="row-odd"><td>PRAM</td>
-<td>Column to select variable for PRAM method</td>
+<tr class="row-odd"><td><p>PRAM</p></td>
+<td><p>Column to select variable for PRAM method</p></td>
 </tr>
-<tr class="row-even"><td>Delete</td>
-<td>Column to select variable to be deleted from released dataset</td>
+<tr class="row-even"><td><p>Delete</p></td>
+<td><p>Column to select variable to be deleted from released dataset</p></td>
 </tr>
-<tr class="row-odd"><td>Number of levels</td>
-<td>Number of different values (including NA/missing) in a categorical (type factor) variable</td>
+<tr class="row-odd"><td><p>Number of levels</p></td>
+<td><p>Number of different values (including NA/missing) in a categorical (type factor) variable</p></td>
 </tr>
-<tr class="row-even"><td>Number of missing</td>
-<td>Number of records with missing value for this particular variable</td>
+<tr class="row-even"><td><p>Number of missing</p></td>
+<td><p>Number of records with missing value for this particular variable</p></td>
 </tr>
 </tbody>
 </table>
@@ -230,26 +105,25 @@ be made for variables that are not relevant to the
 anonymization process and can be released without further treatment. Each of the
 columns is described in more detail:</p>
 <ol class="arabic simple">
-<li><dl class="first docutils">
-<dt><strong>Variable name</strong></dt>
-<dd>This column specifies the variable name as provided in the original dataset.
+<li><dl class="simple">
+<dt><strong>Variable name</strong></dt><dd><p>This column specifies the variable name as provided in the original dataset.
 Variable names cannot be changed in <em>sdcApp</em>, as they are unique identifiers. If
 the anonymization process renders a variable name no longer appropriate, the variable
-must be renamed after exporting the dataset in a software of choice.</dd>
+must be renamed after exporting the dataset in a software of choice.</p>
+</dd>
 </dl>
 </li>
-<li><dl class="first docutils">
-<dt><strong>Type</strong></dt>
-<dd>Each variable has a internal variable type in <em>R</em>. The different types include
+<li><dl class="simple">
+<dt><strong>Type</strong></dt><dd><p>Each variable has a internal variable type in <em>R</em>. The different types include
 numeric, integer, factor and string. Each of the different functions in the
 SDC process requires a specific variable type, e.g., the weight needs to be numeric.
 If a variable is not of the appropriate type, the type of the variable needs to be changed
-before a selection is made (see the Section <a class="reference external" href="loadprepdata.html">Convert variable type</a>).</dd>
+before a selection is made (see the Section <a class="reference external" href="loadprepdata.html">Convert variable type</a>).</p>
+</dd>
 </dl>
 </li>
-<li><dl class="first docutils">
-<dt><strong>Key variables</strong></dt>
-<dd>Variables that are determined as key variables in the disclosure
+<li><dl class="simple">
+<dt><strong>Key variables</strong></dt><dd><p>Variables that are determined as key variables in the disclosure
 scenario need to be selected with the radiobutton.
 Key variables can be either categorical (select <em>cat.</em>) or numeric(select <em>cont.</em>).
 The sets of categorical key variables and numeric key variables are treated independently
@@ -257,18 +131,18 @@ in <em>sdcApp</em>. Categorical key variables can be of type integer or factor. 
 can be of type integer or numeric. If a variable is not a key variable, the default
 value <em>No</em> should be selected.
 At least one variable needs to be selected as
-categorcial key variable in order to create an SDC problem.</dd>
+categorcial key variable in order to create an SDC problem.</p>
+</dd>
 </dl>
 </li>
-<li><dl class="first docutils">
-<dt><strong>Weight</strong></dt>
-<dd>The sampling weight is used to measure the disclosure risk. The weight
-variable needs to be of type numeric.</dd>
+<li><dl class="simple">
+<dt><strong>Weight</strong></dt><dd><p>The sampling weight is used to measure the disclosure risk. The weight
+variable needs to be of type numeric.</p>
+</dd>
 </dl>
 </li>
-<li><dl class="first docutils">
-<dt><strong>Hierarchical identifier</strong></dt>
-<dd>If the data has a hierarchical structure, e.g., individuals
+<li><dl class="simple">
+<dt><strong>Hierarchical identifier</strong></dt><dd><p>If the data has a hierarchical structure, e.g., individuals
 in households, the variable that defines this hierarchy needs to be selected as
 hierarchical identifier (see also the Section <cite>Risk</cite>). This could be for instance a household ID. The hierarchical
 identifier needs to be unique for each hierarchical unit (e.g., household)
@@ -280,40 +154,41 @@ If the unique hierachical indentifier is
 composed of several variabels, e.g., a geographical identifier, such as region, and
 a household ID which is unique within regions but not across, a unique hierarchical
 identifier needs to generated before importing the data into <em>sdcApp</em>. This can be done in
-a software of choice by concatenating the different components.</dd>
+a software of choice by concatenating the different components.</p>
+</dd>
 </dl>
 </li>
-<li><dl class="first docutils">
-<dt><strong>PRAM</strong></dt>
-<dd>If some variables are considered for application of the PRAM method (see <a class="reference external" href="anon.html#PRAM">PRAM</a>),
-they need to be specified at this stage. PRAM variables must be of type factor.</dd>
+<li><dl class="simple">
+<dt><strong>PRAM</strong></dt><dd><p>If some variables are considered for application of the PRAM method (see <a class="reference external" href="anon.html#PRAM">PRAM</a>),
+they need to be specified at this stage. PRAM variables must be of type factor.</p>
+</dd>
 </dl>
 </li>
-<li><dl class="first docutils">
-<dt><strong>Delete</strong></dt>
-<dd>Variables that need to be deleted from the dataset for release, such as
-direct identifiers, need to be selected here. Variables to be deleted can be of any type.</dd>
+<li><dl class="simple">
+<dt><strong>Delete</strong></dt><dd><p>Variables that need to be deleted from the dataset for release, such as
+direct identifiers, need to be selected here. Variables to be deleted can be of any type.</p>
+</dd>
 </dl>
 </li>
-<li><dl class="first docutils">
-<dt><strong>Number of levels</strong></dt>
-<dd>This column shows the number of unique values in each variable. For instance a gender
+<li><dl class="simple">
+<dt><strong>Number of levels</strong></dt><dd><p>This column shows the number of unique values in each variable. For instance a gender
 variable has typically two different levels. Note that if a variable contains missing
-values, this is also considered as a distinct value.</dd>
+values, this is also considered as a distinct value.</p>
+</dd>
 </dl>
 </li>
-<li><dl class="first docutils">
-<dt><strong>Number of missing</strong></dt>
-<dd>This column indicates the number of missing values in each variable.
+<li><dl class="simple">
+<dt><strong>Number of missing</strong></dt><dd><p>This column indicates the number of missing values in each variable.
 If values were set to NA, the missing value code in R, these are counted here. Other
 missing value codes, such as 9, 99, 998 need to be set to NA
-(see also the Section <a class="reference external" href="loadprepdata.html">Set missing values to NA</a>).</dd>
+(see also the Section <a class="reference external" href="loadprepdata.html">Set missing values to NA</a>).</p>
+</dd>
 </dl>
 </li>
 </ol>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">All variables need to be of the appropriate variable type. If the variable type of a
+<p class="admonition-title">Note</p>
+<p>All variables need to be of the appropriate variable type. If the variable type of a
 variable is not suitable for the selected variable function, a popup window with an error
 message will appear. If necessary, the variable type needs to be changed before setting up the SDC
 problem.</p>
@@ -322,7 +197,7 @@ problem.</p>
 setup table:</p>
 <div class="figure align-center" id="id3">
 <span id="fig12"></span><img alt="_images/setupButton.png" src="_images/setupButton.png" />
-<p class="caption"><span class="caption-number">Fig. 24 </span><span class="caption-text">Blue setup button appears below the setup table if the variable selection is valid</span></p>
+<p class="caption"><span class="caption-number">Fig. 24 </span><span class="caption-text">Blue setup button appears below the setup table if the variable selection is valid</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 <p>If a variable selection is invalid, the setup button will disappear and only reappears once
 all invalid choices are corrected. Popup windows as shown in <a class="reference internal" href="#fig13"><span class="std std-numref">Fig. 25</span></a>,
@@ -333,8 +208,8 @@ with the variable type.</p>
 <p>Before clicking the blue button to setup the SDC problem, several parameters have to be set,
 as outlined in the next section.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">If an invalid variable choice is made, such as an invalid variable type
+<p class="admonition-title">Note</p>
+<p>If an invalid variable choice is made, such as an invalid variable type
 or a variable is selected for more than one choice, a pop-up window with an informative
 error message is shown. An example is shown in <a class="reference internal" href="#fig13"><span class="std std-numref">Fig. 25</span></a>. The error
 message can be closed by clicking <em>Continue</em>.
@@ -345,8 +220,8 @@ make it later difficult to trace back the invalid selections.
 The blue setup button disappears and reappears once the problem is fixed.</p>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">The variable selection cannot be saved before setting up the SDC problem. If, for instance,
+<p class="admonition-title">Note</p>
+<p>The variable selection cannot be saved before setting up the SDC problem. If, for instance,
 a variable is not of the appropriate variable type for its use in the SDC problem,
 the variable type needs to be changed on the <em>Microdata</em> tab. By returning to the
 <em>Microdata</em> tab, all selections made on the <em>Anonymize</em> tab are lost and need to be reselected.
@@ -355,7 +230,7 @@ variable selection.</p>
 </div>
 <div class="figure align-center" id="id4">
 <span id="fig13"></span><img alt="_images/setupErrorMessage.png" src="_images/setupErrorMessage.png" />
-<p class="caption"><span class="caption-number">Fig. 25 </span><span class="caption-text">Example of a popup window with an error message after an invalid variable choice</span></p>
+<p class="caption"><span class="caption-number">Fig. 25 </span><span class="caption-text">Example of a popup window with an error message after an invalid variable choice</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="settings">
@@ -365,7 +240,7 @@ the SDC problem: alpha and seed. Both parameters can be set with sliders
 in the right sidepanel (see <a class="reference internal" href="#fig14"><span class="std std-numref">Fig. 26</span></a>).</p>
 <div class="figure align-center" id="id5">
 <span id="fig14"></span><img alt="_images/setupAdditionalParameters.png" src="_images/setupAdditionalParameters.png" />
-<p class="caption"><span class="caption-number">Fig. 26 </span><span class="caption-text">Sliders to set additional parameters for the SDC problem</span></p>
+<p class="caption"><span class="caption-number">Fig. 26 </span><span class="caption-text">Sliders to set additional parameters for the SDC problem</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 <div class="section" id="alpha">
 <h3>Alpha<a class="headerlink" href="#alpha" title="Permalink to this headline">¶</a></h3>
@@ -385,8 +260,8 @@ be set to any integer value from 0 to 500. To select a value, you can click with
 the mouse pointer on the slider and use the arrow keys (left and right or up and down)
 to select an exact value. In <a class="reference internal" href="#fig14"><span class="std std-numref">Fig. 26</span></a> the seed is set at 388.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">In order to replicate exact results when using probabilistic methods, the order in
+<p class="admonition-title">Note</p>
+<p>In order to replicate exact results when using probabilistic methods, the order in
 which the methods are carried out influences the results. Therefore, besides the seed,
 also the order of the operations needs to be the same. The seed changes when used in
 the random number generator. When the undo button is used (see ), the seed is not
@@ -403,88 +278,86 @@ provides a summary of the SDC problem and allows to apply anonymization methods.
 the SDC problem. For example, if no numerical key variables were selected, the information on
 numeric key variables is omitted. Fig shows the summary page.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Once the SDC problem is set up, it is possible and highly recommended to save
+<p class="admonition-title">Note</p>
+<p>Once the SDC problem is set up, it is possible and highly recommended to save
 the SDC problem. By saving the SDC problem, you can reload the problem including
 the preparation steps and variable selection in case of issues with sdcApp or
 to revert to this ‘clean’ state without any methods applied in order to compare several
 methods.</p>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">If you would like to change the variable selection after setting up the SDC problem,
+<p class="admonition-title">Note</p>
+<p>If you would like to change the variable selection after setting up the SDC problem,
 click the red button [add png]. By doing so, you need to respecify the full variable selection.</p>
 </div>
 </div>
 </div>
 
 
-           </div>
-           
           </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="risk.html" class="btn btn-neutral float-right" title="Risk measurement" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="loadprepdata.html" class="btn btn-neutral" title="Loading and Preparing Data" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
-  
-
-  <hr/>
-
-  <div role="contentinfo">
-    <p>
-        &copy; Copyright 2018, Thijs Benschop, Matthew Welch.
-
-    </p>
-  </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
-
-</footer>
-
         </div>
       </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Setup anonymization problem</a><ul>
+<li><a class="reference internal" href="#variable-selection">Variable selection</a></li>
+<li><a class="reference internal" href="#settings">Settings</a><ul>
+<li><a class="reference internal" href="#alpha">Alpha</a></li>
+<li><a class="reference internal" href="#seed">Seed</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#summary-view">Summary view</a></li>
+</ul>
+</li>
+</ul>
 
-    </section>
-
-  </div>
-  
-
-
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'',
-            LANGUAGE:'None',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-  
-
-  <script type="text/javascript">
-      jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
-      });
-  </script> 
-
-</body>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="loadprepdata.html"
+                        title="previous chapter">Loading and Preparing Data</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="risk.html"
+                        title="next chapter">Risk measurement</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/setup.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="risk.html" title="Risk measurement"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="loadprepdata.html" title="Loading and Preparing Data"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">sdcMicro GUI manual  documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2018, Thijs Benschop, Matthew Welch.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
+    </div>
+  </body>
 </html>

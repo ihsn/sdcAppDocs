@@ -1,181 +1,47 @@
 
-
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>Loading and Preparing Data &mdash; sdcMicro GUI manual  documentation</title>
-  
 
-  
-  
-  
-  
-
-  
-
-  
-  
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Loading and Preparing Data &#8212; sdcMicro GUI manual  documentation</title>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/theme_overrides.css" />
     
-
-  
-
-  
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
     <link rel="author" title="About these documents" href="about.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Setup anonymization problem" href="setup.html" />
     <link rel="prev" title="Introduction to sdcApp" href="introsdcApp.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="setup.html" title="Setup anonymization problem"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="introsdcApp.html" title="Introduction to sdcApp"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">sdcMicro GUI manual  documentation</a> &#187;</li> 
+      </ul>
+    </div>  
 
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
-</head>
-
-<body class="wy-body-for-nav">
-
-   
-  <div class="wy-grid-for-nav">
-
-    
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
-          
-
-          
-            <a href="index.html" class="icon icon-home"> sdcMicro GUI manual
-          
-
-          
-          </a>
-
-          
-            
-            
-          
-
-          
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
-</div>
-
-          
-        </div>
-
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
-              <p class="caption"><span class="caption-text">Table of contents</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation and updating</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introsdcApp.html">Introduction to sdcApp</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Loading and Preparing Data</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#loading-data">Loading data</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#testdata">Testdata</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#other-microdata">Other microdata</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#inspect-and-explore-data">Inspect and explore data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#preparing-data">Preparing data</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#convert-variable-type">Convert variable type</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#set-specific-values-to-na">Set specific values to NA</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#modify-factor-variable">Modify factor variable</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#create-stratification-variable">Create stratification variable</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#reset-variables">Reset variables</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#hierarchical-data">Hierarchical data</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#use-subset-of-microdata">Use subset of microdata</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="setup.html">Setup anonymization problem</a></li>
-<li class="toctree-l1"><a class="reference internal" href="risk.html">Risk measurement</a></li>
-<li class="toctree-l1"><a class="reference internal" href="anon.html">Anonymization methods</a></li>
-<li class="toctree-l1"><a class="reference internal" href="utility.html">Utility measurement</a></li>
-<li class="toctree-l1"><a class="reference internal" href="export.html">Export data and reports</a></li>
-<li class="toctree-l1"><a class="reference internal" href="reproducibility.html">Reproducibility</a></li>
-<li class="toctree-l1"><a class="reference internal" href="undo.html">Undo</a></li>
-<li class="toctree-l1"><a class="reference internal" href="casestudies.html">Case Studies (Illustrating the SDC Process)</a></li>
-</ul>
-
-            
-          
-        </div>
-      </div>
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">sdcMicro GUI manual</a>
-        
-      </nav>
-
-
-      <div class="wy-nav-content">
-        
-        <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
-  <ul class="wy-breadcrumbs">
-    
-      <li><a href="index.html">Docs</a> &raquo;</li>
-        
-      <li>Loading and Preparing Data</li>
-    
-    
-      <li class="wy-breadcrumbs-aside">
-        
-            
-            <a href="_sources/loadprepdata.rst.txt" rel="nofollow"> View page source</a>
-          
-        
-      </li>
-    
-  </ul>
-
-  
-  <hr/>
-</div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody">
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
             
   <div class="section" id="loading-and-preparing-data">
 <h1>Loading and Preparing Data<a class="headerlink" href="#loading-and-preparing-data" title="Permalink to this headline">¶</a></h1>
@@ -201,8 +67,8 @@ dataset, navigate to the <strong>Microdata tab</strong> and select <strong>Testd
 Select the dataset from the dropdown menu and click the button <strong>Load data</strong>.
 This is illustrated in <a class="reference internal" href="#fig51"><span class="std std-numref">Fig. 15</span></a>.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Any other datasets loaded in the current <em>R</em> session are also shown in the dropdown list
+<p class="admonition-title">Note</p>
+<p>Any other datasets loaded in the current <em>R</em> session are also shown in the dropdown list
 with available datasets and can be loaded.
 <strong>Add screenshot of dropdown menu with mymicrodata</strong></p>
 </div>
@@ -224,11 +90,11 @@ The data is searchable by using the search bar on the right top of the table. On
 with matches are displayed. The search is performed simultaneously on all variables.</p>
 <div class="figure align-center" id="id1">
 <span id="fig51"></span><img alt="_images/prepLoadTestdata.png" src="_images/prepLoadTestdata.png" />
-<p class="caption"><span class="caption-number">Fig. 15 </span><span class="caption-text">Load testdata on <strong>Microdata</strong> tab</span></p>
+<p class="caption"><span class="caption-number">Fig. 15 </span><span class="caption-text">Load testdata on <strong>Microdata</strong> tab</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <div class="figure align-center" id="id2">
 <span id="fig52"></span><img alt="_images/prepLoadedData.png" src="_images/prepLoadedData.png" />
-<p class="caption"><span class="caption-number">Fig. 16 </span><span class="caption-text">Loaded dataset</span></p>
+<p class="caption"><span class="caption-number">Fig. 16 </span><span class="caption-text">Loaded dataset</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="other-microdata">
@@ -237,65 +103,65 @@ with matches are displayed. The search is performed simultaneously on all variab
 If the microdata is not in one of these data formats, another software can be used
 to convert the data, such as <em>Stat/Transfer</em>. Also some statistical software allow to export
 the data in another data format.</p>
-<span id="tab51"></span><table border="1" class="colwidths-auto docutils align-center" id="id3">
+<span id="tab51"></span><table class="colwidths-auto docutils align-center" id="id3">
 <caption><span class="caption-number">Table 1 </span><span class="caption-text">Data formats compatible with sdcApp</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Software</th>
-<th class="head">File extension</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>Software</p></th>
+<th class="head"><p>File extension</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>R/RStudio</td>
-<td>.rdata</td>
+<tbody>
+<tr class="row-even"><td><p>R/RStudio</p></td>
+<td><p>.rdata</p></td>
 </tr>
-<tr class="row-odd"><td>SPSS</td>
-<td>.sav</td>
+<tr class="row-odd"><td><p>SPSS</p></td>
+<td><p>.sav</p></td>
 </tr>
-<tr class="row-even"><td>SAS</td>
-<td>.sas7bdat</td>
+<tr class="row-even"><td><p>SAS</p></td>
+<td><p>.sas7bdat</p></td>
 </tr>
-<tr class="row-odd"><td>CSV</td>
-<td>.csv, .txt</td>
+<tr class="row-odd"><td><p>CSV</p></td>
+<td><p>.csv, .txt</p></td>
 </tr>
-<tr class="row-even"><td>STATA</td>
-<td>.dta</td>
+<tr class="row-even"><td><p>STATA</p></td>
+<td><p>.dta</p></td>
 </tr>
 </tbody>
 </table>
 <p>In order to load a dataset, select the corresponding data format
 from the left sidebar of the <strong>Microdata</strong> tab. For all formats the user can set two options:</p>
 <ol class="arabic simple">
-<li><dl class="first docutils">
-<dt>Convert string variables (character vectors) to factor variables?</dt>
-<dd>If <code class="code docutils literal notranslate"><span class="pre">TRUE</span></code> (default), variables of type string are automatically converted to categorical variables
+<li><dl class="simple">
+<dt>Convert string variables (character vectors) to factor variables?</dt><dd><p>If <code class="code docutils literal notranslate"><span class="pre">TRUE</span></code> (default), variables of type string are automatically converted to categorical variables
 (type factor in <em>R</em>). Categorical variables need to be of type factor in <em>sdcApp</em>.
 Remove any textual variables, such as ‘Specify other:’ variables before loading the
 data. These variables are oftentimes not suitable for release and require long
-computation times to be transformed to factor. If <code class="code docutils literal notranslate"><span class="pre">FALSE</span></code>,</dd>
+computation times to be transformed to factor. If <code class="code docutils literal notranslate"><span class="pre">FALSE</span></code>,</p>
+</dd>
 </dl>
 </li>
-<li><dl class="first docutils">
-<dt>Drop variables with only missing values (NA)?</dt>
-<dd>If <code class="code docutils literal notranslate"><span class="pre">TRUE</span></code> (default), variables that contain only missing values (<code class="code docutils literal notranslate"><span class="pre">NA</span></code> in <em>R</em>)
+<li><dl class="simple">
+<dt>Drop variables with only missing values (NA)?</dt><dd><p>If <code class="code docutils literal notranslate"><span class="pre">TRUE</span></code> (default), variables that contain only missing values (<code class="code docutils literal notranslate"><span class="pre">NA</span></code> in <em>R</em>)
 are removed upon loading the data. This does not cause any loss of information,
 as these variabels do not contain information. However, variables with only
-missing values can cause issues in <em>sdcApp</em>. If <code class="code docutils literal notranslate"><span class="pre">FALSE</span></code>, no variables are deleted.</dd>
+missing values can cause issues in <em>sdcApp</em>. If <code class="code docutils literal notranslate"><span class="pre">FALSE</span></code>, no variables are deleted.</p>
+</dd>
 </dl>
 </li>
 </ol>
 <p>If the selected data format is a CSV-file, two additional options need to be specified:</p>
 <ol class="arabic simple">
-<li><dl class="first docutils">
-<dt>Does the first row contain the variable names?</dt>
-<dd>If <code class="code docutils literal notranslate"><span class="pre">TRUE</span></code>, the values in the first row are used as variable names. If
+<li><dl class="simple">
+<dt>Does the first row contain the variable names?</dt><dd><p>If <code class="code docutils literal notranslate"><span class="pre">TRUE</span></code>, the values in the first row are used as variable names. If
 <code class="code docutils literal notranslate"><span class="pre">FALSE</span></code>, the variables names are set to V1, V2, V3, … in the order of
-appearance in the dataset.</dd>
+appearance in the dataset.</p>
+</dd>
 </dl>
 </li>
-<li><dl class="first docutils">
-<dt>Field separator</dt>
-<dd>The field separator in the csv file needs to be specified. Options are comma (,),
-semicolon (;) and tab.</dd>
+<li><dl class="simple">
+<dt>Field separator</dt><dd><p>The field separator in the csv file needs to be specified. Options are comma (,),
+semicolon (;) and tab.</p>
+</dd>
 </dl>
 </li>
 </ol>
@@ -303,30 +169,30 @@ semicolon (;) and tab.</dd>
 the file system in your computer and select the microdata file. The file is upload
 immediately after selection. After loading the file, which may</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Set the additional options before selecting the datafile from your file system.
+<p class="admonition-title">Note</p>
+<p>Set the additional options before selecting the datafile from your file system.
 Upon selection after clicking <strong>Browse</strong>, the file is immediately loaded and settings
 can no longer be changed. If the file was accidentally loaded before setting all
 parameters, the file needs to be reloaded after first restting the microdata by
 clicking <strong>Reset microdata</strong> in the left sidebar.</p>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="admonition-title">Note</p>
 <p>The default maximum file size in <em>sdcApp</em> is 50 MB. In order to upload larger files,
 the maximum file size in MB needs to be specified upon launching <em>sdcApp</em>. This can
 be achieved by specifying the argument <code class="code docutils literal notranslate"><span class="pre">maxRequestSize</span></code>:</p>
-<div class="literal-block-wrapper last docutils container" id="id4">
+<div class="literal-block-wrapper docutils container" id="id4">
 <div class="code-block-caption"><span class="caption-number">Listing 5 </span><span class="caption-text">Launching <em>sdcApp</em> to load larger files</span><a class="headerlink" href="#id4" title="Permalink to this code">¶</a></div>
 <div class="highlight-R notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># Launch sdcApp with increased max. file size (200MB)</span>
-sdcApp<span class="p">(</span>maxRequestSize <span class="o">=</span> <span class="m">200</span><span class="p">)</span>
+<span class="nf">sdcApp</span><span class="p">(</span><span class="n">maxRequestSize</span> <span class="o">=</span> <span class="m">200</span><span class="p">)</span>
 </pre></div>
 </td></tr></table></div>
 </div>
 </div>
 <div class="figure align-center" id="id5">
 <span id="fig53"></span><img alt="_images/prepLoadData.png" src="_images/prepLoadData.png" />
-<p class="caption"><span class="caption-number">Fig. 17 </span><span class="caption-text">Load data on Microdata tab - example STATA dataset</span></p>
+<p class="caption"><span class="caption-number">Fig. 17 </span><span class="caption-text">Load data on Microdata tab - example STATA dataset</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 <p>After loading the testdata dataset, the loaded
 dataset is displayed (cf. <a class="reference internal" href="#fig52"><span class="std std-numref">Fig. 16</span></a>). By default the first 20 records are displayed.
@@ -344,7 +210,7 @@ left sidebar shows different options to explore and prepare the data for the ano
 as discussed in the next sections.</p>
 <div class="figure align-center" id="id6">
 <span id="fig511"></span><img alt="_images/prepLoadAfterLoad.png" src="_images/prepLoadAfterLoad.png" />
-<p class="caption"><span class="caption-number">Fig. 18 </span><span class="caption-text">Microdata tab after loading dataset</span></p>
+<p class="caption"><span class="caption-number">Fig. 18 </span><span class="caption-text">Microdata tab after loading dataset</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
 <p>maxrequestsize option for loading larger files</p>
 </div>
@@ -355,8 +221,8 @@ as discussed in the next sections.</p>
 the data viewer, the number of observations and variables is shown as well as the number
 of variables that were deleted as a result all missing values (cf. <a class="reference internal" href="#fig511"><span class="std std-numref">Fig. 18</span></a>).</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">If <em>Drop variables with only missing values (NA)?</em> is set to TRUE, the number of variables
+<p class="admonition-title">Note</p>
+<p>If <em>Drop variables with only missing values (NA)?</em> is set to TRUE, the number of variables
 shown may be lower than the number of variables in the loaded dataset.</p>
 </div>
 <p>It is important to check whether the data was imported completely and correctly by browsing
@@ -366,8 +232,8 @@ then these issues need to be fixed outside of <em>sdcApp</em> and the data need 
 statistics appropriate for the variable type can displayed. If one variable is selected,
 univariate summary statistics are shown.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">The choice of summary statistics is based on the variable type specified in <em>R</em> (shown in
+<p class="admonition-title">Note</p>
+<p>The choice of summary statistics is based on the variable type specified in <em>R</em> (shown in
 brackets after the variable name, e.g., urbrur (integer)). Therefore,
 the representation may not be correct, if the variable type does not correspond
 with the variable content. By converting the variable (see <a class="reference internal" href="#convert-variable-type">Convert variable type</a>),
@@ -398,15 +264,15 @@ in the data, such as <code class="code docutils literal notranslate"><span class
 the data into <em>sdcApp</em>.</p>
 <div class="figure align-center" id="id7">
 <span id="fig57"></span><img alt="_images/prepareMissingToNA.png" src="_images/prepareMissingToNA.png" />
-<p class="caption"><span class="caption-number">Fig. 19 </span><span class="caption-text">Screen to set specific value in a variable to NA</span></p>
+<p class="caption"><span class="caption-number">Fig. 19 </span><span class="caption-text">Screen to set specific value in a variable to NA</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="modify-factor-variable">
 <h3>Modify factor variable<a class="headerlink" href="#modify-factor-variable" title="Permalink to this headline">¶</a></h3>
 <p>Recoding (see Recoding)</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">(this note may come in other places as well) <em>sdcApp</em> is an aid for completing the
+<p class="admonition-title">Note</p>
+<p>(this note may come in other places as well) <em>sdcApp</em> is an aid for completing the
 microdata anonymization process. However, sometimes it may be easier and quicker to
 use other statistical software packages for performing data preparation steps, such as
 recoding.</p>
@@ -416,7 +282,7 @@ recoding.</p>
 <h3>Create stratification variable<a class="headerlink" href="#create-stratification-variable" title="Permalink to this headline">¶</a></h3>
 <div class="figure align-center" id="id8">
 <span id="fig58"></span><img alt="_images/prepStrataVariable.png" src="_images/prepStrataVariable.png" />
-<p class="caption"><span class="caption-number">Fig. 20 </span><span class="caption-text">Screen to create new stratification variable</span></p>
+<p class="caption"><span class="caption-number">Fig. 20 </span><span class="caption-text">Screen to create new stratification variable</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="reset-variables">
@@ -426,11 +292,11 @@ recoding.</p>
 <h3>Hierarchical data<a class="headerlink" href="#hierarchical-data" title="Permalink to this headline">¶</a></h3>
 <div class="figure align-center" id="id9">
 <span id="fig59"></span><img alt="_images/prepHierarchical1.png" src="_images/prepHierarchical1.png" />
-<p class="caption"><span class="caption-number">Fig. 21 </span><span class="caption-text">Screen to create household level dataset</span></p>
+<p class="caption"><span class="caption-number">Fig. 21 </span><span class="caption-text">Screen to create household level dataset</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
 </div>
 <div class="figure align-center" id="id10">
 <span id="fig510"></span><img alt="_images/prepHierarchical2.png" src="_images/prepHierarchical2.png" />
-<p class="caption"><span class="caption-number">Fig. 22 </span><span class="caption-text">Screen merge anonymized household level dataset with individual level dataset</span></p>
+<p class="caption"><span class="caption-number">Fig. 22 </span><span class="caption-text">Screen merge anonymized household level dataset with individual level dataset</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="use-subset-of-microdata">
@@ -440,72 +306,79 @@ recoding.</p>
 </div>
 
 
-           </div>
-           
           </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="setup.html" class="btn btn-neutral float-right" title="Setup anonymization problem" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="introsdcApp.html" class="btn btn-neutral" title="Introduction to sdcApp" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
-  
-
-  <hr/>
-
-  <div role="contentinfo">
-    <p>
-        &copy; Copyright 2018, Thijs Benschop, Matthew Welch.
-
-    </p>
-  </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
-
-</footer>
-
         </div>
       </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Loading and Preparing Data</a><ul>
+<li><a class="reference internal" href="#loading-data">Loading data</a><ul>
+<li><a class="reference internal" href="#testdata">Testdata</a></li>
+<li><a class="reference internal" href="#other-microdata">Other microdata</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#inspect-and-explore-data">Inspect and explore data</a></li>
+<li><a class="reference internal" href="#preparing-data">Preparing data</a><ul>
+<li><a class="reference internal" href="#convert-variable-type">Convert variable type</a></li>
+<li><a class="reference internal" href="#set-specific-values-to-na">Set specific values to NA</a></li>
+<li><a class="reference internal" href="#modify-factor-variable">Modify factor variable</a></li>
+<li><a class="reference internal" href="#create-stratification-variable">Create stratification variable</a></li>
+<li><a class="reference internal" href="#reset-variables">Reset variables</a></li>
+<li><a class="reference internal" href="#hierarchical-data">Hierarchical data</a></li>
+<li><a class="reference internal" href="#use-subset-of-microdata">Use subset of microdata</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 
-    </section>
-
-  </div>
-  
-
-
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'',
-            LANGUAGE:'None',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-  
-
-  <script type="text/javascript">
-      jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
-      });
-  </script> 
-
-</body>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="introsdcApp.html"
+                        title="previous chapter">Introduction to sdcApp</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="setup.html"
+                        title="next chapter">Setup anonymization problem</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/loadprepdata.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="setup.html" title="Setup anonymization problem"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="introsdcApp.html" title="Introduction to sdcApp"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">sdcMicro GUI manual  documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2018, Thijs Benschop, Matthew Welch.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
+    </div>
+  </body>
 </html>

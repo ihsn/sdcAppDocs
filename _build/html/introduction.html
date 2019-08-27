@@ -1,170 +1,47 @@
 
-
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>Introduction &mdash; sdcMicro GUI manual  documentation</title>
-  
 
-  
-  
-  
-  
-
-  
-
-  
-  
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Introduction &#8212; sdcMicro GUI manual  documentation</title>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/theme_overrides.css" />
     
-
-  
-
-  
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
     <link rel="author" title="About these documents" href="about.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Installation and updating" href="installation.html" />
     <link rel="prev" title="sdcApp manual" href="index.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="installation.html" title="Installation and updating"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="sdcApp manual"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">sdcMicro GUI manual  documentation</a> &#187;</li> 
+      </ul>
+    </div>  
 
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
-</head>
-
-<body class="wy-body-for-nav">
-
-   
-  <div class="wy-grid-for-nav">
-
-    
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
-          
-
-          
-            <a href="index.html" class="icon icon-home"> sdcMicro GUI manual
-          
-
-          
-          </a>
-
-          
-            
-            
-          
-
-          
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
-</div>
-
-          
-        </div>
-
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
-              <p class="caption"><span class="caption-text">Table of contents</span></p>
-<ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#what-is-sdcapp">What is sdcApp?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#statistical-disclosure-control-sdc">Statistical Disclosure Control (SDC)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#what-is-the-purpose-of-the-manual">What is the purpose of the manual?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#background-literature-on-sdc-for-microdata">Background literature on SDC for microdata</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#outline-of-this-guide">Outline of this guide</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation and updating</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introsdcApp.html">Introduction to sdcApp</a></li>
-<li class="toctree-l1"><a class="reference internal" href="loadprepdata.html">Loading and Preparing Data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="setup.html">Setup anonymization problem</a></li>
-<li class="toctree-l1"><a class="reference internal" href="risk.html">Risk measurement</a></li>
-<li class="toctree-l1"><a class="reference internal" href="anon.html">Anonymization methods</a></li>
-<li class="toctree-l1"><a class="reference internal" href="utility.html">Utility measurement</a></li>
-<li class="toctree-l1"><a class="reference internal" href="export.html">Export data and reports</a></li>
-<li class="toctree-l1"><a class="reference internal" href="reproducibility.html">Reproducibility</a></li>
-<li class="toctree-l1"><a class="reference internal" href="undo.html">Undo</a></li>
-<li class="toctree-l1"><a class="reference internal" href="casestudies.html">Case Studies (Illustrating the SDC Process)</a></li>
-</ul>
-
-            
-          
-        </div>
-      </div>
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">sdcMicro GUI manual</a>
-        
-      </nav>
-
-
-      <div class="wy-nav-content">
-        
-        <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
-  <ul class="wy-breadcrumbs">
-    
-      <li><a href="index.html">Docs</a> &raquo;</li>
-        
-      <li>Introduction</li>
-    
-    
-      <li class="wy-breadcrumbs-aside">
-        
-            
-            <a href="_sources/introduction.rst.txt" rel="nofollow"> View page source</a>
-          
-        
-      </li>
-    
-  </ul>
-
-  
-  <hr/>
-</div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody">
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
             
   <div class="section" id="introduction">
 <h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
@@ -212,87 +89,83 @@ NSOs, which give a complete overview are especially worth mentioning:</p>
 <h2>Outline of this guide<a class="headerlink" href="#outline-of-this-guide" title="Permalink to this headline">¶</a></h2>
 <p>This guide is divided into the following main sections:</p>
 <ol class="arabic simple">
-<li>the Section <a class="reference external" href="installation.html">Installation and updating</a> guides the user through the installation process of sdcApp, which includes the installation of R, RStudio as well as the required packages. It also discusses the need and process of regular updates of all software components.</li>
-<li>the Section <a class="reference external" href="introsdcApp.html">Introduction to sdcApp</a> covers how to launch and close the application and provides a brief overview of structure of the application.  of the structure of the application</li>
-<li>the Section <a class="reference external" href="loadprepdata.html">Loading and preparing data</a> describes how to load microdata into the application. It also discusses the requirements to the</li>
-<li>the Section <a class="reference external" href="setup.html">Setup anonymization problem</a>  covers the variable selection and setup of an SDC problem.</li>
-<li>the Section <a class="reference external" href="risk.html">Risk measurement</a> covers methods to measure the disclosure risk in the microdata.</li>
-<li>the Section <a class="reference external" href="anon.html">Anonymization methods</a> covers anonymization methods for quantitative and qualitative variables.</li>
-<li>the Section <a class="reference external" href="utility.html">Utility measurement</a> covers the measurement of information loss resulting from anonymization of the data</li>
-<li>the Section <a class="reference external" href="export.html">Export data and reports</a> describes how to export the anonymized dataset and generate reports.</li>
-<li>the Section <a class="reference external" href="reproducibility.html">Reproducibility</a> covers functionality that render the anonymization process reproducable.</li>
-<li>the Section <a class="reference external" href="casestudies.html">Case Studies</a> presents two case studies illustrating the full SDC process in sdcApp.</li>
+<li><p>the Section <a class="reference external" href="installation.html">Installation and updating</a> guides the user through the installation process of sdcApp, which includes the installation of R, RStudio as well as the required packages. It also discusses the need and process of regular updates of all software components.</p></li>
+<li><p>the Section <a class="reference external" href="introsdcApp.html">Introduction to sdcApp</a> covers how to launch and close the application and provides a brief overview of structure of the application.  of the structure of the application</p></li>
+<li><p>the Section <a class="reference external" href="loadprepdata.html">Loading and preparing data</a> describes how to load microdata into the application. It also discusses the requirements to the</p></li>
+<li><p>the Section <a class="reference external" href="setup.html">Setup anonymization problem</a>  covers the variable selection and setup of an SDC problem.</p></li>
+<li><p>the Section <a class="reference external" href="risk.html">Risk measurement</a> covers methods to measure the disclosure risk in the microdata.</p></li>
+<li><p>the Section <a class="reference external" href="anon.html">Anonymization methods</a> covers anonymization methods for quantitative and qualitative variables.</p></li>
+<li><p>the Section <a class="reference external" href="utility.html">Utility measurement</a> covers the measurement of information loss resulting from anonymization of the data</p></li>
+<li><p>the Section <a class="reference external" href="export.html">Export data and reports</a> describes how to export the anonymized dataset and generate reports.</p></li>
+<li><p>the Section <a class="reference external" href="reproducibility.html">Reproducibility</a> covers functionality that render the anonymization process reproducable.</p></li>
+<li><p>the Section <a class="reference external" href="casestudies.html">Case Studies</a> presents two case studies illustrating the full SDC process in sdcApp.</p></li>
 </ol>
 </div>
 </div>
 
 
-           </div>
-           
           </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="installation.html" class="btn btn-neutral float-right" title="Installation and updating" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="index.html" class="btn btn-neutral" title="sdcApp manual" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
-  
-
-  <hr/>
-
-  <div role="contentinfo">
-    <p>
-        &copy; Copyright 2018, Thijs Benschop, Matthew Welch.
-
-    </p>
-  </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
-
-</footer>
-
         </div>
       </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Introduction</a><ul>
+<li><a class="reference internal" href="#what-is-sdcapp">What is sdcApp?</a></li>
+<li><a class="reference internal" href="#statistical-disclosure-control-sdc">Statistical Disclosure Control (SDC)</a></li>
+<li><a class="reference internal" href="#what-is-the-purpose-of-the-manual">What is the purpose of the manual?</a></li>
+<li><a class="reference internal" href="#background-literature-on-sdc-for-microdata">Background literature on SDC for microdata</a></li>
+<li><a class="reference internal" href="#outline-of-this-guide">Outline of this guide</a></li>
+</ul>
+</li>
+</ul>
 
-    </section>
-
-  </div>
-  
-
-
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'',
-            LANGUAGE:'None',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-  
-
-  <script type="text/javascript">
-      jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
-      });
-  </script> 
-
-</body>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">sdcApp manual</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="installation.html"
+                        title="next chapter">Installation and updating</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/introduction.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="installation.html" title="Installation and updating"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="sdcApp manual"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">sdcMicro GUI manual  documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2018, Thijs Benschop, Matthew Welch.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
+    </div>
+  </body>
 </html>

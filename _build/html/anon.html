@@ -1,186 +1,47 @@
 
-
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>Anonymization methods &mdash; sdcMicro GUI manual  documentation</title>
-  
 
-  
-  
-  
-  
-
-  
-
-  
-  
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Anonymization methods &#8212; sdcMicro GUI manual  documentation</title>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/theme_overrides.css" />
     
-
-  
-
-  
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
     <link rel="author" title="About these documents" href="about.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Utility measurement" href="utility.html" />
     <link rel="prev" title="Risk measurement" href="risk.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="utility.html" title="Utility measurement"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="risk.html" title="Risk measurement"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">sdcMicro GUI manual  documentation</a> &#187;</li> 
+      </ul>
+    </div>  
 
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
-</head>
-
-<body class="wy-body-for-nav">
-
-   
-  <div class="wy-grid-for-nav">
-
-    
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
-          
-
-          
-            <a href="index.html" class="icon icon-home"> sdcMicro GUI manual
-          
-
-          
-          </a>
-
-          
-            
-            
-          
-
-          
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
-</div>
-
-          
-        </div>
-
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
-              <p class="caption"><span class="caption-text">Table of contents</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation and updating</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introsdcApp.html">Introduction to sdcApp</a></li>
-<li class="toctree-l1"><a class="reference internal" href="loadprepdata.html">Loading and Preparing Data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="setup.html">Setup anonymization problem</a></li>
-<li class="toctree-l1"><a class="reference internal" href="risk.html">Risk measurement</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Anonymization methods</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#recoding">Recoding</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#global-recoding">Global recoding</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#top-and-bottom-coding">Top and bottom coding</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#k-anonymity-local-suppression">k-Anonymity / local suppression</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#importance">Importance</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#subsets">Subsets</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#pram">PRAM</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#suppress-values-with-high-risk">Suppress values with high risk</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#top-bottom-coding">Top/Bottom coding</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#microaggregation">Microaggregation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#adding-noise">Adding noise</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#rank-swapping">Rank swapping</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#undo">Undo</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#undo-one-step">Undo one step</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#undo-several-steps">Undo several steps</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="utility.html">Utility measurement</a></li>
-<li class="toctree-l1"><a class="reference internal" href="export.html">Export data and reports</a></li>
-<li class="toctree-l1"><a class="reference internal" href="reproducibility.html">Reproducibility</a></li>
-<li class="toctree-l1"><a class="reference internal" href="undo.html">Undo</a></li>
-<li class="toctree-l1"><a class="reference internal" href="casestudies.html">Case Studies (Illustrating the SDC Process)</a></li>
-</ul>
-
-            
-          
-        </div>
-      </div>
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">sdcMicro GUI manual</a>
-        
-      </nav>
-
-
-      <div class="wy-nav-content">
-        
-        <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
-  <ul class="wy-breadcrumbs">
-    
-      <li><a href="index.html">Docs</a> &raquo;</li>
-        
-      <li>Anonymization methods</li>
-    
-    
-      <li class="wy-breadcrumbs-aside">
-        
-            
-            <a href="_sources/anon.rst.txt" rel="nofollow"> View page source</a>
-          
-        
-      </li>
-    
-  </ul>
-
-  
-  <hr/>
-</div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody">
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
             
   <div class="section" id="anonymization-methods">
 <h1>Anonymization methods<a class="headerlink" href="#anonymization-methods" title="Permalink to this headline">¶</a></h1>
@@ -219,22 +80,22 @@ useful if a new group is created combining other and not applicable.
 The default of this option is No.</p>
 <div class="figure align-center" id="id1">
 <span id="fig81"></span><img alt="_images/anonGlobalRecodeSettings.png" src="_images/anonGlobalRecodeSettings.png" />
-<p class="caption"><span class="caption-number">Fig. 31 </span><span class="caption-text">Settings for global recoding to recode the variable age</span></p>
+<p class="caption"><span class="caption-number">Fig. 31 </span><span class="caption-text">Settings for global recoding to recode the variable age</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <p>After selecting the variable, levels and specifying a new label the variable is recoded
 by clicking Recode key variable. The risk measures are immediately updated once the method
 is applied.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">When exploring the recoded variable, the old levels still appear in the
+<p class="admonition-title">Note</p>
+<p>When exploring the recoded variable, the old levels still appear in the
 frequency table. They stay in the variable with 0 observations.</p>
 </div>
 <p>For each group (new level), this process needs to be repeated. If, for example, age should
 be recoded in 5-year age bands, these steps need to be carried out for each 5-year
 age group separately.</p>
 <div class="admonition tip">
-<p class="first admonition-title">Tip</p>
-<p class="last">Global recoding for a variable with many different levels, such as age, can be a
+<p class="admonition-title">Tip</p>
+<p>Global recoding for a variable with many different levels, such as age, can be a
 daunting task in <em>sdcApp</em>, as it involves many clicks and is prone to making mistakes.
 As an alternative, one could perform the recoding in another statistical software
 before loading the data in <em>sdcApp</em>. This would influence the initial risk levels.</p>
@@ -261,8 +122,8 @@ to be recoded. In the example in <a class="reference internal" href="#fig82"><sp
 is selected. Only variables of type numeric can be top or bottom coded.</p>
 <p>add: boxplot to check distribution</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Top and bottom coding ca only be applied to numeric variables. If age, as in our example,
+<p class="admonition-title">Note</p>
+<p>Top and bottom coding ca only be applied to numeric variables. If age, as in our example,
 is converted to factor, the global recoding method needs to be used, in order to
 topcode age by grouping all values above the threshold.</p>
 </div>
@@ -272,8 +133,8 @@ Set the threshold value and replacement value by entering these in the numeric f
 After entering the threshold and replacement values, the number of records with values
 below/above the threshold that are replaced is shown.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">It is advised to use a replacement value different than the threshold value,
+<p class="admonition-title">Note</p>
+<p>It is advised to use a replacement value different than the threshold value,
 such as the weighted mean or median to reduce information loss. The replacement
 value needs to be computed in a different software and manually inserted in <em>sdcApp</em>.</p>
 </div>
@@ -282,7 +143,7 @@ the variable is topcoded by clicking Apply Top/Bottom-Coding. The risk measures 
 automatically updated after the method is applied.</p>
 <div class="figure align-center" id="id2">
 <span id="fig82"></span><img alt="_images/anonTopcodingSettings.png" src="_images/anonTopcodingSettings.png" />
-<p class="caption"><span class="caption-number">Fig. 32 </span><span class="caption-text">Settings for topcoding the variable income at 8 million</span></p>
+<p class="caption"><span class="caption-number">Fig. 32 </span><span class="caption-text">Settings for topcoding the variable income at 8 million</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>
@@ -305,7 +166,7 @@ key variables.</p>
 level of k to be achieved.</p>
 <div class="figure align-center" id="id3">
 <span id="fig83"></span><img alt="_images/anonLocSupSettings.png" src="_images/anonLocSupSettings.png" />
-<p class="caption"><span class="caption-number">Fig. 33 </span><span class="caption-text">Settings for local suppression to achieve 3-anonimity</span></p>
+<p class="caption"><span class="caption-number">Fig. 33 </span><span class="caption-text">Settings for local suppression to achieve 3-anonimity</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 <p>add: overview of suppressions /suppression patterns</p>
 <div class="section" id="importance">
@@ -315,14 +176,14 @@ it is more likely that these variables will contain suppressed values. Sometimes
 with many different levels are important for the</p>
 <div class="figure align-center" id="id4">
 <span id="fig84"></span><img alt="_images/anonLocSupSettingsImportance.png" src="_images/anonLocSupSettingsImportance.png" />
-<p class="caption"><span class="caption-number">Fig. 34 </span><span class="caption-text">Importance settings for local suppression</span></p>
+<p class="caption"><span class="caption-number">Fig. 34 </span><span class="caption-text">Importance settings for local suppression</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="subsets">
 <h3>Subsets<a class="headerlink" href="#subsets" title="Permalink to this headline">¶</a></h3>
 <div class="figure align-center" id="id5">
 <span id="fig85"></span><img alt="_images/anonLocSupSettingsSubset.png" src="_images/anonLocSupSettingsSubset.png" />
-<p class="caption"><span class="caption-number">Fig. 35 </span><span class="caption-text">Subset settings for local suppression</span></p>
+<p class="caption"><span class="caption-number">Fig. 35 </span><span class="caption-text">Subset settings for local suppression</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>
@@ -331,18 +192,18 @@ with many different levels are important for the</p>
 <h2>PRAM<a class="headerlink" href="#pram" title="Permalink to this headline">¶</a></h2>
 <div class="figure align-center" id="id6">
 <span id="fig86"></span><img alt="_images/anonPRAMsettings.png" src="_images/anonPRAMsettings.png" />
-<p class="caption"><span class="caption-number">Fig. 36 </span><span class="caption-text">Settings for PRAM</span></p>
+<p class="caption"><span class="caption-number">Fig. 36 </span><span class="caption-text">Settings for PRAM</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
 <div class="figure align-center" id="id7">
 <span id="fig87"></span><img alt="_images/anonPRAMsettingsMatrix.png" src="_images/anonPRAMsettingsMatrix.png" />
-<p class="caption"><span class="caption-number">Fig. 37 </span><span class="caption-text">Settings for PRAM with customized transition matrix</span></p>
+<p class="caption"><span class="caption-number">Fig. 37 </span><span class="caption-text">Settings for PRAM with customized transition matrix</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="suppress-values-with-high-risk">
 <h2>Suppress values with high risk<a class="headerlink" href="#suppress-values-with-high-risk" title="Permalink to this headline">¶</a></h2>
 <div class="figure align-center" id="id8">
 <span id="fig88"></span><img alt="_images/anonSuppressSettings.png" src="_images/anonSuppressSettings.png" />
-<p class="caption"><span class="caption-number">Fig. 38 </span><span class="caption-text">Settings for suppressing values in records with high risk</span></p>
+<p class="caption"><span class="caption-number">Fig. 38 </span><span class="caption-text">Settings for suppressing values in records with high risk</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="top-bottom-coding">
@@ -352,15 +213,15 @@ with many different levels are important for the</p>
 <h2>Microaggregation<a class="headerlink" href="#microaggregation" title="Permalink to this headline">¶</a></h2>
 <div class="figure align-center" id="id9">
 <span id="fig89"></span><img alt="_images/anonMicroaggregationSettingsCluster.png" src="_images/anonMicroaggregationSettingsCluster.png" />
-<p class="caption"><span class="caption-number">Fig. 39 </span><span class="caption-text">Settings for microaggregation</span></p>
+<p class="caption"><span class="caption-number">Fig. 39 </span><span class="caption-text">Settings for microaggregation</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
 </div>
 <div class="figure align-center" id="id10">
 <span id="fig810"></span><img alt="_images/anonMicroaggregationSettingsAdditional.png" src="_images/anonMicroaggregationSettingsAdditional.png" />
-<p class="caption"><span class="caption-number">Fig. 40 </span><span class="caption-text">Additional settings for microaggregation</span></p>
+<p class="caption"><span class="caption-number">Fig. 40 </span><span class="caption-text">Additional settings for microaggregation</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
 </div>
 <div class="figure align-center" id="id11">
 <span id="fig811"></span><img alt="_images/anonMicroaggregationSettingsCluster.png" src="_images/anonMicroaggregationSettingsCluster.png" />
-<p class="caption"><span class="caption-number">Fig. 41 </span><span class="caption-text">Cluster settings for microaggregation</span></p>
+<p class="caption"><span class="caption-number">Fig. 41 </span><span class="caption-text">Cluster settings for microaggregation</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="adding-noise">
@@ -395,72 +256,84 @@ described below.</p>
 </div>
 
 
-           </div>
-           
           </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="utility.html" class="btn btn-neutral float-right" title="Utility measurement" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="risk.html" class="btn btn-neutral" title="Risk measurement" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
-  
-
-  <hr/>
-
-  <div role="contentinfo">
-    <p>
-        &copy; Copyright 2018, Thijs Benschop, Matthew Welch.
-
-    </p>
-  </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
-
-</footer>
-
         </div>
       </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Anonymization methods</a><ul>
+<li><a class="reference internal" href="#recoding">Recoding</a><ul>
+<li><a class="reference internal" href="#global-recoding">Global recoding</a></li>
+<li><a class="reference internal" href="#top-and-bottom-coding">Top and bottom coding</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#k-anonymity-local-suppression">k-Anonymity / local suppression</a><ul>
+<li><a class="reference internal" href="#importance">Importance</a></li>
+<li><a class="reference internal" href="#subsets">Subsets</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pram">PRAM</a></li>
+<li><a class="reference internal" href="#suppress-values-with-high-risk">Suppress values with high risk</a></li>
+<li><a class="reference internal" href="#top-bottom-coding">Top/Bottom coding</a></li>
+<li><a class="reference internal" href="#microaggregation">Microaggregation</a></li>
+<li><a class="reference internal" href="#adding-noise">Adding noise</a></li>
+<li><a class="reference internal" href="#rank-swapping">Rank swapping</a></li>
+<li><a class="reference internal" href="#undo">Undo</a><ul>
+<li><a class="reference internal" href="#undo-one-step">Undo one step</a></li>
+<li><a class="reference internal" href="#undo-several-steps">Undo several steps</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 
-    </section>
-
-  </div>
-  
-
-
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'',
-            LANGUAGE:'None',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-  
-
-  <script type="text/javascript">
-      jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
-      });
-  </script> 
-
-</body>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="risk.html"
+                        title="previous chapter">Risk measurement</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="utility.html"
+                        title="next chapter">Utility measurement</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/anon.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="utility.html" title="Utility measurement"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="risk.html" title="Risk measurement"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">sdcMicro GUI manual  documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2018, Thijs Benschop, Matthew Welch.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
+    </div>
+  </body>
 </html>

@@ -1,11 +1,11 @@
 Loading and Preparing Data
 ==========================
 
-This section discusses how to load microdata into *sdcApp* and prepare the data
+This section shows how to load microdata into *sdcApp* and prepare the data
 for the SDC process.
 
 The first step in the SDC process is loading the dataset into *sdcApp*. *sdcApp* supports
-most common statistical data formats, such as *R*, *STATA*, *SPSS* and *SAS* files. First time 
+most common statistical data formats, such as *R*, *STATA*, *SPSS* and *SAS* files. First-time 
 users may also load one of the two practice datasets, which are included in *sdcApp*, 
 to explore *sdcApp* and methods. Most examples in this guide are illustrated by 
 using the practice dataset *testdata* and can be reproduced by using this dataset.
@@ -30,10 +30,9 @@ This is illustrated in :numref:`fig51`.
 .. NOTE::
 	Any other datasets loaded in the current *R* session are also shown in the dropdown list 
 	with available datasets and can be loaded.
-	**Add screenshot of dropdown menu with mymicrodata**
 
 After loading the dataset, the data is displayed in the **Microdata** tab. The **Microdata**
-tab changes and the functionality for loading microdata is replaced with 
+tab changes and the functionality for loading microdata is replaced by 
 functionality to explore and prepare the dataset (cf. :numref:`fig52`). The 
 left sidebar shows different options to explore and prepare the data for the anonymization process,
 as discussed in the next sections.
@@ -41,8 +40,8 @@ as discussed in the next sections.
 After loading the testdata dataset, the loaded 
 dataset is displayed (cf. :numref:`fig52`). By default the first 20 records are displayed. 
 With the dropdown menu in the topleft corner it is possible to display 20, 50, 100 or all
-records per page. It is not recommended to select *all* in case of larger datasets
-*sdcApp* will run very slow. In the right bottom it is possible to navigate to different pages,
+records per page. It is not recommended to select *All* in case of larger datasets as
+*sdcApp* will run very slowly. In the right-bottom corner of the screen it is possible to navigate to different pages,
 either by clicking *Next* or by clicking on a page number. The table
 with the data is both horizontally and vertically scrollable with the scrollbars on the 
 right side and bottom of the table. To sort the data by a variable, click on the symbol 
@@ -65,18 +64,19 @@ with matches are displayed. The search is performed simultaneously on all variab
 .. figure:: media/prepLoadedData.png
    :align: center
    
-   Loaded dataset
+   Loaded testdata dataset on **Microdata** tab
 	
-Other microdata
+Your microdata
 ~~~~~~~~~~~~~~~
-*sdcApp* supports datasets in several foreign data formats (cf. :numref:`tab51`). 
+*sdcApp* supports besides the native *R* format datasets in several foreign data formats 
+(cf. :numref:`tab51`). 
 If the microdata is not in one of these data formats, another software can be used 
 to convert the data, such as *Stat/Transfer*. Also some statistical software allow to export
 the data in another data format.
 
 .. _tab51:
 
-.. table:: Data formats compatible with sdcApp
+.. table:: Data formats compatible with *sdcApp*
    :widths: auto
    :align: center
    

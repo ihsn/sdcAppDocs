@@ -38,12 +38,13 @@ and provides more detailed background information on the SDC process, methods an
 Background literature on SDC for microdata
 ------------------------------------------
 There is a broad scientific literature available on SDC for microdata. The theory guide 
-contains many references to the appropriate literature. Two books written by practitioners in
-NSOs, which give a complete overview are especially worth mentioning:
+(see `here <https://statistical-disclosure-control-for-microdata-theory.readthedocs.io/en/latest/>`_)
+provides a full overview of all methods used and implemented in sdcMicro and sdcApp, as well
+as provides an overview over the full SDC process. It also contains references to the 
+appropriate literature. 
 
-Hundepool
-
-Templ
+`HDFG06`_ is a book written by practitioners in NSOs and is especially worth mentioning 
+for those seeking to read a complete overview 
 
 Outline of this guide
 ---------------------
@@ -60,3 +61,11 @@ This guide is divided into the following main sections:
 (8)  	the Section `Export data and reports <export.html>`__ describes how to export the anonymized dataset and generate reports.
 (9)   	the Section `Reproducibility <reproducibility.html>`__ covers functionality that render the anonymization process reproducable.
 (10)	the Section `Case Studies <casestudies.html>`__ presents two case studies illustrating the full SDC process in sdcApp.
+
+References
+----------
+
+.. [HDFG06] Hundepool, A., Domingo-Ferrer, J., Franconi, L., Giessing, S., Lenz, R., Naylor, J., et al. (2006). 
+	**Handbook on Statistical Disclosure Control.**
+	ESSNet SDC.
+	

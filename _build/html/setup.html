@@ -56,11 +56,11 @@ in the loaded dataset.</p>
 <p>In order to setup an SDC problem the user needs to make a variable selection. The variable
 selection itself is the result of the analysis of diclosure scenarios and is beyond the scope
 of this manual. We refer to Chapter in for a thorough discussion of disclosure scenarios.</p>
-<p>The matrix shown in <a class="reference internal" href="#fig11"><span class="std std-numref">Fig. 23</span></a> contain one row for each variable in the loaded dataset
+<p>The matrix shown in <a class="reference internal" href="#fig11"><span class="std std-numref">Fig. 24</span></a> contain one row for each variable in the loaded dataset
 and nine different columns as described in <a class="reference internal" href="#tabsetup1"><span class="std std-numref">Table 2</span></a>.</p>
 <div class="figure align-center" id="id1">
 <span id="fig11"></span><img alt="_images/setupTable.png" src="_images/setupTable.png" />
-<p class="caption"><span class="caption-number">Fig. 23 </span><span class="caption-text">Table on Anonymize tab for variable selection</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 24 </span><span class="caption-text">Table on Anonymize tab for variable selection</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <span id="tabsetup1"></span><table class="colwidths-auto docutils align-center" id="id2">
 <caption><span class="caption-number">Table 2 </span><span class="caption-text">Columns in setup table</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
@@ -197,10 +197,10 @@ problem.</p>
 setup table:</p>
 <div class="figure align-center" id="id3">
 <span id="fig12"></span><img alt="_images/setupButton.png" src="_images/setupButton.png" />
-<p class="caption"><span class="caption-number">Fig. 24 </span><span class="caption-text">Blue setup button appears below the setup table if the variable selection is valid</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 25 </span><span class="caption-text">Blue setup button appears below the setup table if the variable selection is valid</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 <p>If a variable selection is invalid, the setup button will disappear and only reappears once
-all invalid choices are corrected. Popup windows as shown in <a class="reference internal" href="#fig13"><span class="std std-numref">Fig. 25</span></a>,
+all invalid choices are corrected. Popup windows as shown in <a class="reference internal" href="#fig13"><span class="std std-numref">Fig. 26</span></a>,
 will guide the user through the variables
 that need to be fixed. The most common invalid choices are the selection of more
 than one function for a variable and the selection of a function that does not correspond
@@ -211,7 +211,7 @@ as outlined in the next section.</p>
 <p class="admonition-title">Note</p>
 <p>If an invalid variable choice is made, such as an invalid variable type
 or a variable is selected for more than one choice, a pop-up window with an informative
-error message is shown. An example is shown in <a class="reference internal" href="#fig13"><span class="std std-numref">Fig. 25</span></a>. The error
+error message is shown. An example is shown in <a class="reference internal" href="#fig13"><span class="std std-numref">Fig. 26</span></a>. The error
 message can be closed by clicking <em>Continue</em>.
 It is important to undo the invalid selection after clicking away
 the error message, as this doesn’t happen automatically.
@@ -230,17 +230,17 @@ variable selection.</p>
 </div>
 <div class="figure align-center" id="id4">
 <span id="fig13"></span><img alt="_images/setupErrorMessage.png" src="_images/setupErrorMessage.png" />
-<p class="caption"><span class="caption-number">Fig. 25 </span><span class="caption-text">Example of a popup window with an error message after an invalid variable choice</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 26 </span><span class="caption-text">Example of a popup window with an error message after an invalid variable choice</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="settings">
 <h2>Settings<a class="headerlink" href="#settings" title="Permalink to this headline">¶</a></h2>
 <p>Besides the variable selection, there are two more parameters to be set before creating
 the SDC problem: alpha and seed. Both parameters can be set with sliders
-in the right sidepanel (see <a class="reference internal" href="#fig14"><span class="std std-numref">Fig. 26</span></a>).</p>
+in the right sidepanel (see <a class="reference internal" href="#fig14"><span class="std std-numref">Fig. 27</span></a>).</p>
 <div class="figure align-center" id="id5">
 <span id="fig14"></span><img alt="_images/setupAdditionalParameters.png" src="_images/setupAdditionalParameters.png" />
-<p class="caption"><span class="caption-number">Fig. 26 </span><span class="caption-text">Sliders to set additional parameters for the SDC problem</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 27 </span><span class="caption-text">Sliders to set additional parameters for the SDC problem</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 <div class="section" id="alpha">
 <h3>Alpha<a class="headerlink" href="#alpha" title="Permalink to this headline">¶</a></h3>
@@ -258,7 +258,7 @@ if you want to produce replicable results. The seed is used to initialize the
 random number generator used for probabilistic methods. In <em>sdcApp</em>, the seed can
 be set to any integer value from 0 to 500. To select a value, you can click with
 the mouse pointer on the slider and use the arrow keys (left and right or up and down)
-to select an exact value. In <a class="reference internal" href="#fig14"><span class="std std-numref">Fig. 26</span></a> the seed is set at 388.</p>
+to select an exact value. In <a class="reference internal" href="#fig14"><span class="std std-numref">Fig. 27</span></a> the seed is set at 388.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>In order to replicate exact results when using probabilistic methods, the order in

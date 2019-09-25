@@ -3,7 +3,7 @@ Introduction to sdcApp
 
 *sdcApp* is a user-friendly application for microdata anonymization 
 and is built on the `Shiny <https://shiny.rstudio.com>`_
-technology. Shiny allows users to 
+technology. *Shiny* allows users to 
 communicate through a GUI that runs in a webbrowser with a local *R* session. The local
 *R* session performs the necessary calculations. In the case of *sdcApp*, most functionality 
 used in *R* is included in the `sdcMicro <https://CRAN.R-project.org/package=sdcMicro>`_
@@ -179,3 +179,8 @@ to *sdcApp* not responding.
 
 Save SDC problem to continue working later. Possible once the SDC problem is defined. 
 See undo section	
+
+Troubleshooting sdcApp
+-----------------------
+In certain cases, depending on the operating system 
+

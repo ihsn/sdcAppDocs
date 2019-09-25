@@ -48,12 +48,12 @@
 <p>This section will guide you through the steps you need to take to install <em>sdcApp</em>.
 <em>sdcApp</em> is a graphical user interface for the sdcMicro package.
 The <em>sdcMicro</em> package is an add-on package for the statistical software <em>R</em>. In order
-to start working with <em>sdcApp</em>, you need to install <em>R</em>, <em>RStudio</em> <a class="footnote-reference brackets" href="#id7" id="id1">1</a> as well as several
+to start working with <em>sdcApp</em>, you need to install <em>R</em>, <em>RStudio</em> <a class="footnote-reference brackets" href="#id6" id="id1">1</a> as well as several
 add-on packages for R. All software is available free of charge and open-source.
 <em>R</em> and <em>RStudio</em> run on most platfroms, including Windows, Mac OS X and Linux. To use <em>sdcApp</em>,
-a webbrowser needs to be installed as well <a class="footnote-reference brackets" href="#id8" id="id2">2</a>.</p>
+a webbrowser needs to be installed as well <a class="footnote-reference brackets" href="#id7" id="id2">2</a>.</p>
 <p><em>R</em>, <em>RStudio</em>, the <em>sdcMicro</em> package as well as dependencies (other <em>R</em> packages
-that need to be installed for the <em>sdcMicro</em> package to work propoerly) are regularly updated.
+that need to be installed for the <em>sdcMicro</em> package to work properly) are regularly updated.
 Therefore, it is recommended to regularly update to the latest version of the software.
 The Section <a class="reference internal" href="#updating-r-rstudio-and-the-sdcmicro-package">Updating R, RStudio and the sdcMicro package</a> shows how to check for updates
 and install updates.</p>
@@ -63,9 +63,9 @@ and install updates.</p>
 free open source statistical software R can be downloaded from the <a class="reference external" href="https://cran.r-project.org">CRAN website</a>.
 By selecting your OS (cf. <a class="reference internal" href="#fig21"><span class="std std-numref">Fig. 1</span></a>), the installer will be dowloaded to your computer. In order to install
 <em>R</em>, open the installer and follow the installation steps.</p>
-<div class="figure align-center" id="id10">
+<div class="figure align-center" id="id9">
 <span id="fig21"></span><img alt="_images/installDownloadR.png" src="_images/installDownloadR.png" />
-<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Select OS to start downloading R</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Select OS to start downloading R</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
 </div>
 <p>Once <em>R</em> is successfully installed, we can install <em>RStudio</em>. <em>RStudio</em> is an IDE
 (integrated development environment) for <em>R</em>.
@@ -74,13 +74,13 @@ free of charge from the <a class="reference external" href="https://www.rstudio.
 On this webpage, scroll down to the overview of different versions as shown in <a class="reference internal" href="#fig22"><span class="std std-numref">Fig. 2</span></a>
 and select the version corresponding to your OS to start downloading the installer.
 In order to install <em>RStudio</em>, open the installer and follow the installation steps.</p>
-<div class="figure align-center" id="id11">
+<div class="figure align-center" id="id10">
 <span id="fig22"></span><img alt="_images/installRStudioVersion.png" src="_images/installRStudioVersion.png" />
-<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Select version to start downloading RStudio</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Select version to start downloading RStudio</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>We recommend updating to the latest versions of R and RStudio if this software is already
+<p>We recommend updating to the latest versions of <em>R</em> and <em>RStudio</em> if this software is already
 installed on your computer before moving on.
 See also the Sections <a class="reference internal" href="#updating-r">Updating R</a> and <a class="reference internal" href="#updating-rstudio">Updating RStudio</a> for more information on updating the software.</p>
 </div>
@@ -92,9 +92,9 @@ by default of four different panes as shown in <a class="reference internal" hre
 <li><p>R console (by default left down)</p></li>
 <li><p>Plots, files and help (by default right down)</p></li>
 </ol>
-<div class="figure align-center" id="id12">
+<div class="figure align-center" id="id11">
 <span id="fig23"></span><img alt="_images/installRStudio.png" src="_images/installRStudio.png" />
-<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Screenshot RStudio</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Screenshot RStudio</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="installing-sdcmicro-package">
@@ -102,13 +102,14 @@ by default of four different panes as shown in <a class="reference internal" hre
 <p><em>sdcApp</em> is included in the <em>R</em> package <em>sdcMicro</em>. Once <em>RStudio</em> is opened, <em>sdcMicro</em> can be
 installed by executing commands in the <em>R</em> console. <em>sdcMicro</em> and a set of other <em>R</em> packages
 that are required by the <em>sdcMicro</em> package are downloaded from the CRAN servers. Therefore,
-it is necessary to be connected to the internet during the installation process. <a class="footnote-reference brackets" href="#id9" id="id3">3</a></p>
+it is necessary to be connected to the internet during the installation process. <a class="footnote-reference brackets" href="#id8" id="id3">3</a></p>
 <p>In order to install the latest version of the <em>sdcMicro</em> package, type the command
 <code class="code docutils literal notranslate"><span class="pre">install.packages(&quot;sdcMicro&quot;,</span> <span class="pre">dependencies</span> <span class="pre">=</span> <span class="pre">TRUE)</span></code> in the console and press enter to execute (cf. <a class="reference internal" href="#fig24"><span class="std std-numref">Fig. 4</span></a>).
-The first time you are installing R packages, a prompt will ask you to select a CRAN mirror (server) to install the package from.
+The first time you are installing <em>R</em> packages, you will be prompted
+to select a CRAN mirror (server) to install the package from.
 Since the packages on all mirrors are identical, you can choose any of the locations.
-The sdcMicro package itself uses functionality
-from a set of other R packages (e.g., <em>haven</em> for reading files in different formats).
+The <em>sdcMicro</em> package itself uses functionality
+from a set of other <em>R</em> packages (e.g., <em>haven</em> for reading files in different formats).
 By specifying the dependencies argument to TRUE, these dependencies will automatically be installed too.</p>
 <div class="literal-block-wrapper docutils container" id="code01">
 <div class="code-block-caption"><span class="caption-number">Listing 1 </span><span class="caption-text">Installing sdcMicro package</span><a class="headerlink" href="#code01" title="Permalink to this code">¶</a></div>
@@ -118,21 +119,14 @@ By specifying the dependencies argument to TRUE, these dependencies will automat
 </pre></div>
 </td></tr></table></div>
 </div>
-<div class="figure align-center" id="id13">
+<div class="figure align-center" id="id12">
 <span id="fig24"></span><img alt="_images/installInstallsdcMicro.png" src="_images/installInstallsdcMicro.png" />
-<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">Installing sdcMicro package from <em>R</em> console</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">Installing sdcMicro package from <em>R</em> console</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Also dependencies will be installed and the installation may take some time.
-Dependencies are other add-on packages, of which the functionality is required to run the sdcMicro package.</p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>An internet connection is not required while using <em>sdcMicro</em> and <em>sdcApp</em> and the data
-are stored locally on your computer or server. The web browser uses a local host IP,
-which is not connected to the internet and the browser is only used to communicate with
-the running <em>R</em> session.</p>
+Dependencies are other add-on packages, of which the functionality is required to run the <em>sdcMicro</em> package.</p>
 </div>
 </div>
 <div class="section" id="launching-sdcapp">
@@ -141,25 +135,34 @@ the running <em>R</em> session.</p>
 Installing the package is only required once (except for updating), whereas loading the
 package is required every time a new <em>R</em> session is started.</p>
 <p>You can load the <em>sdcMicro</em> package by typing <code class="code docutils literal notranslate"><span class="pre">library(sdcMicro)</span></code>
-and launch the application by typing <code class="code docutils literal notranslate"><span class="pre">sdcApp()</span></code>.</p>
-<p><em>sdcApp</em> opens in your system’s default web browser through the local host IP <code class="code docutils literal notranslate"><span class="pre">127.0.0.1:</span></code>.
+and launch the application by typing <code class="code docutils literal notranslate"><span class="pre">sdcApp()</span></code> (cf. <a class="reference internal" href="#fig25"><span class="std std-numref">Fig. 5</span></a>).</p>
+<p><em>sdcApp</em> opens in your system’s default web browser through the local host IP <code class="code docutils literal notranslate"><span class="pre">127.0.0.1:</span></code> (cf. <a class="reference internal" href="#fig26"><span class="std std-numref">Fig. 6</span></a>).
 <em>sdcApp</em> works with recent versions of any webbrowser.
-Due to small issues encountered with some browsers, we recommend to use Google Chrome, Mozilla Firefox or Safari for the best performance.
+Due to small issues encountered with some browsers, we recommend to use Google Chrome,
+Mozilla Firefox or Safari for the best performance.
 In case your default web browser is not one of the aforementioned browsers, you can simply open an
-alternative browser and copy paste the local host IP address in the new browser.
+alternative browser and copy paste the local host IP address from the <em>R</em> console
+into the new browser.
 <em>sdcApp</em> will open in the new browser.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>An internet connection is not required while using <em>sdcMicro</em> and <em>sdcApp</em> and the data
+are stored locally on your computer or server. The web browser uses a local host IP,
+which is not connected to the internet and the browser is only used to communicate with
+the running <em>R</em> session.</p>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>After launching <em>sdcApp</em> the <em>R</em> session is busy and cannot be used for other calculations.</p>
 </div>
 <p>Furthermore, it’s important that your <em>R</em> session is enabled to use the installed webbrowser.</p>
-<div class="figure align-center" id="id14">
+<div class="figure align-center" id="id13">
 <span id="fig25"></span><img alt="_images/installRconsoleIP.png" src="_images/installRconsoleIP.png" />
-<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">R console with local IP after launching <em>sdcApp</em></span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text"><em>R</em> console with local IP after launching <em>sdcApp</em></span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
 </div>
-<div class="figure align-center" id="id15">
+<div class="figure align-center" id="id14">
 <span id="fig26"></span><img alt="_images/sdcAppStartIP.png" src="_images/sdcAppStartIP.png" />
-<p class="caption"><span class="caption-number">Fig. 6 </span><span class="caption-text">Start screen sdcApp in browser with local IP</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 6 </span><span class="caption-text">Start screen sdcApp in browser with local IP</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
 </div>
 <div class="literal-block-wrapper docutils container" id="code02">
 <div class="code-block-caption"><span class="caption-number">Listing 2 </span><span class="caption-text">Loading sdcMicro package and launching <em>sdcApp</em></span><a class="headerlink" href="#code02" title="Permalink to this code">¶</a></div>
@@ -176,14 +179,18 @@ alternative browser and copy paste the local host IP address in the new browser.
 </td></tr></table></div>
 </div>
 <p>In rare cases, not all dependencies are correctly installed and the following error
-message appears in the R console upon loading the sdcMicro package.</p>
-<p>Please install the package(s) indicated in the error message manually by using the
-command install.packages() with the name of the package(s). In the example error message,
-this would be for the packages .</p>
+message appears in the <em>R</em> console upon loading the sdcMicro package (cf. <a class="reference internal" href="#fig27"><span class="std std-numref">Fig. 7</span></a>).
+In that case, install the package(s) indicated in the error message manually by using the
+command <code class="code docutils literal notranslate"><span class="pre">install.packages()</span></code> with the name of the package(s). In the example error message,
+this would be for the <em>haven</em> package.</p>
+<div class="figure align-center" id="id15">
+<span id="fig27"></span><img alt="_images/installErrorDependencies.png" src="_images/installErrorDependencies.png" />
+<p class="caption"><span class="caption-number">Fig. 7 </span><span class="caption-text">Error message in console in case of missing dependencies</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
+</div>
 </div>
 <div class="section" id="updating-r-rstudio-and-the-sdcmicro-package">
 <h2>Updating R, RStudio and the sdcMicro package<a class="headerlink" href="#updating-r-rstudio-and-the-sdcmicro-package" title="Permalink to this headline">¶</a></h2>
-<p><em>R</em>, <em>RStudio</em>, the <em>dcMicro</em> package as well as dependencies are regularly updated. Updates include
+<p><em>R</em>, <em>RStudio</em>, the <em>sdcMicro</em> package as well as dependencies are regularly updated. Updates include
 bug fixes as well as additional functionality. Therefore,
 it is recommended to regularly update to the latest version of the software.</p>
 <div class="section" id="updating-r">
@@ -195,10 +202,10 @@ is to visit regularly the <a class="reference external" href="https://cran.r-pro
 If a new version of <em>R</em> is available, the same steps as for the installation of <em>R</em> need to be followed
 as described in the Section <a class="reference internal" href="#installing-r-and-rstudio">Installing R and RStudio</a>. The version number of the
 <em>R</em> version installed on your computer appears in the R console upon launching <em>R</em> or <em>RStudio</em>
-(cf. <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig27</span></code>).</p>
+(cf. <a class="reference internal" href="#fig28"><span class="std std-numref">Fig. 8</span></a>).</p>
 <div class="figure align-center" id="id16">
-<span id="fig27"></span><img alt="_images/installRversion.png" src="_images/installRversion.png" />
-<p class="caption"><span class="caption-number">Fig. 7 </span><span class="caption-text">R console with version number</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
+<span id="fig28"></span><img alt="_images/installRversion.png" src="_images/installRversion.png" />
+<p class="caption"><span class="caption-number">Fig. 8 </span><span class="caption-text">R console with version number</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="updating-rstudio">
@@ -213,16 +220,19 @@ as described in the Section <a class="reference internal" href="#installing-r-an
 <h3>Updating R packages<a class="headerlink" href="#updating-r-packages" title="Permalink to this headline">¶</a></h3>
 <p>The <em>sdcMicro</em> package is regularly updated to fix bugs and add functionality. In order to check
 for newer versions, click on the Update button to get an overview of all packages that have
-newer versions available. By clicking Select all, these packages are all automatically updated.</p>
+newer versions available (cf. <a class="reference internal" href="#fig29"><span class="std std-numref">Fig. 9</span></a>). By clicking <strong>Select all</strong>,
+these packages are all automatically updated.</p>
 <div class="figure align-center" id="id17">
-<span id="id6"></span><img alt="_images/installCheckUpdate.png" src="_images/installCheckUpdate.png" />
-<p class="caption"><span class="caption-number">Fig. 8 </span><span class="caption-text">Updating R packages in RStudio</span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
+<span id="fig29"></span><img alt="_images/installCheckUpdate.png" src="_images/installCheckUpdate.png" />
+<p class="caption"><span class="caption-number">Fig. 9 </span><span class="caption-text">Updating <em>R</em> packages in RStudio</span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
 </div>
+<p>Alternatively, one can type the command <code class="code docutils literal notranslate"><span class="pre">update.packages()</span></code> in the <em>R</em> console to
+update all installed packages.</p>
 <div class="literal-block-wrapper docutils container" id="code03">
 <div class="code-block-caption"><span class="caption-number">Listing 3 </span><span class="caption-text">Updating packages</span><a class="headerlink" href="#code03" title="Permalink to this code">¶</a></div>
 <div class="highlight-R notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># Update</span>
-<span class="nf">install.packages</span><span class="p">()</span>
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># Update packages</span>
+<span class="nf">update.packages</span><span class="p">()</span>
 </pre></div>
 </td></tr></table></div>
 </div>
@@ -234,13 +244,13 @@ newer versions available. By clicking Select all, these packages are all automat
 the <a class="reference external" href="https://github.com/sdcTools/sdcMicro">GitHub</a> of the <em>sdcMicro</em> project. There you can
 also report alleged bugs and raise other issues.</p>
 <dl class="footnote brackets">
-<dt class="label" id="id7"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><p>Technically speaking, <em>RStudio is not required to run *sdcApp</em>. Nevertheless, we recommend to install <em>RStudio</em> for a better user experience.</p>
+<dt class="label" id="id6"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Technically speaking, <em>RStudio</em> is not required to run <em>sdcApp</em>. Nevertheless, we recommend to install <em>RStudio</em> for a better user experience.</p>
 </dd>
-<dt class="label" id="id8"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dt class="label" id="id7"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
 <dd><p><em>sdcApp</em> is a <em>Shiny</em> web application, which works best in a recent version of a webbrowser. Therefore, it is recommended to ensure that your webbrowser is updated regularly. Some webbrowsers may impede the proper functioning of <em>sdcApp</em>. If <em>sdcApp</em> doesn’t work properly in your default web browser, please try to install Firefox or Google Chrome.</p>
 </dd>
-<dt class="label" id="id9"><span class="brackets"><a class="fn-backref" href="#id3">3</a></span></dt>
+<dt class="label" id="id8"><span class="brackets"><a class="fn-backref" href="#id3">3</a></span></dt>
 <dd><p>It is possible to download <em>R</em>, <em>RStudio</em> and the packages and transfer the files to the computer with for example a USB drive in case the computer
 <em>sdcMicro</em> should be installed on cannot be connected to the internet for technical or confidentiality reasons.</p>
 </dd>

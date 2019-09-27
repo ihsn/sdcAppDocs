@@ -12,10 +12,15 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-# import os
-# import sys
+
+import os
+import sys
 # sys.path.insert(0, os.path.abspath('.'))
 
+sys.path.insert(0, os.path.abspath('..'))
+sys.path.append(os.path.dirname(__file__))
+
+import sphinx_rtd_theme
 
 # -- Project information -----------------------------------------------------
 
@@ -83,8 +88,8 @@ pygments_style = 'sphinx'
 # a list of builtin themes.
 #
 
-html_theme = 'classic'
-#html_theme = 'sphinx_rtd_theme'
+#html_theme = 'classic'
+html_theme = 'sphinx_rtd_theme'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the

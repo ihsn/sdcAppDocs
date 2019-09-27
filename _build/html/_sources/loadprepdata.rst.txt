@@ -72,7 +72,7 @@ Your microdata
 (cf. :numref:`tab51`). 
 If the microdata is not in one of these data formats, another software can be used 
 to convert the data, such as *Stat/Transfer*. Also some statistical software allow to export
-the data in another data format.
+data in another data format.
 
 .. _tab51:
 

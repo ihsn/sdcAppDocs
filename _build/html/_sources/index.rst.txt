@@ -20,11 +20,9 @@ Project Number P094376. As well as from United Kingdom - DFID funding
 to the World Bank Multi-Donor Trust Fund - International Household Survey 
 and Accelerated Data Program – TF071804/TF011722.
 
-Table of contents
-=================
-
 .. toctree::
    :maxdepth: 2
+   :caption: Table of contents
 
    introduction
    installation

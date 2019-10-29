@@ -1,4 +1,4 @@
-Anonymization methods
+Anonymization Methods
 ======================
 
 Once the disclosure risk is evaluated and is too high for release, SDC methods need
@@ -11,10 +11,20 @@ undo the method (see `Undo <undo.html>`__) and reapply the same method with a di
 In this section, we provide a brief description of common SDC methods for microdata and
 show how to use these in *sdcApp*. For more information on the choice of the 
 appropriate method and more detailed information on the methods themselves, we refer to
-the respective section in the SDC theory guide (link).
+the section **Anonymization methods** in
+`Statistical Disclosure Control for Microdata: A Theory Guide <https://sdctheory.readthedocs.io/en/latest/>`_.
+
+In order to reproduce the examples in this section, one should load *testdata* dataset, which
+is included in the *sdcMicro* package and follow the steps to setup the SDC problem as 
+outlined in the section `Setup Anonymization Problem <setup.html>`__.
 
 Recoding
 --------
+Recoding is a deterministic method used to decrease the number of distinct categories 
+or values for a variable. This is done by combining or grouping categories for categorical 
+variables or constructing intervals for continuous variables. Recoding is applied to 
+all observations of a certain variable and not only to those at risk of disclosure. 
+In *sdcApp* two general types are availbale: global recoding and top and bottom coding.
 
 Global recoding
 ~~~~~~~~~~~~~~~

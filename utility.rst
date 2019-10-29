@@ -1,5 +1,7 @@
-Utility measurement
+Utility Measurement
 ===================
+
+
 
 General utility measures in *sdcApp*
 ------------------------------------
@@ -41,7 +43,10 @@ within the confidence interval of the original estimate.
 	E.g. regression on age if age is recoded in 5-year intervals.
 
 In order to do so, it is posible to export the dataset at any point in *sdcApp*.
-See Export dataset. Several datasets can be exported after applying different methods 
+See the Section `Export anonymized dataset <export.html>`__ to learn how to export
+a dataset from *sdcApp*. The microdata can be exported at any intermediate stata in the 
+SDC process.
+Several datasets can be exported after applying different methods 
 with different parameters settings to compare the information loss resulting from
 the anonymization. This information can be used to select the anonymization methods 
 as well as to inform the user about the implications of the anonymization on

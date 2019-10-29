@@ -1,7 +1,7 @@
-Setup anonymization problem
+Setup Anonymization Problem
 ============================
 
-Based on the analysis of the disclosure scenarios (see ), the user needs can make the variable 
+Based on the analysis of the disclosure scenarios, the user needs can make the variable 
 selection in *sdcApp* and set some other parameters in order to define the 
 so-called SDC problem. Once the data is loaded and prepared,
 the tab *Anonymize* shows a variable selection matrix in the main panel. The right sidebar
@@ -12,9 +12,11 @@ Variable selection
 ------------------
 In order to setup an SDC problem the user needs to make a variable selection. The variable
 selection itself is the result of the analysis of diclosure scenarios and is beyond the scope
-of this manual. We refer to Chapter in for a thorough discussion of disclosure scenarios.
+of this manual. We refer to the section `Disclosure scenarios <https://sdctheory.readthedocs.io/en/latest/measure_risk.html#disclosure-scenarios>`_)
+in **Statistical Disclosure Control for Microdata: A Theory Guide** 
+for a thorough discussion of disclosure scenarios.
 
-The matrix shown in :numref:`fig11` contain one row for each variable in the loaded dataset
+The matrix shown in :numref:`fig11` contains one row for each variable in the loaded dataset
 and nine different columns as described in :numref:`tabsetup1`. 
 
 .. _fig11:
@@ -157,6 +159,13 @@ as outlined in the next section.
    
    Example of a popup window with an error message after an invalid variable choice
 
+For the examples and illustrations in this guide, we select the variables **urbrur**, **sex**, and **age**
+as categorical key variables, the variables **expend**, **income**, and **savings** as
+continuous key variables, the variables **sampling_weight** as weight and the variables
+**roof** and **walls** as PRAM variables (cf. :numref:`fig11`). Note that non hierarchical 
+identifier was selected as the data lack a hierarchical structure. The remaining variables
+that are not selected are considered as not of importance for the SDC process.
+
 Settings
 --------
 Besides the variable selection, there are two more parameters to be set before creating
@@ -194,6 +203,8 @@ to select an exact value. In :numref:`fig14` the seed is set at 388.
 	also the order of the operations needs to be the same. The seed changes when used in 
 	the random number generator. When the undo button is used (see ), the seed is not
 	reset to the value prior to the reverted step.
+
+
 
 Summary view
 ------------

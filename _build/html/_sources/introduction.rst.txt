@@ -44,7 +44,7 @@ as provides an overview over the full SDC process. It also contains references t
 appropriate literature. 
 
 `HDFG06`_ is a book written by practitioners in NSOs and is especially worth mentioning 
-for those seeking to read a complete overview 
+for those seeking to read a complete overview .
 
 Outline of this guide
 ---------------------

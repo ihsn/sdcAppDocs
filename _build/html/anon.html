@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Anonymization methods &#8212; sdcMicro GUI manual  documentation</title>
+    <title>Anonymization Methods &#8212; sdcMicro GUI manual  documentation</title>
     <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/theme_overrides.css" />
@@ -19,7 +19,7 @@
     <link rel="author" title="About these documents" href="about.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Utility measurement" href="utility.html" />
+    <link rel="next" title="Utility Measurement" href="utility.html" />
     <link rel="prev" title="Risk measurement" href="risk.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
@@ -29,7 +29,7 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="utility.html" title="Utility measurement"
+          <a href="utility.html" title="Utility Measurement"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="risk.html" title="Risk measurement"
@@ -44,7 +44,7 @@
           <div class="body" role="main">
             
   <div class="section" id="anonymization-methods">
-<h1>Anonymization methods<a class="headerlink" href="#anonymization-methods" title="Permalink to this headline">¶</a></h1>
+<h1>Anonymization Methods<a class="headerlink" href="#anonymization-methods" title="Permalink to this headline">¶</a></h1>
 <p>Once the disclosure risk is evaluated and is too high for release, SDC methods need
 to be applied to the variables to reduce the risk. This process is iterative, i.e.,
 after applying a certain method with a set of parameters, the disclosure risk
@@ -54,9 +54,18 @@ undo the method (see <a class="reference external" href="undo.html">Undo</a>) an
 <p>In this section, we provide a brief description of common SDC methods for microdata and
 show how to use these in <em>sdcApp</em>. For more information on the choice of the
 appropriate method and more detailed information on the methods themselves, we refer to
-the respective section in the SDC theory guide (link).</p>
+the section <strong>Anonymization methods</strong> in
+<a class="reference external" href="https://sdctheory.readthedocs.io/en/latest/">Statistical Disclosure Control for Microdata: A Theory Guide</a>.</p>
+<p>In order to reproduce the examples in this section, one should load <em>testdata</em> dataset, which
+is included in the <em>sdcMicro</em> package and follow the steps to setup the SDC problem as
+outlined in the section <a class="reference external" href="setup.html">Setup Anonymization Problem</a>.</p>
 <div class="section" id="recoding">
 <h2>Recoding<a class="headerlink" href="#recoding" title="Permalink to this headline">¶</a></h2>
+<p>Recoding is a deterministic method used to decrease the number of distinct categories
+or values for a variable. This is done by combining or grouping categories for categorical
+variables or constructing intervals for continuous variables. Recoding is applied to
+all observations of a certain variable and not only to those at risk of disclosure.
+In <em>sdcApp</em> two general types are availbale: global recoding and top and bottom coding.</p>
 <div class="section" id="global-recoding">
 <h3>Global recoding<a class="headerlink" href="#global-recoding" title="Permalink to this headline">¶</a></h3>
 <p>Global recoding combines several categories (levels) of a categorical variable or constructs
@@ -263,7 +272,7 @@ described below.</p>
         <div class="sphinxsidebarwrapper">
   <h3><a href="index.html">Table of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">Anonymization methods</a><ul>
+<li><a class="reference internal" href="#">Anonymization Methods</a><ul>
 <li><a class="reference internal" href="#recoding">Recoding</a><ul>
 <li><a class="reference internal" href="#global-recoding">Global recoding</a></li>
 <li><a class="reference internal" href="#top-and-bottom-coding">Top and bottom coding</a></li>
@@ -294,7 +303,7 @@ described below.</p>
                         title="previous chapter">Risk measurement</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="utility.html"
-                        title="next chapter">Utility measurement</a></p>
+                        title="next chapter">Utility Measurement</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -323,7 +332,7 @@ described below.</p>
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="utility.html" title="Utility measurement"
+          <a href="utility.html" title="Utility Measurement"
              >next</a> |</li>
         <li class="right" >
           <a href="risk.html" title="Risk measurement"

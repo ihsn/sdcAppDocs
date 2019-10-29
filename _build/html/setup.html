@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Setup anonymization problem &#8212; sdcMicro GUI manual  documentation</title>
+    <title>Setup Anonymization Problem &#8212; sdcMicro GUI manual  documentation</title>
     <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/theme_overrides.css" />
@@ -44,8 +44,8 @@
           <div class="body" role="main">
             
   <div class="section" id="setup-anonymization-problem">
-<h1>Setup anonymization problem<a class="headerlink" href="#setup-anonymization-problem" title="Permalink to this headline">¶</a></h1>
-<p>Based on the analysis of the disclosure scenarios (see ), the user needs can make the variable
+<h1>Setup Anonymization Problem<a class="headerlink" href="#setup-anonymization-problem" title="Permalink to this headline">¶</a></h1>
+<p>Based on the analysis of the disclosure scenarios, the user needs can make the variable
 selection in <em>sdcApp</em> and set some other parameters in order to define the
 so-called SDC problem. Once the data is loaded and prepared,
 the tab <em>Anonymize</em> shows a variable selection matrix in the main panel. The right sidebar
@@ -55,8 +55,10 @@ in the loaded dataset.</p>
 <h2>Variable selection<a class="headerlink" href="#variable-selection" title="Permalink to this headline">¶</a></h2>
 <p>In order to setup an SDC problem the user needs to make a variable selection. The variable
 selection itself is the result of the analysis of diclosure scenarios and is beyond the scope
-of this manual. We refer to Chapter in for a thorough discussion of disclosure scenarios.</p>
-<p>The matrix shown in <a class="reference internal" href="#fig11"><span class="std std-numref">Fig. 24</span></a> contain one row for each variable in the loaded dataset
+of this manual. We refer to the section <a class="reference external" href="https://sdctheory.readthedocs.io/en/latest/measure_risk.html#disclosure-scenarios">Disclosure scenarios</a>)
+in <strong>Statistical Disclosure Control for Microdata: A Theory Guide</strong>
+for a thorough discussion of disclosure scenarios.</p>
+<p>The matrix shown in <a class="reference internal" href="#fig11"><span class="std std-numref">Fig. 24</span></a> contains one row for each variable in the loaded dataset
 and nine different columns as described in <a class="reference internal" href="#tabsetup1"><span class="std std-numref">Table 2</span></a>.</p>
 <div class="figure align-center" id="id1">
 <span id="fig11"></span><img alt="_images/setupTable.png" src="_images/setupTable.png" />
@@ -232,6 +234,12 @@ variable selection.</p>
 <span id="fig13"></span><img alt="_images/setupErrorMessage.png" src="_images/setupErrorMessage.png" />
 <p class="caption"><span class="caption-number">Fig. 26 </span><span class="caption-text">Example of a popup window with an error message after an invalid variable choice</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
+<p>For the examples and illustrations in this guide, we select the variables <strong>urbrur</strong>, <strong>sex</strong>, and <strong>age</strong>
+as categorical key variables, the variables <strong>expend</strong>, <strong>income</strong>, and <strong>savings</strong> as
+continuous key variables, the variables <strong>sampling_weight</strong> as weight and the variables
+<strong>roof</strong> and <strong>walls</strong> as PRAM variables (cf. <a class="reference internal" href="#fig11"><span class="std std-numref">Fig. 24</span></a>). Note that non hierarchical
+identifier was selected as the data lack a hierarchical structure. The remaining variables
+that are not selected are considered as not of importance for the SDC process.</p>
 </div>
 <div class="section" id="settings">
 <h2>Settings<a class="headerlink" href="#settings" title="Permalink to this headline">¶</a></h2>
@@ -301,7 +309,7 @@ click the red button [add png]. By doing so, you need to respecify the full vari
         <div class="sphinxsidebarwrapper">
   <h3><a href="index.html">Table of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">Setup anonymization problem</a><ul>
+<li><a class="reference internal" href="#">Setup Anonymization Problem</a><ul>
 <li><a class="reference internal" href="#variable-selection">Variable selection</a></li>
 <li><a class="reference internal" href="#settings">Settings</a><ul>
 <li><a class="reference internal" href="#alpha">Alpha</a></li>

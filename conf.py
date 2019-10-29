@@ -24,7 +24,7 @@ import sphinx_rtd_theme
 
 # -- Project information -----------------------------------------------------
 
-project = 'sdcMicro GUI manual'
+project = 'sdcApp manual'
 copyright = '2019, International Household Survey Network'
 author = 'Thijs Benschop, Matthew Welch'
 

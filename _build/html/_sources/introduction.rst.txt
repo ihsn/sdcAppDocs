@@ -4,7 +4,7 @@ Introduction
 What is sdcApp?
 ---------------
 
-*sdcApp* is the Graphical User Interface (GUI) for the R package *sdcMicro* (see
+*sdcApp* is the Graphical User Interface (GUI) for the R package *sdcMicro*`TKM15`_ (see
 `here <https://cran.r-project.org/web/packages/sdcMicro/index.html>`_). The *sdcApp* 
 opens the functionality of *sdcMicro* to users not familiar with the statistical
 programming language *R*. *sdcMicro* is an add-on package for the statistical software *R* 
@@ -68,4 +68,7 @@ References
 .. [HDFG06] Hundepool, A., Domingo-Ferrer, J., Franconi, L., Giessing, S., Lenz, R., Naylor, J., et al. (2006). 
 	**Handbook on Statistical Disclosure Control.**
 	ESSNet SDC.
-	
+.. [TKM15]	Matthias Templ, Alexander Kowarik, Bernhard Meindl (2015). 
+	Statistical Disclosure Control for Micro-Data Using the R Package sdcMicro. 
+	**Journal of Statistical Software**, 67(4), 1-36.<doi:10.18637/jss.v067.i04>
+

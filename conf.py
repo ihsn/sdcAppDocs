@@ -180,3 +180,4 @@ intersphinx_mapping = {'https://docs.python.org/': None}
 
 # Option for references to tables and figures
 numfig = True
+

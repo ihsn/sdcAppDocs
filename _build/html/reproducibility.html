@@ -1,234 +1,160 @@
 
-
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>Reproducibility &mdash; sdcMicro GUI manual  documentation</title>
-  
 
-  
-  
-  
-  
-
-  
-
-  
-  
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Reproducibility &#8212; sdcApp manual  documentation</title>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/theme_overrides.css" />
     
-
-  
-
-  
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
     <link rel="author" title="About these documents" href="about.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Export data, reports" href="export.html" /> 
+    <link rel="next" title="Undo" href="undo.html" />
+    <link rel="prev" title="Export data and reports" href="export.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="undo.html" title="Undo"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="export.html" title="Export data and reports"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">sdcApp manual  documentation</a> &#187;</li> 
+      </ul>
+    </div>  
 
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
-</head>
-
-<body class="wy-body-for-nav">
-
-   
-  <div class="wy-grid-for-nav">
-
-    
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
-          
-
-          
-            <a href="index.html" class="icon icon-home"> sdcMicro GUI manual
-          
-
-          
-          </a>
-
-          
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
             
-            
-          
-
-          
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
+  <div class="section" id="reproducibility">
+<h1>Reproducibility<a class="headerlink" href="#reproducibility" title="Permalink to this headline">¶</a></h1>
+<p>Reproducibility is key to the SDC process, as …</p>
+<div class="section" id="exporting-r-script">
+<h2>Exporting <em>R</em> script<a class="headerlink" href="#exporting-r-script" title="Permalink to this headline">¶</a></h2>
+<p><em>sdcApp</em> is a GUI for the <em>R</em> package <em>sdcMicro</em>. All steps executed in <em>sdcApp</em> are translated
+into <em>R</em> commands. Therefore, the full anonymization can also be performed from command-line
+in <em>R</em>. While carrying out the anonymization process, the code to perform the same action
+from command-line is generated. The code can be viewed and exported on the <strong>Reproducibility</strong>
+tab by selecting <strong>View the current script</strong> from the left sidebar (cf. <a class="reference internal" href="#fig111"><span class="std std-numref">Fig. 45</span></a>).
+The script also contains comments, which are the lines starting with the hash tag (<code class="code docutils literal notranslate"><span class="pre">#</span></code>).
+These comments are meant to help with the interpretation of the code blocks.</p>
+<div class="figure align-center" id="id5">
+<span id="fig111"></span><img alt="_images/reproScript.png" src="_images/reproScript.png" />
+<p class="caption"><span class="caption-number">Fig. 45 </span><span class="caption-text"><em>R</em> script to reproduce anonymization process after setting up SDC problem</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+<p>The goal of the <em>R</em> script is threefold:
+1) To reproduce the steps taken in the anonymization process. This guarantees
+the reproducibility, since the all variabele selections and parameters are contained in the
+code and the order of the application of different methods is preserved in the code.
+2) As a starting point to learn <em>R</em> and use <em>sdcMicro</em> from <em>R</em> command-line. Especially for
+users with some degree of familiarity with <em>R</em>, the script
+3) To rerun the same methods with different parameter settings without the need to make
+all selections by mouseclick in the GUI. It’s relatively easy to change the parameter settings
+in the <em>R</em> code and rerun the code. However, the code does not include commands to shw
+the results.</p>
+<p>By clicking on the blue button <strong>Save script to file</strong> at the top of the page, the script
+is saved as <em>R</em> script (extension .R) on disk to the selected storage path on the
+<strong>About/Help</strong> tab (see <a class="reference external" href="introsdcApp.html">Introduction to sdcApp</a>).
+The filename of the exported script starts with ‘exportedScript_sdcMicro’ followed
+by a date and time stamp, e.g., ‘exportedScript_sdcMicro_20181010_1212.R’.</p>
+<p>In order to run the script in <em>R</em>, open the saved script in <em>RStudio</em>. The only
+thing to do is to change the path of the input file to the actual file path on your computer.
+In the second line of the <em>R</em> script,</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In case a method was applied in <em>sdcApp</em> and subsequently reverted by using the <strong>Undo</strong>
+button, the method is not erased from the script, but rather the undo command is added.
+For example, if local suppression was applied and reverted, this appears as follows in
+the script:</p>
+<div class="highlight-R notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">## Local suppression to obtain k-anonymity</span>
+<span class="n">sdcObj</span> <span class="o">&lt;-</span> <span class="nf">kAnon</span><span class="p">(</span><span class="n">sdcObj</span><span class="p">,</span> <span class="n">importance</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">),</span> <span class="n">combs</span><span class="o">=</span><span class="kc">NULL</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">3</span><span class="p">))</span>
+<span class="n">sdcObj</span> <span class="o">&lt;-</span> <span class="nf">undolast</span><span class="p">(</span><span class="n">sdcObj</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<p>This code preceding the :code:<a href="#id1"><span class="problematic" id="id2">`</span></a>undoLast`command and the :code:<a href="#id3"><span class="problematic" id="id4">`</span></a>undoLast`command
+can be deleted without changing the results.</p>
+</div>
+</div>
 </div>
 
-          
-        </div>
 
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
-              <p class="caption"><span class="caption-text">Table of contents</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="about.html">Help and settings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="loadprepdata.html">Loading and Preparing Data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="setup.html">Setup anonymization problem</a></li>
-<li class="toctree-l1"><a class="reference internal" href="risk.html">Risk measurement</a></li>
-<li class="toctree-l1"><a class="reference internal" href="anon.html">Anonymization methods</a></li>
-<li class="toctree-l1"><a class="reference internal" href="utility.html">Utility</a></li>
-<li class="toctree-l1"><a class="reference internal" href="export.html">Export data, reports</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Reproducibility</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#exporting-script">Exporting script</a></li>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Reproducibility</a><ul>
+<li><a class="reference internal" href="#exporting-r-script">Exporting <em>R</em> script</a></li>
 </ul>
 </li>
 </ul>
 
-            
-          
-        </div>
-      </div>
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">sdcMicro GUI manual</a>
-        
-      </nav>
-
-
-      <div class="wy-nav-content">
-        
-        <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
-  <ul class="wy-breadcrumbs">
-    
-      <li><a href="index.html">Docs</a> &raquo;</li>
-        
-      <li>Reproducibility</li>
-    
-    
-      <li class="wy-breadcrumbs-aside">
-        
-            
-            <a href="_sources/reproducibility.rst.txt" rel="nofollow"> View page source</a>
-          
-        
-      </li>
-    
-  </ul>
-
-  
-  <hr/>
-</div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody">
-            
-  <div class="section" id="reproducibility">
-<h1>Reproducibility<a class="headerlink" href="#reproducibility" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="exporting-script">
-<h2>Exporting script<a class="headerlink" href="#exporting-script" title="Permalink to this headline">¶</a></h2>
-</div>
-</div>
-
-
-           </div>
-           
-          </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-      
-        <a href="export.html" class="btn btn-neutral" title="Export data, reports" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="export.html"
+                        title="previous chapter">Export data and reports</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="undo.html"
+                        title="next chapter">Undo</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/reproducibility.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
     </div>
-  
-
-  <hr/>
-
-  <div role="contentinfo">
-    <p>
-        &copy; Copyright 2018, Thijs Benschop.
-
-    </p>
-  </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
-
-</footer>
-
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
       </div>
-
-    </section>
-
-  </div>
-  
-
-
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'',
-            LANGUAGE:'None',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-  
-
-  <script type="text/javascript">
-      jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
-      });
-  </script> 
-
-</body>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="undo.html" title="Undo"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="export.html" title="Export data and reports"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">sdcApp manual  documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019, International Household Survey Network.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
+    </div>
+  </body>
 </html>

@@ -1,232 +1,167 @@
 
-
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>Utility &mdash; sdcMicro GUI manual  documentation</title>
-  
 
-  
-  
-  
-  
-
-  
-
-  
-  
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Utility Measurement &#8212; sdcApp manual  documentation</title>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/theme_overrides.css" />
     
-
-  
-
-  
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
     <link rel="author" title="About these documents" href="about.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Export data, reports" href="export.html" />
-    <link rel="prev" title="Anonymization methods" href="anon.html" /> 
+    <link rel="next" title="Export data and reports" href="export.html" />
+    <link rel="prev" title="Anonymization Methods" href="anon.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="export.html" title="Export data and reports"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="anon.html" title="Anonymization Methods"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">sdcApp manual  documentation</a> &#187;</li> 
+      </ul>
+    </div>  
 
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
-</head>
-
-<body class="wy-body-for-nav">
-
-   
-  <div class="wy-grid-for-nav">
-
-    
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
-          
-
-          
-            <a href="index.html" class="icon icon-home"> sdcMicro GUI manual
-          
-
-          
-          </a>
-
-          
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
             
-            
-          
-
-          
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
+  <div class="section" id="utility-measurement">
+<h1>Utility Measurement<a class="headerlink" href="#utility-measurement" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="general-utility-measures-in-sdcapp">
+<h2>General utility measures in <em>sdcApp</em><a class="headerlink" href="#general-utility-measures-in-sdcapp" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="compare-summary-statistics">
+<h3>Compare summary statistics<a class="headerlink" href="#compare-summary-statistics" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="categorical-variables">
+<h4>Categorical variables<a class="headerlink" href="#categorical-variables" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="continuous-variables">
+<h4>Continuous variables<a class="headerlink" href="#continuous-variables" title="Permalink to this headline">¶</a></h4>
+</div>
+</div>
+<div class="section" id="il1s-measure">
+<h3>IL1s measure<a class="headerlink" href="#il1s-measure" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="customized-utility-measures">
+<h2>Customized utility measures<a class="headerlink" href="#customized-utility-measures" title="Permalink to this headline">¶</a></h2>
+<p>As the statistical analyses based on the microdata depend, amongst others,
+on to the topic of the survey, the country and the definition of the variables,
+it is not feasible to include all these measures in <em>sdcApp</em>. Instead, it is recommended
+to compute the statistics and indicators and perform statistical an econometric
+analyses on the original and anonymized datasets and evaluate the differences in the results.
+If a publication based on the microdata is already published, it is recommended
+to recompute the statistics in these publications from the anonymized dataset.</p>
+<p>The approach is to compare the indicators calculated on the untreated data and the
+data after anonymization with different methods. If the differences between the
+indicators are not too large, the anonymized dataset can be released for use by
+researchers. It should be taken into account that indicators calculated on samples
+are estimates with a certain variance and confidence interval. Therefore, for sample
+data, it is more informative to compare the overlap of confidence intervals and/or
+to evaluate whether the point estimate calculated after anonymization is contained
+within the confidence interval of the original estimate.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Some analyses may no longer be possible or not possible in exactly the same way.
+E.g. regression on age if age is recoded in 5-year intervals.</p>
+</div>
+<p>In order to do so, it is posible to export the dataset at any point in <em>sdcApp</em>.
+See the Section <a class="reference external" href="export.html">Export anonymized dataset</a> to learn how to export
+a dataset from <em>sdcApp</em>. The microdata can be exported at any intermediate stata in the
+SDC process.
+Several datasets can be exported after applying different methods
+with different parameters settings to compare the information loss resulting from
+the anonymization. This information can be used to select the anonymization methods
+as well as to inform the user about the implications of the anonymization on
+the validity of the dataset for analysis.</p>
+</div>
 </div>
 
-          
-        </div>
 
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
-              <p class="caption"><span class="caption-text">Table of contents</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="about.html">Help and settings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="loadprepdata.html">Loading and Preparing Data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="setup.html">Setup anonymization problem</a></li>
-<li class="toctree-l1"><a class="reference internal" href="risk.html">Risk measurement</a></li>
-<li class="toctree-l1"><a class="reference internal" href="anon.html">Anonymization methods</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Utility</a></li>
-<li class="toctree-l1"><a class="reference internal" href="export.html">Export data, reports</a></li>
-<li class="toctree-l1"><a class="reference internal" href="reproducibility.html">Reproducibility</a></li>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Utility Measurement</a><ul>
+<li><a class="reference internal" href="#general-utility-measures-in-sdcapp">General utility measures in <em>sdcApp</em></a><ul>
+<li><a class="reference internal" href="#compare-summary-statistics">Compare summary statistics</a><ul>
+<li><a class="reference internal" href="#categorical-variables">Categorical variables</a></li>
+<li><a class="reference internal" href="#continuous-variables">Continuous variables</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#il1s-measure">IL1s measure</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#customized-utility-measures">Customized utility measures</a></li>
+</ul>
+</li>
 </ul>
 
-            
-          
-        </div>
-      </div>
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">sdcMicro GUI manual</a>
-        
-      </nav>
-
-
-      <div class="wy-nav-content">
-        
-        <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
-  <ul class="wy-breadcrumbs">
-    
-      <li><a href="index.html">Docs</a> &raquo;</li>
-        
-      <li>Utility</li>
-    
-    
-      <li class="wy-breadcrumbs-aside">
-        
-            
-            <a href="_sources/utility.rst.txt" rel="nofollow"> View page source</a>
-          
-        
-      </li>
-    
-  </ul>
-
-  
-  <hr/>
-</div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody">
-            
-  <div class="section" id="utility">
-<h1>Utility<a class="headerlink" href="#utility" title="Permalink to this headline">¶</a></h1>
-<p>test</p>
-</div>
-
-
-           </div>
-           
-          </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="export.html" class="btn btn-neutral float-right" title="Export data, reports" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="anon.html" class="btn btn-neutral" title="Anonymization methods" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="anon.html"
+                        title="previous chapter">Anonymization Methods</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="export.html"
+                        title="next chapter">Export data and reports</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/utility.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
     </div>
-  
-
-  <hr/>
-
-  <div role="contentinfo">
-    <p>
-        &copy; Copyright 2018, Thijs Benschop.
-
-    </p>
-  </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
-
-</footer>
-
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
       </div>
-
-    </section>
-
-  </div>
-  
-
-
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'',
-            LANGUAGE:'None',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-  
-
-  <script type="text/javascript">
-      jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
-      });
-  </script> 
-
-</body>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="export.html" title="Export data and reports"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="anon.html" title="Anonymization Methods"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">sdcApp manual  documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019, International Household Survey Network.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
+    </div>
+  </body>
 </html>

@@ -12,16 +12,21 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-# import os
-# import sys
-# sys.path.insert(0, os.path.abspath('.'))
 
+import os
+import sys
+sys.path.insert(0, os.path.abspath('.'))
+#import importlib
+
+import sphinx_rtd_theme
+
+#importlib.import_module('sphinx_rtd_theme')
 
 # -- Project information -----------------------------------------------------
 
-project = 'sdcMicro GUI manual'
-copyright = '2018, Thijs Benschop'
-author = 'Thijs Benschop'
+project = 'sdcApp manual'
+copyright = '2019, International Household Survey Network'
+author = 'Thijs Benschop, Matthew Welch'
 
 # The short X.Y version
 version = ''
@@ -39,7 +44,15 @@ release = ''
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-]
+    'sphinx.ext.autodoc',
+    'sphinx.ext.doctest',
+    'sphinx.ext.intersphinx',
+    'sphinx.ext.todo',
+    'sphinx.ext.coverage',
+    'sphinx.ext.mathjax',
+    'sphinx.ext.ifconfig',
+    'sphinx.ext.viewcode',
+    'sphinx.ext.githubpages',]
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -74,7 +87,9 @@ pygments_style = 'sphinx'
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'sphinxdoc'
+
+#html_theme = 'classic'
+html_theme = 'sphinx_rtd_theme'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -102,6 +117,8 @@ html_static_path = ['_static']
 
 # Output file base name for HTML help builder.
 htmlhelp_basename = 'sdcMicroGUImanualdoc'
+def setup(app):
+    app.add_stylesheet('theme_overrides.css')
 
 
 # -- Options for LaTeX output ------------------------------------------------
@@ -153,3 +170,14 @@ texinfo_documents = [
      author, 'sdcMicroGUImanual', 'One line description of project.',
      'Miscellaneous'),
 ]
+
+# -- Extension configuration -------------------------------------------------
+
+# -- Options for intersphinx extension ---------------------------------------
+
+# Example configuration for intersphinx: refer to the Python standard library.
+intersphinx_mapping = {'https://docs.python.org/': None}
+
+# Option for references to tables and figures
+numfig = True
+

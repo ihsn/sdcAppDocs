@@ -1,12 +1,23 @@
-sdcMicro GUI manual
-===================
-The application of many anonymization methods is complex and requires knowledge of the methods and access to suitable tools for implementation. For users comfortable with using R, the package sdcMicro provides a tool for the application of a comprehensive suite of methods commonly used and described in the literature on disclosure control. Users not familiar with R, but who have an immediate need for tools to anonymize microdata, would benefit from a friendly Graphic User Interface (GUI) for the sdcMicro package.
+sdcApp manual
+=============
 
-To provide a GUI environment for the non-R user, the World Bank through a Grant from DFID,  funded the initial development of a Shiny GUI application called sdcApp, which has been added to the sdcMicro package.
+This is documentation and guidance for *sdcApp*, a user interface for the *sdcMicro* *R* 
+package, which provides tools for Statistical Disclosure Control (SDC) for microdata, 
+also known as microdata anonymization. For an introduction to the theory and practice of Statistical Disclosure Control please see our accompanying guide: 
+`Statistical Disclosure Control for Microdata: Theory <https://sdctheory.readthedocs.io/en/latest/>`_.
 
-Users of sdcApp can implement the most widely used anonymization methods present in the sdcMicro package without requiring in-depth knowledge of R. In addition to the anonymization methods implemented in the sdcMicro package, sdcApp offers a comprehensive set of risk and utility measures. This includes functions to measure, visualize and compare risk and utility throughout the anonymization process.  sdcApp also helps users by producing reports on the methods used in formats suitable for internal and external audiences and saves the underlying R code to ensure reproducibility.  For users of other statistical packages, sdcApp supports importing and exporting microdata in several formats. Like R, sdcMicro is open source and available in the CRAN repositories. 
 
-Authors: Matthew Welch - Senior Statistician, World Bank, Thijs Benschop, Consultant,  World Bank
+**Authors of this manual:** Thijs Benschop and Matthew Welch, The World Bank
+
+**Acknowledgments:** The authors thank Olivier Dupriez and Cathrine Machingauta (The World Bank) 
+for their technical comments and inputs throughout the process.
+
+The production of this guide was made possible through a World Bank Knowledge 
+for Change II Grant: KCP II - A microdata dissemination challenge: 
+Balancing data protection and data utility. Grant number: TF 015043, 
+Project Number P094376. As well as from United Kingdom - DFID funding 
+to the World Bank Multi-Donor Trust Fund - International Household Survey 
+and Accelerated Data Program – TF071804/TF011722/TF0A7461.
 
 .. toctree::
    :maxdepth: 2
@@ -14,7 +25,7 @@ Authors: Matthew Welch - Senior Statistician, World Bank, Thijs Benschop, Consul
 
    introduction
    installation
-   about
+   introsdcApp
    loadprepdata
    setup
    risk
@@ -22,3 +33,6 @@ Authors: Matthew Welch - Senior Statistician, World Bank, Thijs Benschop, Consul
    utility
    export
    reproducibility
+   undo
+   casestudies
+

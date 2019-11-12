@@ -1,232 +1,228 @@
 
-
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>Risk measurement &mdash; sdcMicro GUI manual  documentation</title>
-  
 
-  
-  
-  
-  
-
-  
-
-  
-  
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Risk measurement &#8212; sdcApp manual  documentation</title>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/theme_overrides.css" />
     
-
-  
-
-  
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
     <link rel="author" title="About these documents" href="about.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Anonymization methods" href="anon.html" />
-    <link rel="prev" title="Setup anonymization problem" href="setup.html" /> 
+    <link rel="next" title="Anonymization Methods" href="anon.html" />
+    <link rel="prev" title="Setup Anonymization Problem" href="setup.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="anon.html" title="Anonymization Methods"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="setup.html" title="Setup Anonymization Problem"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">sdcApp manual  documentation</a> &#187;</li> 
+      </ul>
+    </div>  
 
-  
-  <script src="_static/js/modernizr.min.js"></script>
-
-</head>
-
-<body class="wy-body-for-nav">
-
-   
-  <div class="wy-grid-for-nav">
-
-    
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
-          
-
-          
-            <a href="index.html" class="icon icon-home"> sdcMicro GUI manual
-          
-
-          
-          </a>
-
-          
-            
-            
-          
-
-          
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
-</div>
-
-          
-        </div>
-
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
-              <p class="caption"><span class="caption-text">Table of contents</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="about.html">Help and settings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="loadprepdata.html">Loading and Preparing Data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="setup.html">Setup anonymization problem</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Risk measurement</a></li>
-<li class="toctree-l1"><a class="reference internal" href="anon.html">Anonymization methods</a></li>
-<li class="toctree-l1"><a class="reference internal" href="utility.html">Utility</a></li>
-<li class="toctree-l1"><a class="reference internal" href="export.html">Export data, reports</a></li>
-<li class="toctree-l1"><a class="reference internal" href="reproducibility.html">Reproducibility</a></li>
-</ul>
-
-            
-          
-        </div>
-      </div>
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">sdcMicro GUI manual</a>
-        
-      </nav>
-
-
-      <div class="wy-nav-content">
-        
-        <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
-  <ul class="wy-breadcrumbs">
-    
-      <li><a href="index.html">Docs</a> &raquo;</li>
-        
-      <li>Risk measurement</li>
-    
-    
-      <li class="wy-breadcrumbs-aside">
-        
-            
-            <a href="_sources/risk.rst.txt" rel="nofollow"> View page source</a>
-          
-        
-      </li>
-    
-  </ul>
-
-  
-  <hr/>
-</div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody">
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
             
   <div class="section" id="risk-measurement">
 <h1>Risk measurement<a class="headerlink" href="#risk-measurement" title="Permalink to this headline">¶</a></h1>
-<p>test</p>
+<div class="section" id="summary-view">
+<h2>Summary view<a class="headerlink" href="#summary-view" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="global-risk-measure">
+<h3>Global risk measure<a class="headerlink" href="#global-risk-measure" title="Permalink to this headline">¶</a></h3>
+<p>For categorical variables</p>
+</div>
+<div class="section" id="k-anonymity">
+<h3><span class="math notranslate nohighlight">\(k\)</span>-anonymity<a class="headerlink" href="#k-anonymity" title="Permalink to this headline">¶</a></h3>
+<p>The risk measure <span class="math notranslate nohighlight">\(k\)</span>-anonymity is based on the principle that, in a safe
+dataset, the number of individuals sharing the same combination of
+values (keys) of categorical quasi-identifiers should be higher than a
+specified threshold <span class="math notranslate nohighlight">\(k\)</span>. <span class="math notranslate nohighlight">\(k\)</span>-anonymity is a risk
+measure based on the microdata to be released, since it only takes the
+sample into account. An individual violates <span class="math notranslate nohighlight">\(k\)</span>-anonymity if the
+sample frequency count <span class="math notranslate nohighlight">\(f_{k}\)</span> for the key <span class="math notranslate nohighlight">\(k\)</span> is smaller
+than the specified threshold <span class="math notranslate nohighlight">\(k\)</span>. For example, if an
+individual has the same combination of quasi-identifiers as two other
+individuals in the sample, these individuals satisfy 3-anonymity but
+violate 4-anonymity. In the dataset, six individuals
+satisfy 2-anonymity and four violate 2-anonymity. The individuals that
+violate 2-anonymity are sample uniques. The risk measure is the number
+of observations that violates k-anonymity for a certain value of <em>k</em>,
+which is</p>
+<div class="math notranslate nohighlight">
+\[\sum_{i}^{}{I(f_{k} &lt; k)},\]</div>
+<p>where <span class="math notranslate nohighlight">\(I\)</span> is the indicator function and <span class="math notranslate nohighlight">\(i\)</span> refers to the
+<span class="math notranslate nohighlight">\(i\)</span><sup>th</sup> record. This is simply a count of the number of
+individuals with a sample frequency of their key lower than <span class="math notranslate nohighlight">\(k\)</span>.
+The count is higher for larger <span class="math notranslate nohighlight">\(k\)</span>, since if a record satisfies
+<span class="math notranslate nohighlight">\(k\)</span>-anonimity, it also satisfies <span class="math notranslate nohighlight">\((k + 1)\)</span>-anonimity. The
+risk measure <span class="math notranslate nohighlight">\(k\)</span>-anonymity does not consider the sample weights,
+but it is important to consider the sample weights when determining the
+required level of <span class="math notranslate nohighlight">\(k\)</span>-anonymity. If the sample weights are large,
+one individual in the dataset represents more individuals in the target
+population, the probability of a correct match is smaller, and hence the
+required threshold can be lower. Large sample weights go together with
+smaller datasets. In a smaller dataset, the probability to find another
+record with the same key is smaller than in a larger dataset. This
+probability is related to the number of records in the population with a
+particular key through the sample weights.</p>
+<p>In the summary view</p>
+<div class="figure align-center" id="id3">
+<span id="fig71"></span><img alt="_images/summary_k_anon.png" src="_images/summary_k_anon.png" />
+<p class="caption"><span class="caption-number">Fig. 28 </span><span class="caption-text">Information on <span class="math notranslate nohighlight">\(k\)</span>-anonymity violators in summary view</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="risk-measures-for-numerical-key-variables">
+<h3>Risk measures for numerical key variables<a class="headerlink" href="#risk-measures-for-numerical-key-variables" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="household-risk">
+<h3>Household risk<a class="headerlink" href="#household-risk" title="Permalink to this headline">¶</a></h3>
+<p>If household identifier is selected, household risk will automatically be displayed.</p>
+</div>
+</div>
+<div class="section" id="detailed-view">
+<h2>Detailed view<a class="headerlink" href="#detailed-view" title="Permalink to this headline">¶</a></h2>
+<p>The Risk/Utility tab provides more detailed information on risk measures and records at
+(high) risk.</p>
+<div class="section" id="risky-observations">
+<h3>Risky observations<a class="headerlink" href="#risky-observations" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="suda">
+<h3>SUDA<a class="headerlink" href="#suda" title="Permalink to this headline">¶</a></h3>
+<p>The SUDA algorithm identifies all the MSUs in the sample, which in turn
+are used to assign a SUDA score to each record. This score indicates how
+“risky” a record is. The potential risk of the records is determined
+based on two observations:</p>
+<ul class="simple">
+<li><p>The smaller the size of the MSU within a record (i.e., the fewer
+variables are needed to reach uniqueness), the greater the risk of
+the record</p></li>
+<li><p>The larger the number of MSUs possessed by a record, the greater the
+risk of the record</p></li>
+</ul>
+<div class="figure align-center" id="id4">
+<span id="id1"></span><img alt="_images/risk_suda_setup.png" src="_images/risk_suda_setup.png" />
+<p class="caption"><span class="caption-number">Fig. 29 </span><span class="caption-text">Compute SUDA scores</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-center" id="id5">
+<span id="fig72"></span><img alt="_images/risk_suda_result.png" src="_images/risk_suda_result.png" />
+<p class="caption"><span class="caption-number">Fig. 30 </span><span class="caption-text">Result of SUDA calculation</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="l-diversity">
+<h3>l-diversity<a class="headerlink" href="#l-diversity" title="Permalink to this headline">¶</a></h3>
+<p>A dataset
+satisfies <span class="math notranslate nohighlight">\(l\)</span>-diversity if for every key <span class="math notranslate nohighlight">\(k\)</span> there are at least
+<span class="math notranslate nohighlight">\(l\)</span> different values for each of the sensitive variables. In the
+example, the first two individuals satisfy only 1-diversity, individuals
+4 and 6 satisfy 2-diversity. The required level of <span class="math notranslate nohighlight">\(l\)</span>-diversity
+depends on the number of possible values the sensitive variable can
+take. If the sensitive variable is a binary variable, the highest level
+if <span class="math notranslate nohighlight">\(l\)</span>-diversity that can be achieved is 2. A sample unique will
+always only satisfy 1-diversity.</p>
+<p>To compute <span class="math notranslate nohighlight">\(l\)</span>-diversity for sensitive variables in sdcApp</p>
+</div>
+<div class="section" id="id2">
+<h3>k-anonymity<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<div class="figure align-center" id="id6">
+<span id="fig73"></span><img alt="_images/summary_k_anon.png" src="_images/summary_k_anon.png" />
+<p class="caption"><span class="caption-number">Fig. 31 </span><span class="caption-text">Information on <span class="math notranslate nohighlight">\(k\)</span>-anonymity violators for any level of <span class="math notranslate nohighlight">\(k\)</span></span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+</div>
 </div>
 
 
-           </div>
-           
           </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="anon.html" class="btn btn-neutral float-right" title="Anonymization methods" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="setup.html" class="btn btn-neutral" title="Setup anonymization problem" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
-  
-
-  <hr/>
-
-  <div role="contentinfo">
-    <p>
-        &copy; Copyright 2018, Thijs Benschop.
-
-    </p>
-  </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
-
-</footer>
-
         </div>
       </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Risk measurement</a><ul>
+<li><a class="reference internal" href="#summary-view">Summary view</a><ul>
+<li><a class="reference internal" href="#global-risk-measure">Global risk measure</a></li>
+<li><a class="reference internal" href="#k-anonymity"><span class="math notranslate nohighlight">\(k\)</span>-anonymity</a></li>
+<li><a class="reference internal" href="#risk-measures-for-numerical-key-variables">Risk measures for numerical key variables</a></li>
+<li><a class="reference internal" href="#household-risk">Household risk</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#detailed-view">Detailed view</a><ul>
+<li><a class="reference internal" href="#risky-observations">Risky observations</a></li>
+<li><a class="reference internal" href="#suda">SUDA</a></li>
+<li><a class="reference internal" href="#l-diversity">l-diversity</a></li>
+<li><a class="reference internal" href="#id2">k-anonymity</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 
-    </section>
-
-  </div>
-  
-
-
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'',
-            LANGUAGE:'None',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-  
-
-  <script type="text/javascript">
-      jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
-      });
-  </script> 
-
-</body>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="setup.html"
+                        title="previous chapter">Setup Anonymization Problem</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="anon.html"
+                        title="next chapter">Anonymization Methods</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/risk.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="anon.html" title="Anonymization Methods"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="setup.html" title="Setup Anonymization Problem"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">sdcApp manual  documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019, International Household Survey Network.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.1.2.
+    </div>
+  </body>
 </html>

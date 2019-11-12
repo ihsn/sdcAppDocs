@@ -3,10 +3,9 @@ sdcApp manual
 
 This is documentation and guidance for *sdcApp*, a user interface for the *sdcMicro* *R* 
 package, which provides tools for Statistical Disclosure Control (SDC) for microdata, 
-also known as microdata anonymization. We refer to 
-`Statistical Disclosure Control for Microdata: A Theory Guide <https://sdctheory.readthedocs.io/en/latest/>`_.
-for an introduction to SDC for microdata with a complete overview of the theory as well 
-as examples from practice.
+also known as microdata anonymization. For an introduction to the theory and practice of Statistical Disclosure Control please see our accompanying guide: 
+`Statistical Disclosure Control for Microdata: Theory <https://sdctheory.readthedocs.io/en/latest/>`_.
+
 
 **Authors of this manual:** Thijs Benschop and Matthew Welch, The World Bank
 

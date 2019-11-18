@@ -6,6 +6,12 @@ package, which provides tools for Statistical Disclosure Control (SDC) for micro
 also known as microdata anonymization. For an introduction to the theory and practice of Statistical Disclosure Control please see our accompanying guide: 
 `Statistical Disclosure Control for Microdata: Theory <https://sdctheory.readthedocs.io/en/latest/>`_.
 
+As *sdcApp* is a GUI for the *R* package *sdcMicro*, users familiar with using *R* for statistical analysis
+may prefer to carry out the anonymization process using *R* from command-line. 
+More information and guidance on using *sdcMicro* from command-line 
+is available in the 
+`Statistical Disclosure Control for Microdata: A Practice Guide for sdcMicro <https://sdcpractice.readthedocs.io/en/latest/>`_
+from the same authors.
 
 **Authors of this manual:** Thijs Benschop and Matthew Welch, The World Bank
 

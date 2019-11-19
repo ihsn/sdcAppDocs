@@ -47,8 +47,8 @@
 <h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="what-is-sdcapp">
 <h2>What is sdcApp?<a class="headerlink" href="#what-is-sdcapp" title="Permalink to this headline">¶</a></h2>
-<p><em>sdcApp</em> is the Graphical User Interface (GUI) for the R package <em>sdcMicro*`TKM15`_ (see
-`here &lt;https://cran.r-project.org/web/packages/sdcMicro/index.html&gt;`_). The *sdcApp</em>
+<p><em>sdcApp</em> is the Graphical User Interface (GUI) for the R package <em>sdcMicro</em> (<a class="reference internal" href="#tkm15">TKM15</a>) (see
+<a class="reference external" href="https://cran.r-project.org/web/packages/sdcMicro/index.html">here</a>). The <em>sdcApp</em>
 opens the functionality of <em>sdcMicro</em> to users not familiar with the statistical
 programming language <em>R</em>. <em>sdcMicro</em> is an add-on package for the statistical software <em>R</em>
 for Statistical Disclosure Control (SDC) of microdata and includes functions for risk measurement,
@@ -59,57 +59,63 @@ microdata. All functionality available in the <em>sdcMicro</em> package is also 
 <h2>Statistical Disclosure Control (SDC)<a class="headerlink" href="#statistical-disclosure-control-sdc" title="Permalink to this headline">¶</a></h2>
 <p>A large part of the data collected by statistical agencies cannot be published directly
 due to privacy and confidentiality concerns. These concerns are both of legal and ethical
-nature. SDC seeks to treat and alter the data so that the data can be published or
+nature. SDC seeks to treat and alter the data in such a way that the data can be published or
 released without revealing the confidential information it contains, while, at the same time,
-limit information loss due to the anonymization of the data. There are two strands of literature
+limit information loss due to the anonymization of the data. There are two main strands of literature
 on SDC: 1) for microdata and 2) for tabular data. <em>sdcMicro</em> and <em>sdcApp</em> only provide the tools
 and methodology for protecting microdata.</p>
 </div>
 <div class="section" id="what-is-the-purpose-of-the-manual">
 <h2>What is the purpose of the manual?<a class="headerlink" href="#what-is-the-purpose-of-the-manual" title="Permalink to this headline">¶</a></h2>
 <p>This manual is designed to provide step-by-step guidance through the process of anonymizing a
-dataset with microdata. Both limited background information on methods and measures is
-provided as well as instructions on how to complete these steps in sdcApp. As <em>sdcApp</em> is a
-GUI for the <em>sdcMicro</em> package, users familiar with using <em>R</em> for statistical analysis
+dataset with microdata. The focus of this manual is on providing instructions on how to
+complete these steps in <em>sdcApp</em>, but also includes limited information on the
+implemented methods and measures. For more in-depth information on the measures and methods
+as well a the SDC process, we refer to the accompanying theory guide
+<a class="reference external" href="https://sdctheory.readthedocs.io/en/latest/">Statistical Disclosure Control for Microdata: Theory</a>.
+As <em>sdcApp</em> is a GUI for the <em>sdcMicro</em> package, users familiar with using <em>R</em> for statistical analysis
 may prefer to carry out the anonymization process using <em>R</em> from command-line.
 More information and guidance on using <em>sdcMicro</em> from command-line
-is available in the SDC Practice Guide available <a class="reference external" href="https://sdcpractice.readthedocs.io/en/latest/">here</a>.
-A theory guide is available <a class="reference external" href="https://statistical-disclosure-control-for-microdata-theory.readthedocs.io/en/latest/">here</a>
-and provides more detailed background information on the SDC process, methods and measures.</p>
+is available in the <a class="reference external" href="https://sdcpractice.readthedocs.io/en/latest/">Statistical Disclosure Control for Microdata: A Practice Guide for sdcMicro</a>.</p>
 </div>
 <div class="section" id="background-literature-on-sdc-for-microdata">
 <h2>Background literature on SDC for microdata<a class="headerlink" href="#background-literature-on-sdc-for-microdata" title="Permalink to this headline">¶</a></h2>
-<p>There is a broad scientific literature available on SDC for microdata. The theory guide
-(see <a class="reference external" href="https://statistical-disclosure-control-for-microdata-theory.readthedocs.io/en/latest/">here</a>)
+<p>There is a broad scientific literature available on SDC for microdata. The guide
+<a class="reference external" href="https://sdctheory.readthedocs.io/en/latest/">Statistical Disclosure Control for Microdata: Theory</a>
 provides a full overview of all methods used and implemented in sdcMicro and sdcApp, as well
 as provides an overview over the full SDC process. It also contains references to the
 appropriate literature.</p>
-<p><a class="reference internal" href="#hdfg06">HDFG06</a> is a book written by practitioners in NSOs and is especially worth mentioning
-for those seeking to read a complete overview .</p>
+<p><a class="reference internal" href="#hdfg10">HDFG10</a> (and [HDFG12]) is a handbook written by practitioners in NSOs and is especially worth mentioning
+for those seeking to read a complete overview. This volume also contains information on
+SDC for tabular data.</p>
 </div>
 <div class="section" id="outline-of-this-guide">
 <h2>Outline of this guide<a class="headerlink" href="#outline-of-this-guide" title="Permalink to this headline">¶</a></h2>
 <p>This guide is divided into the following main sections:</p>
 <ol class="arabic simple">
-<li><p>the Section <a class="reference external" href="installation.html">Installation and updating</a> guides the user through the installation process of sdcApp, which includes the installation of R, RStudio as well as the required packages. It also discusses the need and process of regular updates of all software components.</p></li>
-<li><p>the Section <a class="reference external" href="introsdcApp.html">Introduction to sdcApp</a> covers how to launch and close the application and provides a brief overview of structure of the application.  of the structure of the application</p></li>
-<li><p>the Section <a class="reference external" href="loadprepdata.html">Loading and preparing data</a> describes how to load microdata into the application. It also discusses the requirements to the</p></li>
+<li><p>the Section <a class="reference external" href="installation.html">Installation and updating</a> guides the user through the installation process of <em>sdcApp</em>, which includes the installation of <em>R</em>, <em>RStudio</em> as well as the required packages. It also discusses the need and process of regular updates of all software components.</p></li>
+<li><p>the Section <a class="reference external" href="introsdcApp.html">Introduction to sdcApp</a> covers how to launch and close the application and provides a brief overview of structure of the application.</p></li>
+<li><p>the Section <a class="reference external" href="loadprepdata.html">Loading and preparing data</a> describes how to load microdata into the application. It also discusses the requirements to the microdata and how to prepare the microdata.</p></li>
 <li><p>the Section <a class="reference external" href="setup.html">Setup anonymization problem</a>  covers the variable selection and setup of an SDC problem.</p></li>
 <li><p>the Section <a class="reference external" href="risk.html">Risk measurement</a> covers methods to measure the disclosure risk in the microdata.</p></li>
 <li><p>the Section <a class="reference external" href="anon.html">Anonymization methods</a> covers anonymization methods for quantitative and qualitative variables.</p></li>
-<li><p>the Section <a class="reference external" href="utility.html">Utility measurement</a> covers the measurement of information loss resulting from anonymization of the data</p></li>
+<li><p>the Section <a class="reference external" href="utility.html">Utility measurement</a> covers the measurement of information loss resulting from anonymization of the data.</p></li>
 <li><p>the Section <a class="reference external" href="export.html">Export data and reports</a> describes how to export the anonymized dataset and generate reports.</p></li>
 <li><p>the Section <a class="reference external" href="reproducibility.html">Reproducibility</a> covers functionality that render the anonymization process reproducable.</p></li>
-<li><p>the Section <a class="reference external" href="casestudies.html">Case Studies</a> presents two case studies illustrating the full SDC process in sdcApp.</p></li>
+<li><p>the Section <a class="reference external" href="casestudies.html">Case Studies</a> presents two case studies illustrating the full SDC process in <em>sdcApp</em>.</p></li>
 </ol>
 </div>
 <div class="section" id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
 <dl class="citation">
-<dt class="label" id="hdfg06"><span class="brackets">HDFG06</span></dt>
-<dd><p>Hundepool, A., Domingo-Ferrer, J., Franconi, L., Giessing, S., Lenz, R., Naylor, J., et al. (2006).
+<dt class="label" id="hdfg10"><span class="brackets">HDFG10</span></dt>
+<dd><p>Hundepool, A., Domingo-Ferrer, J., Franconi, L., Giessing, S., Lenz, R., Naylor, J., et al. (2010).
 <strong>Handbook on Statistical Disclosure Control.</strong>
-ESSNet SDC.</p>
+ESSNet SDC. Retrieved November 18, 2019 from <a class="reference external" href="https://ec.europa.eu/eurostat/cros/system/files/SDC_Handbook.pdf">https://ec.europa.eu/eurostat/cros/system/files/SDC_Handbook.pdf</a></p>
+</dd>
+<dt class="label" id="hdfg12"><span class="brackets">HDFG12</span></dt>
+<dd><p>Hundepool, A., Domingo-Ferrer, J., Franconi, L., Giessing, S., Schulte Nordholt, E., Spicer, K., and de Wolf, P.-P. (2012).
+Statistical Disclosure Control. Chichester: John Wiley &amp; Sons Ltd. doi:10.1002/9781118348239.</p>
 </dd>
 <dt class="label" id="tkm15"><span class="brackets">TKM15</span></dt>
 <dd><p>Matthias Templ, Alexander Kowarik, Bernhard Meindl (2015).

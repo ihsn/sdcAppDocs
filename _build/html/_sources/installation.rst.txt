@@ -1,11 +1,11 @@
 Installation and updating
 =========================
 
-This section will guide you through the steps you need to take to install *sdcApp*.
-*sdcApp* is a graphical user interface for the sdcMicro package. 
+This section will guide you through the steps to install and run *sdcApp*.
+*sdcApp* is a graphical user interface for the *sdcMicro* package. 
 The *sdcMicro* package is an add-on package for the statistical software *R*. In order
-to start working with *sdcApp*, you need to install *R*, *RStudio* [1]_ as well as several 
-add-on packages for R. All software is available free of charge and open-source. 
+to start working with *sdcApp*, you need to install *R* (`R19`_), *RStudio* (`RStudio18`_) [1]_ 
+as well as several add-on packages for *R*. All software is available free of charge and open-source. 
 *R* and *RStudio* run on most platfroms, including Windows, Mac OS X and Linux. To use *sdcApp*,
 a webbrowser needs to be installed as well [2]_.
 
@@ -19,7 +19,8 @@ Installing R and RStudio
 -------------------------
 The first step in the installation of *sdcApp* is the installation of *R* and *RStudio*. The 
 free open source statistical software R can be downloaded from the `CRAN website <https://cran.r-project.org>`_.
-By selecting your OS (cf. :numref:`fig21`), the installer will be dowloaded to your computer. In order to install
+By selecting your operating system (OS) (cf. :numref:`fig21`), the installer will 
+be dowloaded to your computer. In order to install
 *R*, open the installer and follow the installation steps.
 
 .. _fig21:
@@ -62,11 +63,12 @@ by default of four different panes as shown in :numref:`fig23`.
 .. figure:: media/installRStudio.png
    :align: center
    
-   Screenshot RStudio
+   Screenshot RStudio after launching
 
 Installing sdcMicro package
 ---------------------------
-*sdcApp* is included in the *R* package *sdcMicro*. Once *RStudio* is opened, *sdcMicro* can be 
+*sdcApp* is included in the *R* package *sdcMicro*. Once *RStudio* is opened, the 
+*sdcMicro* package can be 
 installed by executing commands in the *R* console. *sdcMicro* and a set of other *R* packages
 that are required by the *sdcMicro* package are downloaded from the CRAN servers. Therefore, 
 it is necessary to be connected to the internet during the installation process. [3]_
@@ -78,7 +80,7 @@ to select a CRAN mirror (server) to install the package from.
 Since the packages on all mirrors are identical, you can choose any of the locations. 
 The *sdcMicro* package itself uses functionality
 from a set of other *R* packages (e.g., *haven* for reading files in different formats). 
-By specifying the dependencies argument to TRUE, these dependencies will automatically be installed too.
+By setting the :code:`dependencies` argument to :code:`TRUE`, these dependencies will automatically be installed too.
 
 .. code-block:: R
    :linenos:
@@ -107,28 +109,7 @@ Installing the package is only required once (except for updating), whereas load
 package is required every time a new *R* session is started.
 
 You can load the *sdcMicro* package by typing :code:`library(sdcMicro)`
-and launch the application by typing :code:`sdcApp()` (cf. :numref:`fig25`). 
-
-*sdcApp* opens in your system's default web browser through the local host IP :code:`127.0.0.1:` (cf. :numref:`fig26`). 
-*sdcApp* works with recent versions of any webbrowser. 
-Due to small issues encountered with some browsers, we recommend to use Google Chrome, 
-Mozilla Firefox or Safari for the best performance.
-In case your default web browser is not one of the aforementioned browsers, you can simply open an
-alternative browser and copy paste the local host IP address from the *R* console
-into the new browser. 
-*sdcApp* will open in the new browser.
-
-
-.. NOTE::
-	An internet connection is not required while using *sdcMicro* and *sdcApp* and the data 
-	are stored locally on your computer or server. The web browser uses a local host IP, 
-	which is not connected to the internet and the browser is only used to communicate with 
-	the running *R* session.
-
-.. NOTE::
-	After launching *sdcApp* the *R* session is busy and cannot be used for other calculations.
-
-Furthermore, it's important that your *R* session is enabled to use the installed webbrowser. 
+and launch the application by typing :code:`sdcApp()` (cf. :numref:`fig25` and :numref:`code02`). 
 
 .. _fig25:
 
@@ -136,14 +117,7 @@ Furthermore, it's important that your *R* session is enabled to use the installe
    :align: center
    
    *R* console with local IP after launching *sdcApp*
-	
-.. _fig26:
 
-.. figure:: media/sdcAppStartIP.png
-   :align: center
-   
-   Start screen sdcApp in browser with local IP
-	
 .. code-block:: R
    :linenos:
    :caption: Loading sdcMicro package and launching *sdcApp*
@@ -155,11 +129,41 @@ Furthermore, it's important that your *R* session is enabled to use the installe
    # Launch sdcApp (opens in browser window)
    sdcApp()
 
+*sdcApp* opens in your system's default web browser through the local host IP :code:`127.0.0.1:` 
+(cf. :numref:`fig26`). 
+*sdcApp* works with recent versions of any webbrowser. 
+Due to small issues encountered with some browsers, we recommend to use Google Chrome, 
+Mozilla Firefox or Safari for the best performance.
+In case your default web browser is not one of the aforementioned browsers, you can simply open an
+alternative browser and copy paste the local host IP address from the *R* console
+into the new browser. 
+*sdcApp* will open in the new browser. 
+
+.. NOTE::
+	Your *R* session must be enabled to communicate with the installed webbrowser. 
+
+.. NOTE::
+	An internet connection is not required while using *sdcMicro* and *sdcApp* and the data 
+	are stored locally on your computer or server. The web browser uses a local host IP, 
+	which is not connected to the internet and the browser is only used to communicate with 
+	the running *R* session.
+
+.. NOTE::
+	After launching *sdcApp* the *R* session is busy and cannot be used for other calculations.
+	
+.. _fig26:
+
+.. figure:: media/sdcAppStartIP.png
+   :align: center
+   
+   Start screen sdcApp in browser with local IP
+	
 In rare cases, not all dependencies are correctly installed and the following error 
 message appears in the *R* console upon loading the sdcMicro package (cf. :numref:`fig27`).  
 In that case, install the package(s) indicated in the error message manually by using the 
 command :code:`install.packages()` with the name of the package(s). In the example error message, 
-this would be for the *haven* package.
+this would be for the *haven* package. :numref:`code03` shows the command to install
+the *haven* package.
 
 .. _fig27:
 
@@ -168,11 +172,19 @@ this would be for the *haven* package.
    
    Error message in console in case of missing dependencies
 
+.. code-block:: R
+   :linenos:
+   :caption: Installing dependencies manually
+   :name: code03
+   
+   # Install dependency
+   install.packages("haven", dependencies = TRUE)
+
 Updating R, RStudio and the sdcMicro package
 ---------------------------------------------
 *R*, *RStudio*, the *sdcMicro* package as well as dependencies are regularly updated. Updates include
 bug fixes as well as additional functionality. Therefore,
-it is recommended to regularly update to the latest version of the software.
+it is recommended to regularly update to the latest version of the software and packages.
 
 Updating R
 ~~~~~~~~~~
@@ -198,13 +210,14 @@ To check for updates in *RStudio*, go to Help -> Check for updates. If an update
 the current version number and the newest version number are shown. In order to install 
 the newer version, you need to visit the  
 `RStudio <https://www.rstudio.com/products/rstudio/download/>`_ website and follow the steps
-as described in the Section `Installing R and RStudio`_.
+as described in the Section `Installing R and RStudio`_. *RStudio* uses by 
+default the latest *R* version installed on your computer.
 
 Updating R packages
 ~~~~~~~~~~~~~~~~~~~
 The *sdcMicro* package is regularly updated to fix bugs and add functionality. In order to check 
 for newer versions, click on the Update button to get an overview of all packages that have
-newer versions available (cf. :numref:`fig29`). By clicking **Select all**, 
+newer versions available (cf. :numref:`fig29`). By clicking **Select All** and **Install Updates**, 
 these packages are all automatically updated.
 
 .. NOTE:::
@@ -223,7 +236,7 @@ update all installed packages.
 .. code-block:: R
    :linenos:
    :caption: Updating packages
-   :name: code03
+   :name: code04
    
    # Update packages
    update.packages()
@@ -231,12 +244,23 @@ update all installed packages.
 Bug reporting on GitHub
 -----------------------
 
-The sdcMicro package is open source software and the source code can be easily viewed on
+The *sdcMicro* package is open source software and the source code can be easily viewed on
 the `GitHub <https://github.com/sdcTools/sdcMicro>`_ of the *sdcMicro* project. There you can
 also report alleged bugs and raise other issues.
 
    
 .. [1] Technically speaking, *RStudio* is not required to run *sdcApp*. Nevertheless, we recommend to install *RStudio* for a better user experience.
-.. [2] *sdcApp* is a *Shiny* web application, which works best in a recent version of a webbrowser. Therefore, it is recommended to ensure that your webbrowser is updated regularly. Some webbrowsers may impede the proper functioning of *sdcApp*. If *sdcApp* doesn't work properly in your default web browser, please try to install Firefox or Google Chrome.
+.. [2] *sdcApp* is a *Shiny* `CCAX19`_ web application, which works best in a recent version of a webbrowser. Therefore, it is recommended to ensure that your webbrowser is updated regularly. Some webbrowsers may impede the proper functioning of *sdcApp*. If *sdcApp* does not work properly in your default web browser, please try to install Firefox or Google Chrome.
 .. [3] It is possible to download *R*, *RStudio* and the packages and transfer the files to the computer with for example a USB drive in case the computer 
 	   *sdcMicro* should be installed on cannot be connected to the internet for technical or confidentiality reasons.
+
+References
+----------
+.. [CCAX19] Winston Chang, Joe Cheng, JJ Allaire, Yihui Xie and Jonathan McPherson (2019). shiny: Web Application
+  Framework for R. R package version 1.4.0. https://CRAN.R-project.org/package=shiny
+  
+.. [R19] R Core Team (2019). **R: A language and environment for statistical computing.** 
+	R Foundation for Statistical Computing, Vienna, Austria. URL https://www.R-project.org/.
+	
+.. [RStudio18] RStudio Team (2018). **RStudio: Integrated Development for R**. RStudio, Inc., Boston, MA URL
+	http://www.rstudio.com/.

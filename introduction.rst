@@ -44,7 +44,7 @@ provides a full overview of all methods used and implemented in sdcMicro and sdc
 as provides an overview over the full SDC process. It also contains references to the 
 appropriate literature. 
 
-`HDFG06`_ is a book written by practitioners in NSOs and is especially worth mentioning 
+`HDFG10`_ (and [HDFG12]) is a handbook written by practitioners in NSOs and is especially worth mentioning 
 for those seeking to read a complete overview. This volume also contains information on 
 SDC for tabular data.
 
@@ -67,9 +67,13 @@ This guide is divided into the following main sections:
 References
 ----------
 
-.. [HDFG06] Hundepool, A., Domingo-Ferrer, J., Franconi, L., Giessing, S., Lenz, R., Naylor, J., et al. (2006). 
+.. [HDFG10] Hundepool, A., Domingo-Ferrer, J., Franconi, L., Giessing, S., Lenz, R., Naylor, J., et al. (2010). 
 	**Handbook on Statistical Disclosure Control.**
-	ESSNet SDC.
+	ESSNet SDC. Retrieved November 18, 2019 from https://ec.europa.eu/eurostat/cros/system/files/SDC_Handbook.pdf
+	
+.. [HDFG12]	Hundepool, A., Domingo-Ferrer, J., Franconi, L., Giessing, S., Schulte Nordholt, E., Spicer, K., and de Wolf, P.-P. (2012). 
+	Statistical Disclosure Control. Chichester: John Wiley & Sons Ltd. doi:10.1002/9781118348239.
+	
 .. [TKM15]	Matthias Templ, Alexander Kowarik, Bernhard Meindl (2015). 
 	Statistical Disclosure Control for Micro-Data Using the R Package sdcMicro. 
 	**Journal of Statistical Software**, 67(4), 1-36.<doi:10.18637/jss.v067.i04>

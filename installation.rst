@@ -59,7 +59,7 @@ by default of four different panes as shown in :numref:`fig23`.
    
 .. _fig23:
 
-.. figure:: media/installRStudio.png
+.. figure:: media/installRStudio_new.png
    :align: center
    
    Screenshot RStudio

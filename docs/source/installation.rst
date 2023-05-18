@@ -188,7 +188,7 @@ as described in the Section `Installing R and RStudio`_. The version number of t
 
 .. _fig28:
 
-.. figure:: media/installRversion.png
+.. figure:: media/installRVersion_new.png
    :align: center
 
    R console with version number

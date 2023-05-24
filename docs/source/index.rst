@@ -1,28 +1,28 @@
 sdcApp manual
 =============
 
-This is documentation and guidance for *sdcApp*, a user interface for the *sdcMicro* *R* 
-package, which provides tools for Statistical Disclosure Control (SDC) for microdata, 
-also known as microdata anonymization. For an introduction to the theory and practice of Statistical Disclosure Control please see our accompanying guide: 
+This is documentation and guidance for *sdcApp*, a user interface for the *sdcMicro* *R*
+package, which provides tools for Statistical Disclosure Control (SDC) for microdata,
+also known as microdata anonymization. For an introduction to the theory and practice of Statistical Disclosure Control please see our accompanying guide:
 `Statistical Disclosure Control for Microdata: Theory <https://sdctheory.readthedocs.io/en/latest/>`_.
 
-As *sdcApp* is a GUI for the *R* package *sdcMicro*, users familiar with using *R* for statistical analysis
-may prefer to carry out the anonymization process using *R* from command-line. 
-More information and guidance on using *sdcMicro* from command-line 
-is available in the 
+As *sdcApp* is a graphical user interface (GUI) for the *R* package *sdcMicro*, users familiar with using *R* for statistical analysis
+may prefer to carry out the anonymization process using *R* from command-line.
+More information and guidance on using *sdcMicro* from command-line
+is available in the
 `Statistical Disclosure Control for Microdata: A Practice Guide for sdcMicro <https://sdcpractice.readthedocs.io/en/latest/>`_
 from the same authors.
 
 **Authors of this manual:** Thijs Benschop and Matthew Welch, The World Bank
 
-**Acknowledgments:** The authors thank Olivier Dupriez and Cathrine Machingauta (The World Bank) 
+**Acknowledgments:** The authors thank Olivier Dupriez and Cathrine Machingauta (The World Bank)
 for their technical comments and inputs throughout the process.
 
-The production of this guide was made possible through a World Bank Knowledge 
-for Change II Grant: KCP II - A microdata dissemination challenge: 
-Balancing data protection and data utility. Grant number: TF 015043, 
-Project Number P094376. As well as from United Kingdom - DFID funding 
-to the World Bank Multi-Donor Trust Fund - International Household Survey 
+The production of this guide was made possible through a World Bank Knowledge
+for Change II Grant: KCP II - A microdata dissemination challenge:
+Balancing data protection and data utility. Grant number: TF 015043,
+Project Number P094376. As well as from United Kingdom - DFID funding
+to the World Bank Multi-Donor Trust Fund - International Household Survey
 and Accelerated Data Program – TF071804/TF011722/TF0A7461.
 
 .. toctree::
@@ -41,4 +41,3 @@ and Accelerated Data Program – TF071804/TF011722/TF0A7461.
    reproducibility
    undo
    casestudies
-

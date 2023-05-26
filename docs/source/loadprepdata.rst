@@ -5,7 +5,7 @@ This section shows how to load microdata into *sdcApp* and prepare the data
 for the SDC process.
 
 The first step in the SDC process is loading the dataset into *sdcApp*. *sdcApp* supports
-most common statistical data formats, such as *R*, *STATA*, *SPSS* and *SAS* files. First-time 
+most common statistical data formats, such as *R*, *STATA*, *SPSS*, *SAS* and csv files. First-time 
 users may also load one of the two practice datasets, which are included in *sdcApp*, 
 to explore *sdcApp* and methods. Most examples in this guide are illustrated by 
 using the practice dataset *testdata* and can be reproduced by using this dataset.
@@ -18,11 +18,11 @@ before loading the data in *sdcApp*.
 Loading data
 ------------
 
-Testdata
-~~~~~~~~
+Practice datasets
+~~~~~~~~~~~~~~~~~
 *sdcApp* includes two practice datasets: *testdata* and *testdata2*. The dataset
 *testdata* is used to illustrate methods and examples in this guide. In order to
-replicate these examples, the user needs to load this dataset. In order to load the testdata
+replicate these examples, the user needs to load this dataset. In order to load the *testdata*
 dataset, navigate to the **Microdata tab** and select **Testdata/Internal data** in the left sidebar.
 Select the dataset from the dropdown menu and click the button **Load data**. 
 This is illustrated in :numref:`fig51`. 
@@ -30,12 +30,26 @@ This is illustrated in :numref:`fig51`.
 .. NOTE::
 	Any other datasets loaded in the current *R* session are also shown in the dropdown list 
 	with available datasets and can be loaded.
+	
+.. _fig51:
+
+.. figure:: media/prepLoadTestdata.png
+   :align: center
+   
+   Load testdata on **Microdata** tab
 
 After loading the dataset, the data is displayed in the **Microdata** tab. The **Microdata**
 tab changes and the functionality for loading microdata is replaced by 
-functionality to explore and prepare the dataset (cf. :numref:`fig52`). The 
+functionality for exploring and preparing the dataset (cf. :numref:`fig52`). The 
 left sidebar shows different options to explore and prepare the data for the anonymization process,
 as discussed in the next sections.
+
+.. _fig52:
+
+.. figure:: media/prepLoadedData.png
+   :align: center
+   
+   Loaded testdata dataset on **Microdata** tab
 
 After loading the testdata dataset, the loaded 
 dataset is displayed (cf. :numref:`fig52`). By default the first 20 records are displayed. 
@@ -52,24 +66,10 @@ with matches are displayed. The search is performed simultaneously on all variab
 .. |sort| image:: media/prepLoadSort.png	
 .. |sort2| image:: media/prepLoadSort2.png
 	
-.. _fig51:
-
-.. figure:: media/prepLoadTestdata.png
-   :align: center
-   
-   Load testdata on **Microdata** tab
-
-.. _fig52:
-
-.. figure:: media/prepLoadedData.png
-   :align: center
-   
-   Loaded testdata dataset on **Microdata** tab
-	
 Your microdata
 ~~~~~~~~~~~~~~~
-*sdcApp* supports besides the native *R* format datasets in several foreign data formats 
-(cf. :numref:`tab51`). 
+Besides the native *R* format, *sdcApp* supports datasets in several other common data formats 
+(cf. :numref:`tab51`).
 If the microdata is not in one of these data formats, another software can be used 
 to convert the data, such as *Stat/Transfer*. Also some statistical software allow to export
 data in another data format.
@@ -86,26 +86,35 @@ data in another data format.
    R/RStudio	.rdata
    SPSS			.sav
    SAS			.sas7bdat
-   CSV			.csv, .txt
    STATA		.dta
+   csv			.csv, .txt
    ==========  ================
    
 In order to load a dataset, select the corresponding data format
-from the left sidebar of the **Microdata** tab. For all formats the user can set two options:
+from the left sidebar of the **Microdata** tab. For all formats the user can set two 
+options (cf.  :numref:`fig53`):
 	
 (1)	Convert string variables (character vectors) to factor variables?
 		If :code:`TRUE` (default), variables of type string are automatically converted to categorical variables 
 		(type factor in *R*). Categorical variables need to be of type factor in *sdcApp*.
-		Remove any textual variables, such as 'Specify other:' variables before loading the
+		Remove any textual string variables, such as 'Specify other:' variables before loading the
 		data. These variables are oftentimes not suitable for release and require long
-		computation times to be transformed to factor. If :code:`FALSE`,
+		computation times to be transformed to factor. If :code:`FALSE`, string variables
+		are read as vectors of type character.
 (2)	Drop variables with only missing values (NA)?
 		If :code:`TRUE` (default), variables that contain only missing values (:code:`NA` in *R*) 
 		are removed upon loading the data. This does not cause any loss of information,
-		as these variabels do not contain information. However, variables with only
+		as these variables do not contain information. However, variables with only
 		missing values can cause issues in *sdcApp*. If :code:`FALSE`, no variables are deleted.
 
-If the selected data format is a CSV-file, two additional options need to be specified:
+.. _fig53:
+
+.. figure:: media/prepLoadData.png
+   :align: center
+   
+   Load data on Microdata tab - example STATA dataset 
+
+If the selected data format is a csv file, two additional options need to be specified:
 
 (1)	Does the first row contain the variable names?
 		If :code:`TRUE`, the values in the first row are used as variable names. If 
@@ -116,7 +125,7 @@ If the selected data format is a CSV-file, two additional options need to be spe
 		semicolon (;) and tab.
 
 After setting the options for the data upload, click on the button **Browse** to access
-the file system in your computer and select the microdata file. The file is upload 
+the file system in your computer and select the microdata file. The file is uploaded 
 immediately after selection. After loading the file, which may 
 
 .. NOTE::	
@@ -138,15 +147,7 @@ immediately after selection. After loading the file, which may
    		# Launch sdcApp with increased max. file size (200MB)
    		sdcApp(maxRequestSize = 200)
 
-.. _fig53:
-
-.. figure:: media/prepLoadData.png
-   :align: center
-   
-   Load data on Microdata tab - example STATA dataset 
-
-After loading the testdata dataset, the loaded 
-dataset is displayed (cf. :numref:`fig52`). By default the first 20 records are displayed. 
+After loading, the dataset is displayed. By default the first 20 records are displayed. 
 With the dropdown menu in the topleft corner it is possible to display 20, 50, 100 or all
 records per page. It is not recommended to select *all* in case of larger datasets
 *sdcApp* will run very slow. In the right bottom it is possible to navigate to different pages,
@@ -161,29 +162,26 @@ functionality to explore and prepare the dataset (cf. :numref:`fig511`). The
 left sidebar shows different options to explore and prepare the data for the anonymization process,
 as discussed in the next sections.
 
-.. _fig511:
-
-.. figure:: media/prepLoadAfterLoad.png
-   :align: center
-   
-   Microdata tab after loading dataset 
-   
-   
-maxrequestsize option for loading larger files
-
 Inspect and explore data
 ------------------------
-After loading the dataset into *sdcApp*, the data is shown on the Microdata tab. At the top of 
-the data viewer, the number of observations and variables is shown as well as the number 
+After loading the dataset into *sdcApp*, the data is shown on the **Microdata** tab. At the top of 
+the data viewer, the file name, the number of observations and variables is shown as well as the number 
 of variables that were deleted as a result all missing values (cf. :numref:`fig511`). 
 
+.. _fig511:
+
+.. figure:: media/prepLoadNameSizeDataset.png
+   :align: center
+   
+   The file name, number of observations and variables shown after loading a dataset.
+
 .. NOTE::
-	If *Drop variables with only missing values (NA)?* is set to TRUE, the number of variables
+	If the option *Drop variables with only missing values (NA)?* is set to TRUE, the number of variables
 	shown may be lower than the number of variables in the loaded dataset.
 
 It is important to check whether the data was imported completely and correctly by browsing
 the dataset in *sdcApp*. If, for example, records are missing or labels are corrupted, 
-then these issues need to be fixed outside of *sdcApp* and the data need to be reimported.
+these issues need to be fixed outside of *sdcApp* and the data need to be reimported.
 
 By clicking **Explore variables** in the left sidebar, univariate and bivariate summary
 statistics appropriate for the variable type can displayed. If one variable is selected,
@@ -200,19 +198,40 @@ univariate summary statistics are shown.
 Preparing data
 --------------
 Most datasets need to be prepared before the start of the anonymization process. Examples 
-of data preparation are removing variables that are not suitable for release, etc. It is
+of data preparation steps are adding labels, correcting errors, removing variables that are not 
+suitable for release, converting the variable type, creating stratification variables and 
+subsetting in case of hierarchical data. It is
 recommended to carry out the data preparation in a statistical software of choice, before 
-loading the data in sdcApp. Data preparation includes 
+loading the data in sdcApp.
 
 After loading the data in sdcApp, still some steps may need to be carried, which are 
 specific to the needs of the sdcApp. These steps are discussed in the following subsections.
 
 Convert variable type
 ~~~~~~~~~~~~~~~~~~~~~~
-numeric to factor
+*R* uses different variable types. Common variables types are character (string variables), 
+factor (categorical variables), integer and numeric. In order to carry out the SDC process
+in sdcApp, categorical varables need to be of type factor or integer. Numerical variables 
+need to be of type numeric or integer. This is epecially important if variables are selected 
+as key variables (see Section `Variable selection <setup.html>`__). 
 
-to numeric
+Most of the time variables have the correct type after loading in sdcApp. However, in some instances, 
+the variable type needs to be changed after loading the data. For example, a categorical variable
+without variable labels may be read in as numeric variables or a numeric variable that has a one or more 
+values with a label (e.g. missing value code or not applicable code) may be stored as factor variable.
+In some cases, this can be solved by changing the labels in the original data and reload the data. However,
+this may not always be desirable, for instance, in the example of one vlue in a numeric variable that is
+labelled. In these cases, the variable type must be changed in sdcApp. sdcApp allows to convert numeric 
+variable to factor variables (for categorical variables) and character and factor variables to numeric.
 
+
+Convert variables to factor
+
+Convert variables to numeric
+
+.. NOTE::
+	Case of variable age  - typically numeric, but want to use as categorcial key var -> need
+	to 
 
 Set specific values to NA
 ~~~~~~~~~~~~~~~~~~~~~~~~~

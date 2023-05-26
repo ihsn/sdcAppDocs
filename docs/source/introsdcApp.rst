@@ -128,8 +128,8 @@ study of the SDC literature on risk and utility measurement and anonymization me
 Getting started
 ---------------
 
-The sdcMicro package includes two test datasets (:code:`testdata` and :code:`testdata2`). Throughout this
-guide the dataset testdata to illustrate all the functions. How to load :code:`testdata` is explained 
+The sdcMicro package includes two practice datasets (*testdata* and *testdata2*). Throughout this
+guide the dataset testdata to illustrate all the functions. How to load *testdata* is explained 
 in the Section `Loading and Preparing Data <loadprepdata.html>`__. In the section 
 `Case Studies <casestudies.html>`__, the SDC process using sdcAp is illustrated using other datasets.
 
